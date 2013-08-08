@@ -1,0 +1,11 @@
+---
+layout: page
+title: "Freelancing"
+---
+
+<section class="content freelancing">
+  <h1 class="lowercase">/ freelancing</h1>
+
+  {% capture document %}{% include freelance.md %}{% endcapture %}
+  {{ document | markdownify }}
+</section>

@@ -1,0 +1,11 @@
+---
+layout: page
+title: "About Ray Clanan"
+---
+
+<section class="content about">
+  <h1 class="lowercase">/ about</h1>
+
+  {% capture document %}{% include about.md %}{% endcapture %}
+  {{ document | markdownify }}
+</section>

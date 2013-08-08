@@ -1,0 +1,11 @@
+---
+layout: page
+title: "Technology I use"
+---
+
+<section class="content technology">
+  <h1 class="lowercase">/ technology</h1>
+
+  {% capture document %}{% include technology.md %}{% endcapture %}
+  {{ document | markdownify }}
+</section>

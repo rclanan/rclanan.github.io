@@ -1,0 +1,12 @@
+---
+layout: page
+title: "Some of my side projects"
+---
+
+<section class="content labs">
+  <h1 class="lowercase">/ labs</h1>
+
+  {% capture document %}{% include labs.md %}{% endcapture %}
+  {{ document | markdownify }}
+
+</section>
