@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>{{ page.title }}</title>
+
+  <meta name="author" content="{{ site.author.name }}" />
+  <meta name="description" content="{{ site.description }}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="alternate" type="application/rss+xml" href="/atom.xml" />
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300'
+    rel='stylesheet' type='text/css'>
+
+  <link href="/css/styles.css" rel="stylesheet">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-57x57-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+</head>
+
+<body>
+  <header id="navbar" class="navbar navbar-fixed-top" role="banner">
+    <div class="container">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">{{ site.title }}</a>
+      <nav class="nav-collapse collapse navbar-responsive-collapse" role="navigation">
+        <ul class="nav navbar-nav pull-right hidden-print lowercase">
+          <li><a title="See the post list" href="/">Posts</a></li>
+          <li><a title="About me" href="/about">About</a></li>
+          <li><a title="Technology I use" href="/technology">Technology</a></li>
+          <li><a title="Some of my side projects" href="/labs">Labs</a></li>
+          <li><a title="Freelancing Information" href="/freelance">Hire Me</a></li>
+          <li><a title="Contact me" href="/contact">Contact</a></li>
+          <li><a title="Atom Feed" href="/atom.xml">RSS</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+    {{ content }}
+
+  <footer id="footer" class="hidden-print">
+    <section class="meta">
+      <div class="container">
+        <div class="row">
+          <div class="col col-lg-2 col-lg-offset-2">
+            <a href="https://twitter.com/{{ site.author.twitter }}">
+              <i class="icon icon-twitter icon-4x"></i>
+              <div>Follow me on Twitter</div>
+            </a>
+          </div>
+          <div class="col col-lg-2 next">
+            <a href="https://github.com/{{ site.author.github }}">
+              <i class="icon icon-github icon-4x"></i>
+              <div>
+                See my github profile
+              </div>
+            </a>
+          </div>
+          <div class="col col-lg-2 next">
+            <a href="http://www.linkedin.com/in/{{ site.author.linkedin }}">
+              <i class="icon icon-linkedin icon-4x"></i>
+              <div>
+                See my linkedin profile
+              </div>
+            </a>
+          </div>
+          <div class="col col-lg-2 next">
+            <a href="http://www.facebook.com/{{ site.author.facebook }}">
+              <i class="icon icon-facebook icon-4x"></i>
+              <div>
+                Connect on Facebook
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </footer>
+  {% include analytics.html %}
+  {% include gauges.html %}
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="/js/scripts.js"></script>
+
+</body>
+</html>

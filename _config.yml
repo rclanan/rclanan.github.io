@@ -1,0 +1,18 @@
+markdown: redcarpet
+pygments: true
+permalink: /posts/:title
+redcarpet:
+  extensions: ["smart"]
+title : Utopian Concept
+production_url : http://utopianconcept.com
+description: "Ray Clanan is an autodidact polyglot senior freelance developer, based in the United States. He is professional, creative, and experienced with all aspects of development ranging from web, mobile, desktop, and client/server."
+disqus_shortname: utopianconcept
+analytics: UA-42068834-1
+author :
+  name : Ray Clanan
+  github : rclanan
+  twitter : utopianconcept
+  linkedin : raymondclanan
+  facebook : ray.clanan
+  email: rclanan@utopianconcept.com
+  phone: +1 317-586-2186
