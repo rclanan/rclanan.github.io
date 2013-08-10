@@ -8,9 +8,27 @@ layout: nil
     <changefreq>daily</changefreq>
     <priority>1</priority>
   </url>
-{% for page in site.posts %}  <url>
+  {% for post in site.posts %}
+    <url>
+      <loc>{{ site.production_url }}{{ post.url }}</loc>
+      {% if post.lastmod == null %}
+    <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+    {% else %}
+    <lastmod>{{ post.lastmod | date_to_xmlschema }}</lastmod>
+    {% endif %}
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    </url>
+  {% endfor %}
+  {% for page in site.pages %}
+  {% if page.sitemap != null and page.sitemap != empty %}
+  <url>
     <loc>{{ site.production_url }}{{ page.url }}</loc>
-    <lastmod>{{ page.date | date: "%Y-%m-%d" }}</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>{{ page.sitemap.lastmod | date_to_xmlschema }}</lastmod>
+    <changefreq>{{ page.sitemap.changefreq }}</changefreq>
+    <priority>{{ page.sitemap.priority }}</priority>
   </url>
-{% endfor %}</urlset>
+  {% endif %}
+  {% endfor %}
+
+</urlset>
