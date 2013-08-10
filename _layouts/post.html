@@ -9,17 +9,21 @@ layout: page
   </h1>
   </header>
   <section class="byline">
-    <time title="{{ page.date | date_to_xmlschema }}" pubdate="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %e, %Y" }}</time>
+    <i class="icon-calendar"></i> <time title="{{ page.date | date_to_xmlschema }}" pubdate="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %e, %Y" }}</time> . {{ page.category }}
+    <br/><small><i class="icon-tags"></i> {% for tag in page.tags %} <a href="/tags/{{ tag }}" title="View posts tagged with &quot;{{ tag }}&quot;"><u>{{ tag }}</u></a> {% if forloop.last != true %} {% endif %} {% endfor %} </small>
+    <br />
   </section>
 
   <section class="entry">
     {{ content }}
   </section>
 
-  <div class="pull"></div>
-  {% include twitter.html %}
-  <hr>
-  {% if page.comments %}
-  {% include disqus.html %}
-  {% endif %}
+  <footer>
+    <div class="pull"></div>
+      {% include twitter.html %}
+      <hr />
+      {% if page.comments %}
+      {% include disqus.html %}
+      {% endif %}
+  </footer>
 </article>

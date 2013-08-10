@@ -2,6 +2,9 @@
 layout: post
 title: "Creating a Mock Web Service in .NET"
 comments: true
+tags: .net mock web service howto
+category: Coding
+summary: A brief walk through on how to create a mock web service in .net
 ---
 
 Earlier this week at a client's I had to trace down where an exception was coming from when making a web service call. I had access to the client's front end code, the part that actually made the calls to the web service in question but didn't have access to the code for the web service. In order to replicate this, I figured the best route would be to create a mock web service that I could than throw exceptions or custom return values that I would like to test. 
