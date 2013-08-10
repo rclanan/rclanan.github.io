@@ -8,11 +8,11 @@ Earlier this week at a client's I had to trace down where an exception was comin
 
 Creating a mock web service has numerous benefits in terms of testing. Some of those might include: 
 
-	* By passing a web service that charges you for every service call.
-	* Serve up different scenarios for "expected" results.
-	* Simulate the web service being down or not available.   
-	* The service is still being developed and you need to continue on with your development.
-	* Test exceptions that might be thrown from the web service. 
+* By passing a web service that charges you for every service call.
+* Serve up different scenarios for "expected" results.
+* Simulate the web service being down or not available.   
+* The service is still being developed and you need to continue on with your development.
+* Test exceptions that might be thrown from the web service. 
 
 With the later bullet point being my case, I start off by grabbing the [WSDL](http://en.wikipedia.org/wiki/Web_Services_Description_Language) file from the existing running web service. To do this you can just append ?wsdl to the path and it will generate the WSDL XML for you. Save this out to your local machine. 
 

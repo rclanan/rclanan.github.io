@@ -3,16 +3,18 @@ layout: page
 ---
 
 <article class="content">
+  <header>
   <h1>
     <a href="{{ page.url }}">{{ page.title }}</a>
   </h1>
-
+  </header>
   <section class="byline">
     <time title="{{ page.date | date_to_xmlschema }}" pubdate="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %e, %Y" }}</time>
   </section>
 
-  {{ content }}
-</article>
+  <section class="entry">
+    {{ content }}
+  </section>
 
   <div class="pull"></div>
   {% include twitter.html %}
@@ -20,3 +22,4 @@ layout: page
   {% if page.comments %}
   {% include disqus.html %}
   {% endif %}
+</article>
