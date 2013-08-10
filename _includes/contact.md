@@ -13,3 +13,5 @@ Always looking for new opportunities to use what I have learned or learn seomthi
 ##### [Connect with me on LinkedIn](http://linkedin.com/in/raymondclanan)
 
 ##### [View my coding skill progress on CoderBits](https://coderbits.com/rclanan)
+
+##### [Leave me feedback on Github](https://github.com/rclanan/Feedback/issues/new)

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Obligatory Hello World"
+comments: true
 ---
 
 This is  my obligatory hello world post! 
