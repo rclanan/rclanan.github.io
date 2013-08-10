@@ -15,6 +15,9 @@ build:
 	@rm -rf js/scripts.js.tmp
 	@echo "Compiling and Compressing JS files with uglify-js... ${CHECK} Done"
 	@echo "${HR}"
+	@cp -r _site/tags/* tags/
+	@echo "Copying tags folder to root... ${CHECK} Done"
+	@echo "${HR}"
 	@echo "Successfully built."
 
 update:

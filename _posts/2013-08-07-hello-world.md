@@ -2,6 +2,9 @@
 layout: post
 title: "Obligatory Hello World"
 comments: true
+tags: intro
+category: Introduction
+summary: The obligatory hello world post
 ---
 
 This is  my obligatory hello world post! 
