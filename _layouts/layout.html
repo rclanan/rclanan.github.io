@@ -50,6 +50,23 @@
     {% endfor %}
   {% endif %}
 
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@utopianconcept">
+  <meta name="twitter:creator" content="@rclanan">
+  {% if page.title %}
+    <meta name="twitter:title" content="{{ page.title }}">
+  {% else %}
+    <meta name="twitter:title" content="{{ site.title }}">
+  {% endif %}
+  {% if page.url %}
+    <meta name="twitter:url" content="{{ site.production_url }}{{ page.url }}">
+  {% endif %}
+  {% if page.description %}
+    <meta name="twitter:description" content="{{ page.description }}">
+  {% else %}
+    <meta name="twitter:description" content="{{ site.description }}">
+  {% endif %}
+
   {% endcapture %}{{ header | strip_newlines }}
 
   <link rel="alternate" type="application/rss+xml" href="/atom.xml" />
