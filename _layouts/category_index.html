@@ -6,8 +6,8 @@ layout: page
   <table class="table table-striped">
     <tbody>
       {% for post in site.posts %}
-        {% for tag in post.tags %}
-          {% if tag == page.tag %}
+        {% for category in post.category %}
+          {% if category == page.category %}
           <tr>
             <td>
               <h3><a href="{{ site.production_url }}{{ post.url }}">{{ post.title }}</a></h3>

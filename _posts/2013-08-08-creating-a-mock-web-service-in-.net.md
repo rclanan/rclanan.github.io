@@ -3,7 +3,7 @@ layout: post
 title: "Creating a Mock Web Service in .NET"
 comments: true
 tags: .net mock web service howto
-category: Coding
+category: coding
 summary: A brief walk through on how to create a mock web service in .net
 ---
 

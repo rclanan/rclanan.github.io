@@ -3,7 +3,7 @@ layout: post
 title: "Obligatory Hello World"
 comments: true
 tags: intro
-category: Introduction
+category: introduction
 summary: The obligatory hello world post
 ---
 
