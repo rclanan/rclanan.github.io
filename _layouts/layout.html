@@ -81,6 +81,10 @@
     <meta property="article:tag" content="{{ tag }}">
     {% endfor %}
   {% endif %}
+  {% if site.facebook.appid %}
+    <meta property="fb:admins" content="{{ site.author.facebook }}" />
+    <meta property="fb:app_id" content="{{ site.facebook.appid }}"/>
+  {% endif %}
 
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300'
     rel='stylesheet' type='text/css'>
@@ -171,7 +175,6 @@
     </section>
   </footer>
   {% include analytics.html %}
-  {% include gauges.html %}
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <script src="/js/scripts.js"></script>
 
