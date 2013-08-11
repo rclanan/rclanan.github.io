@@ -28,6 +28,8 @@ layout: page
             None
         {% endif %}
         | <a href="{{ site.production_url }}{{ page.url}}"><span class="label label-info">Permalink</span></a>
+
+        | <a href="http://www.instapaper.com/hello2?url={{ site.production_url }}{{ page.url }}&amp;title={{ page.title }}" title="Save {{ page.title }} to Instapaper" target="_blank">Read later</a>
         </small>
     </span>
   </section>
@@ -38,7 +40,7 @@ layout: page
 
   <footer>
     <div class="pull"></div>
-      {% include twitter.html %}
+      {% include sharing.html %}
       <hr />
       {% if page.comments %}
       {% include disqus.html %}
