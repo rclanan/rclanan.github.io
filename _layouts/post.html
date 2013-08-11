@@ -41,6 +41,34 @@ layout: page
   <footer>
     <div class="pull"></div>
       {% include sharing.html %}
+      <div id="email-capture" class="row">
+          <div class="col-lg-6 col-lg-offset-3 text-center">
+            <div class="row"><div class="col-lg-12">
+              <p>Subscribe to my mailing list
+              </p>
+            </div>
+            <div class="col-lg-12">
+              <div id="mc_embed_signup" class="row">
+              <form action="http://utopianconcept.us7.list-manage.com/subscribe/post?u=6319e8bccb7eca0c94e55b132&amp;id=380501b246" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                  <div class="col-lg-6 col-lg-offset-3 text-center mc-field-group">
+                    <div class="input-group">
+                      <input type="hidden" value="{{ page.title }}" name="ARTICLE" class="" id="mce-ARTICLE">
+                      <input type="email" value="" name="EMAIL" class="form-control required email" id="mce-EMAIL" placeholder="email address" required>
+                      <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit" name="subscribe" id="mc-embedded-subscribe">Subscribe</button>
+                      </span>
+                    </div>
+                    <div class="col-lg-4 mce-responses">
+                      <div class="response" id="mce-error-response" style="display:none"></div>
+                      <div class="response" id="mce-success-response" style="display:none"></div>
+                    </div>
+                  </div>
+                </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       <hr />
       {% if page.comments %}
       {% include disqus.html %}

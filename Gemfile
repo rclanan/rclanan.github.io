@@ -6,6 +6,8 @@ gem 'jekyll'
 
 gem 'rmagick'
 
+gem 'newrelic_rpm'
+
 group :development do
   gem 'guard'
   gem 'guard-livereload'
