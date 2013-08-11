@@ -1,6 +1,12 @@
 markdown: redcarpet
 pygments: true
 permalink: /posts/:title
+paginate: 10
+tag_page_dir: tag
+tag_feed_dir: tag
+tag_page_layout: tag_page
+tag_feed_layout: tag_feed
+exclude: [README.md]
 redcarpet:
   extensions: ["smart"]
 title : Utopian Concept

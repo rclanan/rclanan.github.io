@@ -18,6 +18,9 @@ build:
 	@cp -r _site/tags/* tags/
 	@echo "Copying tags folder to root... ${CHECK} Done"
 	@echo "${HR}"
+	@cp -r _site/category/* category/
+	@echo "Copying category folder to root... ${CHECK} Done"
+	@echo "${HR}"
 	@echo "Successfully built."
 
 update:

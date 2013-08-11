@@ -9,9 +9,27 @@ layout: page
   </h1>
   </header>
   <section class="byline">
-    <i class="icon-calendar"></i> <time title="{{ page.date | date_to_xmlschema }}" pubdate="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %e, %Y" }}</time> . {{ page.category }}
-    <br/><small><i class="icon-tags"></i> {% for tag in page.tags %} <a href="/tags/{{ tag }}" title="View posts tagged with &quot;{{ tag }}&quot;"><u>{{ tag }}</u></a> {% if forloop.last != true %} {% endif %} {% endfor %} </small>
-    <br />
+    <i class="icon-calendar"></i> <time title="{{ page.date | date_to_xmlschema }}" pubdate="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %e, %Y" }}</time>
+    <span class="post-details pull-right">
+      <small>Categories:
+        {% if page.category %}
+          {% for category in page.category %}
+            <a href="/category/{{ category }}" title="View posts categorized with &quot;{{ page.category }}&quot;"><span class="label">{{ category }}</span></a>
+          {% endfor %}
+        {% else %}
+            None
+        {% endif %}
+      | Tags
+        {% if page.tags %}
+          {% for tag in page.tags %}
+            <a href="/tags/{{ tag }}" title="View posts tagged with &quot;{{ tag }}&quot;"><span class="label">{{ tag }}</span></a>
+          {% endfor %}
+        {% else %}
+            None
+        {% endif %}
+        | <a href="{{ site.production_url }}{{ page.url}}"><span class="label label-info">Permalink</span></a>
+        </small>
+    </span>
   </section>
 
   <section class="entry">
