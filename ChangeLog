@@ -1,0 +1,289 @@
+commit fe4859c
+Author: Ray CLanan <rclanan@utopianconcept.com>
+Date:   2013-08-11
+
+    add getclicky.com
+
+_includes/getclicky.html
+_layouts/layout.html
+
+commit b15dac0
+Author: Ray CLanan <rclanan@utopianconcept.com>
+Date:   2013-08-11
+
+    update code block in markdown
+
+_posts/2013-08-08-creating-a-mock-web-service-in-.net.md
+
+commit 68dcdfd
+Author: Ray CLanan <rclanan@utopianconcept.com>
+Date:   2013-08-11
+
+    add newrelic; add email link; add subscribe
+
+Gemfile
+_includes/github.html
+_layouts/layout.html
+_layouts/post.html
+category/coding/index.html
+category/introduction/index.html
+newrelic.yml
+tags/howto/index.html
+tags/intro/index.html
+tags/mock/index.html
+tags/service/index.html
+tags/web/index.html
+
+commit b5bdf0f
+Author: Ray CLanan <rclanan@utopianconcept.com>
+Date:   2013-08-11
+
+    add additional social media share buttons
+
+_config.yml
+_includes/linkedin.html
+_includes/sharing.html
+_includes/twitter.html
+_layouts/category_index.html
+_layouts/layout.html
+_layouts/post.html
+_layouts/tag_index.html
+category/coding/index.html
+category/introduction/index.html
+images/yc500.gif
+index.html
+tags/howto/index.html
+tags/intro/index.html
+tags/mock/index.html
+tags/service/index.html
+tags/web/index.html
+
+commit cdc3948
+Author: Ray CLanan <rclanan@utopianconcept.com>
+Date:   2013-08-11
+
+    add disclaimer; add category generator; tweak category/tag display
+
+Makefile
+_assets/styles.less
+_config.yml
+_layouts/category_index.html
+_layouts/layout.html
+_layouts/post.html
+_layouts/tag_index.html
+_plugins/tag_gen.rb
+_posts/2013-08-07-hello-world.md
+_posts/2013-08-08-creating-a-mock-web-service-in-.net.md
+category/coding/index.html
+category/introduction/index.html
+css/styles.css
+index.html
+tags/howto/index.html
+tags/intro/index.html
+tags/mock/index.html
+tags/service/index.html
+tags/web/index.html
+
+commit 05b570c
+Author: Ray CLanan <rclanan@utopianconcept.com>
+Date:   2013-08-10
+
+    additional sitewide tweaks
+
+404.html
+_layouts/layout.html
+_plugins/titlecase.rb
+atom.xml
+index.html
+sitemap.xml
+
+commit fc0fb0b
+Author: Ray CLanan <rclanan@utopianconcept.com>
+Date:   2013-08-10
+
+    add support for twitter cards
+
+_layouts/layout.html
+
+commit 17d47b3
+Author: Ray CLanan <rclanan@utopianconcept.com>
+Date:   2013-08-10
+
+    update og data
+
+_layouts/layout.html
+
+commit d4ed6d6
+Author: Ray CLanan <rclanan@utopianconcept.com>
+Date:   2013-08-10
+
+    update og data
+
+_layouts/layout.html
+
+commit 20fc068
+Author: Ray CLanan <rclanan@utopianconcept.com>
+Date:   2013-08-10
+
+    add rss feed
+
+rss.xml
+
+commit 63c4439
+Author: Ray CLanan <rclanan@utopianconcept.com>
+Date:   2013-08-10
+
+    update atom feed
+
+atom.xml
+
+commit 5603e7c
+Author: Ray CLanan <rclanan@utopianconcept.com>
+Date:   2013-08-10
+
+    tweak sitemap to include all pages on site
+
+about/index.html
+contact/index.html
+freelance/index.html
+index.html
+labs/index.html
+sitemap.xml
+technology/index.html
+
+commit abb7f3e
+Author: Ray CLanan <rclanan@utopianconcept.com>
+Date:   2013-08-10
+
+    removed unused linkage
+
+_layouts/tag_index.html
+
+commit e289371
+Author: Ray CLanan <rclanan@utopianconcept.com>
+Date:   2013-08-10
+
+    added support for tags and categories
+
+Makefile
+README.md
+_layouts/post.html
+_layouts/tag_index.html
+_plugins/tag_gen.rb
+_posts/2013-08-07-hello-world.md
+_posts/2013-08-08-creating-a-mock-web-service-in-.net.md
+index.html
+tags/howto/index.html
+tags/intro/index.html
+tags/mock/index.html
+tags/service/index.html
+tags/web/index.html
+
+commit 10e35c0
+Author: Ray CLanan <rclanan@utopianconcept.com>
+Date:   2013-08-10
+
+    modified layout of blog posts
+
+_layouts/post.html
+_posts/2013-08-08-creating-a-mock-web-service-in-.net.md
+
+commit d4e11e8
+Author: Ray CLanan <rclanan@utopianconcept.com>
+Date:   2013-08-09
+
+    add enable/disable comments; add extra config settigns; add sitemap; add og meta tags; add humans.txt; add robots.txt; change misc layout tags; add feedback link on contact page;
+
+_config.yml
+_includes/contact.md
+_includes/disqus.html
+_layouts/layout.html
+_layouts/post.html
+_posts/2013-08-07-hello-world.md
+_posts/2013-08-08-creating-a-mock-web-service-in-.net.md
+atom.xml
+humans.txt
+robots.txt
+sitemap.xml
+
+commit 28908e8
+Author: Ray CLanan <rclanan@utopianconcept.com>
+Date:   2013-08-08
+
+    Updated 2013-08-08-creating-a-mock-web-service-in-.net.md
+
+_posts/2013-08-08-creating-a-mock-web-service-in-.net.md
+
+commit d9ca4c4
+Author: Ray CLanan <rclanan@utopianconcept.com>
+Date:   2013-08-08
+
+    Created 2013-08-08-creating-a-mock-web-service-in-.net.md
+
+_posts/2013-08-08-creating-a-mock-web-service-in-.net.md
+
+commit deff94d
+Author: Ray CLanan <rclanan@utopianconcept.com>
+Date:   2013-08-07
+
+    Add CNAME file for custom domain
+
+CNAME
+
+commit 98a51d6
+Author: Ray CLanan <rclanan@utopianconcept.com>
+Date:   2013-08-07
+
+    Initial commit
+
+.gitignore
+.gitmodules
+404.html
+Gemfile
+Guardfile
+Makefile
+Rakefile
+_assets/bootstrap
+_assets/fontawesome
+_assets/pygments.less
+_assets/resume.less
+_assets/scripts.js
+_assets/styles.less
+_config.yml
+_includes/about.md
+_includes/analytics.html
+_includes/contact.md
+_includes/cover.html
+_includes/disqus.html
+_includes/freelance.md
+_includes/gauges.html
+_includes/labs.md
+_includes/resume.md
+_includes/technology.md
+_includes/twitter.html
+_layouts/layout.html
+_layouts/page.html
+_layouts/post.html
+_posts/2013-08-07-hello-world.md
+about/index.html
+apple-touch-icon-114x114-precomposed.png
+apple-touch-icon-144x144-precomposed.png
+apple-touch-icon-57x57-precomposed.png
+apple-touch-icon-72x72-precomposed.png
+atom.xml
+contact/index.html
+css/styles.css
+favicon.ico
+font/FontAwesome.otf
+font/fontawesome-webfont.eot
+font/fontawesome-webfont.svg
+font/fontawesome-webfont.ttf
+font/fontawesome-webfont.woff
+freelance/index.html
+index.html
+js/scripts.js
+labs/index.html
+package.json
+resume/index.html
+script/update
+technology/index.html
