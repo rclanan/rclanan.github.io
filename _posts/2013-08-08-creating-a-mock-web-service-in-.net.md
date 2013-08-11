@@ -20,9 +20,9 @@ Creating a mock web service has numerous benefits in terms of testing. Some of t
 With the later bullet point being my case, I start off by grabbing the [WSDL](http://en.wikipedia.org/wiki/Web_Services_Description_Language) file from the existing running web service. To do this you can just append ?wsdl to the path and it will generate the WSDL XML for you. Save this out to your local machine. 
 
 After acquiring the WSDL XML, we will use the [wsdl.exe](http://msdn.microsoft.com/en-us/library/7h3ystb6.aspx) file provided by Visual Studio to create our service interface. Open up the [Visual Studio Command Prompt](http://msdn.microsoft.com/en-us/library/ms229859.aspx), and type:
-
+```
 wsdl /language:CS /namespace:Your.Namespace /out:Output\Directory /protocol:SOAP /serverinterface yourwsdlxmlfile.wsdl
-
+```
 This should create a .cs file in the /out directory that will contain the interface that you need to implement to create a mock web service. 
 
 In Visual Studio, create a new ASP.NET Empty Web Application from the Web installed templates under Add New Project. Add the .cs file to that was generated to this project, and then add a new web service. 
