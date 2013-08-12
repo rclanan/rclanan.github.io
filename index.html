@@ -12,6 +12,7 @@ sitemap:
     {% for post in site.posts %}
     <li>
       <a href="{{ post.url }}" rel="bookmark" title="Permalink to {{ post.title }}">{{ post.title }}</a>
+      <br />
       <small>Categories:
                 {% if post.category %}
                 {% for category in post.category %}
