@@ -21,6 +21,9 @@ build:
 	@cp -r _site/category/* category/
 	@echo "Copying category folder to root... ${CHECK} Done"
 	@echo "${HR}"
+	@git log --stat --name-only --date=short --abbrev-commit > ChangeLog
+	@echo "Update ChangeLog... ${CHECK} Done"
+	@echo "${HR}"
 	@echo "Successfully built."
 
 update:
