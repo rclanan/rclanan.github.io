@@ -1,9 +1,11 @@
 ---
 layout: nil
+published: true
 ---
+
 # www.robotstxt.org/
 # http://code.google.com/web/controlcrawlindex/
 User-agent: *
 Disallow: 
 
-Sitemap: {{ site.url }}/sitemap.xml 
+Sitemap: {{ site.production_url }}/sitemap.xml
