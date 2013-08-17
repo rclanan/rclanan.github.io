@@ -1,0 +1,15 @@
+---
+layout: page
+title: "Recommendations from fellow colleagues and managers"
+sitemap:
+    priority: 0.7
+    changefreq: monthly
+    lastmod: 2013-08-16T22:00:56+20:00
+---
+
+<section class="content recommendations">
+  <h1 class="lowercase">/ recommendations</h1>
+
+  {% capture document %}{% include recommendations.md %}{% endcapture %}
+  {{ document | markdownify }}
+</section>

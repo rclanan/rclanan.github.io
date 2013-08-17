@@ -4,14 +4,15 @@ title: "Utopian Concept - Blog"
 sitemap:
     priority: 0.7
     changefreq: monthly
-    lastmod: 2013-08-10T02:49:35-04:00
+    lastmod: 2013-08-16T22:53:36+20:00
 ---
 
 <section class="content">
   <ul class="listing">
     {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}" rel="bookmark" title="Permalink to {{ post.title }}">{{ post.title }}</a>
+    <li itemscope itemtype="http://schema.org/BlogPosting">
+      <meta itemprop="description" content="{{ post.summary }}">
+      <a href="{{ site.production_url }}{{ post.url}}" rel="bookmark" title="Permalink to {{ post.title }}" itemprop="url">{{ post.title }}</a>
       <br />
       <small>Categories:
                 {% if post.category %}
@@ -29,10 +30,10 @@ sitemap:
                 {% else %}
                     None
                 {% endif %}
-             | <a href="{{ site.production_url }}{{ post.url}}"><span class="label label-info">Permalink</span></a>
+             | <a href="{{ site.production_url }}{{ post.url}}" itemprop="url"><span class="label label-info">Permalink</span></a>
              | <a href="http://www.instapaper.com/hello2?url={{ site.production_url }}{{ post.url }}&amp;title={{ post.title }}" title="Save {{ post.title }} to Instapaper" target="_blank">Read later</a>
         </small>
-      <span class="pull-right"><i class="icon-calendar"></i> <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %e, %Y" }}</time></span>
+      <span class="pull-right"><i class="icon-calendar"></i> <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%B %e, %Y" }}</time>- {{ post.content.size | readtime }} Minute Read</span>
     </li>
     {% endfor %}
   </ul>

@@ -2,14 +2,15 @@
 layout: page
 ---
 
-<article class="content">
+<article class="content" itemscope itemtype="http://schema.org/BlogPosting">
   <header>
-  <h1>
-    <a href="{{ page.url }}">{{ page.title }}</a>
+  <h1 itemprop="name">
+    <a href="{{ site.production_url }}{{ page.url}}" itemprop="url">{{ page.title }}</a>
   </h1>
   </header>
   <section class="byline">
-    <i class="icon-calendar"></i> <time title="{{ page.date | date_to_xmlschema }}" pubdate="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %e, %Y" }}</time>
+    <meta itemprop="description" content="{{ page.summary }}">
+    <i class="icon-calendar"></i> <time title="{{ page.date | date_to_xmlschema }}" pubdate="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%B %e, %Y" }}</time> - {{ content.size | readtime }} Minute Read
     <span class="post-details pull-right">
       <small>Categories:
         {% if page.category %}
@@ -34,7 +35,7 @@ layout: page
     </span>
   </section>
 
-  <section class="entry">
+  <section class="entry" itemprop="articleBody">
     {{ content }}
   </section>
 

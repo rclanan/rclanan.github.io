@@ -53,7 +53,7 @@ Next thing we need to do is update our references. We will want to add two refer
      * Change Project Output Groups to None
 2. WiXUIExtension
 
-Now we need to edit the WiX installer project file. At the top of the project file we need to enable project havesting. To the top of the file in the PropertyGroup element add: 
+Now we need to edit the WiX installer project file. At the top of the project file we need to enable project havesting. To the top of the file in the PropertyGroup element add:
 
 ```xml
 <?xml version=" 1.0" encoding=" utf-8"?>
@@ -79,7 +79,7 @@ Under the ItemGroup that references your projects solution we need to add a tag 
 </ItemGroup>
 ```
 
-Next we need to add a custom target that will get trigger before the build. To do so at the end of the file add: 
+Next we need to add a custom target that will get trigger before the build. To do so at the end of the file add:
 
 ```xml
       <Target Name=" BeforeBuild">
@@ -215,7 +215,7 @@ From there we can go on to configure our Feature element:
 ```xml
 <Feature Id=" ProductFeature" Title=" $(var.ProductTitle)" Level=" 1">
       < ComponentGroupRef Id ="BusinessWebService_Project " />
-      < ComponentGroupRef Id ="Product.Generated " />          
+      < ComponentGroupRef Id ="Product.Generated " />
 </ Feature>
 ```
 
@@ -250,4 +250,4 @@ Until next time...
 [id_1]: http://farm8.staticflickr.com/7326/9472180915_ef89a463d3.jpg
 [id_2]: http://farm3.staticflickr.com/2853/9474968680_48cb47c7d1.jpg
 [id_3]: http://farm3.staticflickr.com/2840/9472180923_756dc0b1a7.jpg
-[id_4]: http://farm4.staticflickr.com/3825/9474968650_c528df53ff_s.jpg 
+[id_4]: http://farm4.staticflickr.com/3825/9474968650_c528df53ff_s.jpg

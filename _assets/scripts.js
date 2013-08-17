@@ -1,1 +1,3 @@
-// nothing to do here...
+jQuery(document).ready(function() {
+    jQuery('[rel="tooltip"]').tooltip({trigger : 'hover'});
+  })
