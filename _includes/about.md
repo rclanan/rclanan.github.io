@@ -31,9 +31,7 @@ processes and technology.
 
 ## Specialties:
 
-E-commerce websites, content management systems, object-oriented design, web
-services, window services, SharePoint customization, dynamic data driven
-software and web sites
+E-commerce websites, content management systems, object-oriented design, web services, window services, SharePoint development, SharePoint administration, dynamic data driven, software and web sites, web applications, mobile applications
 
 Wanna talk about something? Send me an
 [email](mailto:&#114;&#099;&#108;&#097;&#110;&#097;&#110;&#064;&#117;&#116;&#111;&#112;&#105;&#097;&#110;&#099;&#111;&#110;&#099;&#101;&#112;&#116;&#046;&#099;&#111;&#109;).
