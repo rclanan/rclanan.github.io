@@ -1,3 +1,35 @@
+commit 4335067
+Author: Ray Clanan <rclanan@utopianconcept.com>
+Date:   2013-08-17
+
+    add estimated read time; microdata formatting; recommendations added
+
+ChangeLog
+_assets/scripts.js
+_assets/styles.less
+_includes/contact.md
+_includes/recommendations.md
+_includes/sharing.html
+_layouts/layout.html
+_layouts/post.html
+_plugins/read_time.rb
+_posts/2013-08-08-creating-a-mock-web-service-in-.net.md
+_posts/2013-08-12-creating-a-wix-installer-for-a-.net-web-project.md
+category/coding/index.html
+category/introduction/index.html
+css/styles.css
+index.html
+js/scripts.js
+recommendations/index.html
+tags/WiX/index.html
+tags/howto/index.html
+tags/installer/index.html
+tags/intro/index.html
+tags/mock/index.html
+tags/project/index.html
+tags/service/index.html
+tags/web/index.html
+
 commit 778c688
 Author: Ray Clanan <rclanan@utopianconcept.com>
 Date:   2013-08-13

@@ -10,7 +10,7 @@ layout: page
   </header>
   <section class="byline">
     <meta itemprop="description" content="{{ page.summary }}">
-    <i class="icon-calendar"></i> <time title="{{ page.date | date_to_xmlschema }}" pubdate="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%B %e, %Y" }}</time> - {{ content.size | readtime }} Minute Read
+    <i class="icon-calendar"></i> <time title="{{ page.date | date_to_xmlschema }}" pubdate="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%B %e, %Y" }}</time>
     <span class="post-details pull-right">
       <small>Categories:
         {% if page.category %}
