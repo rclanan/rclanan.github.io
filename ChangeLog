@@ -1,3 +1,21 @@
+commit a4d89cd
+Author: Ray Clanan <rclanan@utopianconcept.com>
+Date:   2013-08-17
+
+    update specialities to match linkedin
+
+_includes/about.md
+
+commit 8f74264
+Author: Ray Clanan <rclanan@utopianconcept.com>
+Date:   2013-08-17
+
+    remove estimated read time, did not work with gh-pages
+
+ChangeLog
+_layouts/post.html
+index.html
+
 commit 4335067
 Author: Ray Clanan <rclanan@utopianconcept.com>
 Date:   2013-08-17

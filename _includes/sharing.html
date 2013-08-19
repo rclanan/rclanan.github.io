@@ -1,53 +1,16 @@
 <div class="row">
-    <ul class="list-inline">
-        <li>
-    <!-- Twitter -->
-    <a  href="https://twitter.com/share" class="twitter-share-button" data-text="{{ page.title }}" data-via="{{ site.author.twitter }}" data-related="{{ site.author.twitter_related }}" data-lang="en">Tweet</a>
-        </li>
-        <li>
-    <!-- Google+ -->
-    <g:plusone size="medium"></g:plusone>
-        </li>
-        <li>
-    <a href="https://coderwall.com/{{ site.author.coderwall }}"><img alt="Endorse {{ site.author.coderwall }} on Coderwall" src="https://api.coderwall.com/{{ site.author.coderwall }}/endorsecount.png" /></a>
-        </li>
-        <li>
-    <script src="//platform.linkedin.com/in.js" type="text/javascript">
-     lang: en_US
-    </script>
-    <script type="IN/Share" data-url="{{ site.production_url }}{{ page.url }}" data-counter="right"></script>
-        </li>
-        <li>
-    <script id='flattrbtn'>(function(i){var f,s=document.getElementById(i);f=document.createElement('iframe');f.src='//api.flattr.com/button/view/?uid={{ site.author.flattr }}&button=compact&url='+encodeURIComponent(document.URL);f.title='Flattr';f.height=20;f.width=110;f.style.borderWidth=0;s.parentNode.insertBefore(f,s);})('flattrbtn');</script>
-        </li>
-        <li>
-    <iframe style="border: 0; margin: 0; padding: 0;"
-            src="https://www.gittip.com/{{ site.author.gittip }}/widget.html"
-            width="48pt" height="22pt"></iframe>
-        </li>
-    </ul>
+    <!-- AddThis Button BEGIN -->
+    <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+    <a class="addthis_button_facebook"></a>
+    <a class="addthis_button_twitter"></a>
+    <a class="addthis_button_linkedin"></a>
+    <a class="addthis_button_pinterest_share"></a>
+    <a class="addthis_button_hackernews"></a>
+    <a class="addthis_button_reddit"></a>
+    <a class="addthis_button_google_plusone_share"></a>
+    <a class="addthis_button_compact"></a><a class="addthis_counter addthis_bubble_style"></a>
+    </div>
+    <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-520fdca5596ba758"></script>
+    <!-- AddThis Button END -->
 </div>
-<script>
-
-(function(doc, script) {
-
-    // Async Social Buttons
-    var js,
-        fjs = doc.getElementsByTagName(script)[0],
-        add = function(url, id) {
-            if (doc.getElementById(id)) {return;}
-            js = doc.createElement(script);
-            js.src = url;
-            id && (js.id = id);
-            fjs.parentNode.insertBefore(js, fjs);
-        };
-
-    // Twitter SDK
-    add('//platform.twitter.com/widgets.js', 'twitter-wjs');
-
-    // Google+ button
-    add('https://apis.google.com/js/plusone.js');
-
-}(document, 'script'));
-
-</script>
