@@ -9,9 +9,9 @@ tag_feed_layout: tag_feed
 exclude: ["README.md", "Rakefile", "Makefile"]
 redcarpet:
   extensions: ["smart"]
-title : Utopian Concept
+title : Utopian Concept LLC
 production_url : http://utopianconcept.com
-description: "Ray Clanan is an autodidact polyglot senior freelance developer, based in the United States. He is professional, creative, and experienced with all aspects of development ranging from web, mobile, desktop, and client/server."
+description: "Utopian Concept LLC is a bespoke development company based in the United States. Experienced with all aspects of development ranging from web, mobile, desktop, and client/server."
 disqus_shortname: utopianconcept
 googleplus_user: 117308858606542676324
 facebook:
