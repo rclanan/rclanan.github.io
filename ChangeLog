@@ -1,3 +1,45 @@
+commit f219119
+Author: Ray Clanan <rclanan@utopianconcept.com>
+Date:   2013-08-19
+
+    Updated _config.yml
+
+_config.yml
+
+commit cc2975e
+Author: Ray Clanan <rclanan@utopianconcept.com>
+Date:   2013-08-19
+
+    Updated _config.yml
+
+_config.yml
+
+commit eb67b1d
+Author: Ray Clanan <rclanan@utopianconcept.com>
+Date:   2013-08-19
+
+    Deleted _posts/2013-08-19-your-filename.md
+
+_posts/2013-08-19-your-filename.md
+
+commit fefd35d
+Author: Ray Clanan <rclanan@utopianconcept.com>
+Date:   2013-08-19
+
+    Created 2013-08-19-your-filename.md
+
+_posts/2013-08-19-your-filename.md
+
+commit 354bc76
+Author: Ray Clanan <rclanan@utopianconcept.com>
+Date:   2013-08-18
+
+    add addthis to sharing include
+
+ChangeLog
+_config.yml
+_includes/sharing.html
+
 commit a4d89cd
 Author: Ray Clanan <rclanan@utopianconcept.com>
 Date:   2013-08-17
