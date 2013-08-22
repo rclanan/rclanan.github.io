@@ -24,13 +24,9 @@ The first guide that I will create will deal with languages that I already have 
 With all of that out of the way, let&#39;s say we get on with the guide. In this introduction, I am just going to cover the basics questions.
 
 1. What is an API?
-
 2. Examples of a Web API
-
 3. HTTP Methods and HTTP Status Codes
-
 4. What is REST?
-
 5. Examples of REST
 
 ### What is an API? ###
@@ -48,28 +44,17 @@ Web APIs on the other hand deal with HTTP (**H**yper**t**ext **T**ransfer **P**r
 Many of the most popular websites have published public APIs these days. Not all of these examples are of REST APIs as well as the ones that do include REST API they also include other types of APIs like SOAP. Some examples of these popular APIs are:
 
 1. [Google API](https://code.google.com/)
-
-  - Allows you to integration with maps&#44; email&#44; Google+&#44; and more.
-
+    - Allows you to integration with maps&#44; email&#44; Google+&#44; and more.
 2. [Facebook API](https://developers.facebook.com/docs/reference/apis/)
-
-  - Provides integrations like the ability to &#39;Like&#39; and share pages from your website.
-
+    - Provides integrations like the ability to &#39;Like&#39; and share pages from your website.
 3. [Twitter API](https://dev.twitter.com/)
-
-  - With this integration you can automate sending tweets when different events occur as well as read tweets via the API
-
+    - With this integration you can automate sending tweets when different events occur as well as read tweets via the API
 4. [Salesforce.com](http://www.salesforce.com/us/developer/docs/api/index.htm)
-
-  - Allows you to access information about your contacts&#44; send messages&#44; among other things
-
+    - Allows you to access information about your contacts&#44; send messages&#44; among other things
 5. [LinkedIn API](https://developer.linkedin.com/apis)
-
-  - Allows you to perform searches&#44; share content&#44; etc.
-
+    - Allows you to perform searches&#44; share content&#44; etc.
 6. [Github API](http://developer.github.com/v3/)
-
-  - Provides the ability to create and search among Issues&#44; Gists&#44; Git Data&#44; People&#44; as well as a host of other features
+    - Provides the ability to create and search among Issues&#44; Gists&#44; Git Data&#44; People&#44; as well as a host of other features
 
 ### HTTP Methods and HTTP Status Codes ###
 
@@ -78,36 +63,21 @@ Many of the most popular websites have published public APIs these days. Not all
 HTTP methods are defined in the [RFC 2616](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html) put out by the [World Wide Web Consortium (W3C)](http://www.w3.org/). These HTTP methods are commonly referred to as _&quot;verbs&quot;_. Currently there are a total of eight different verbs that are defined by the HTTP/1.1 protocol. Below these verbs are defined as well as their typical usage.
 
 1. OPTIONS
-
-  - Used to request what options are available for the request/response
-
+    - Used to request what options are available for the request/response
 2. GET
-
-  - Used to retrieve information about a resource
-
+    - Used to retrieve information about a resource
 3. HEAD
-
-  - Same as GET except only returns the header information
-
+    - Same as GET except only returns the header information
 4. POST
-
-  - Used for creating a new resource
-
+    - Used for creating a new resource
 5. PUT
-
-  - Used for updating a resource
-
+    - Used for updating a resource
 6. DELETE
-
-  - Used for deleting a resource
-
+    - Used for deleting a resource
 7. TRACE
-
-  - Used for tracing the request message
-
+    - Used for tracing the request message
 8. CONNECT
-
-  - Used for proxies
+    - Used for proxies
 
 In a typical REST API we usually only concern ourselves with GET, POST, PUT, DELETE, which form the basis of [CRUD](http://en.wikipedia.org/wiki/Create,_read,_update_and_delete) (Create, Read, Update, and Delete). The most commonly used HTTP method that most people unknowingly utilize is the GET verb. Since GET is used as a way to retrieve information about a resource, which is what is used to load web pages into a browser. Have you ever filled out an online form? Then you have most likely used POST, though there are other options as well. Some browsers do not implement all the HTTP methods nor do they need to.
 
@@ -116,56 +86,31 @@ In a typical REST API we usually only concern ourselves with GET, POST, PUT, DEL
 HTTP Status Codes are also defined in the [RFC 2616](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10) put out by the W3C. There are numerous types of status codes so for further information please refer to [section ten of the RFC](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10). I will name a few that you are most likely to use the most, though they all have recommended use cases that are associated with them.
 
 1. Successful Codes - 2xx
-
-  - 200 - OK
-
-    - Request has succeeded
-
-  - 201 - Created
-
-    - New resource has been created
-
-  - 204 - No Content
-
-    - Request has been accepted
-
+    - 200 - OK
+        - Request has succeeded
+    - 201 - Created
+        * New resource has been created
+    - 204 - No Content
+        * Request has been accepted
 2. Redirect Codes - 3xx
-
-  - 304 - Not Modified
-
-    - Indicates resource has not been modified since last requested
-
+    - 304 - Not Modified
+        * Indicates resource has not been modified since last requested
 3. Client Error Codes - 4xx
-
-  - 400 - Bad Request
-
-    - Request could not be understood
-
-  - 401 - Unauthorized
-
-    - Missing or invalid authentication information
-
-  - 403 - Forbidden
-
-    - User is not authorized to perform the operation or resource is unavailable
-
-  - 404 - Not Found
-
-    - Requested resource was not found
-
-  - 409 - Conflict
-
-    - A resource conflict
-
+    - 400 - Bad Request
+        - Request could not be understood
+    - 401 - Unauthorized
+        * Missing or invalid authentication information
+    - 403 - Forbidden
+        * User is not authorized to perform the operation or resource is unavailable
+    - 404 - Not Found
+        * Requested resource was not found
+    - 409 - Conflict
+        * A resource conflict
 4. Server Error Codes - 5xx
-
-  - 500 - Internal Server Error
-
-    - General catch-all for thrown exceptions
-
-  - 503 - Service Unavailable
-
-    - Service cannot be used at the time of the request
+    - 500 - Internal Server Error
+        * General catch-all for thrown exceptions
+    - 503 - Service Unavailable
+        * Service cannot be used at the time of the request
 
 ### What is REST? ###
 
@@ -176,121 +121,70 @@ REST works on the basic principle of resources. A resource can be anything from 
 The six constraints are:
 
 1. Client-Server
-
-  - This one deals with the separation of concern between the client and server. If the interface between the two remains unchanged then the client and/or server can be replaced and developed independently of each other.
-
+    - This one deals with the separation of concern between the client and server. If the interface between the two remains unchanged then the client and/or server can be replaced and developed independently of each other.
 2. Stateless
-
-  - By definition, REST means statelessness; therefore the state is handle the request is embedded in the request itself.
-
+    - By definition, REST means statelessness; therefore the state is handle the request is embedded in the request itself.
 3. Cache
-
-  - This one basically states that a resource must be cacheable and define themselves as such to the client.
-
+    - This one basically states that a resource must be cacheable and define themselves as such to the client.
 4. Uniform Interface
-
-  - This one defines the interface between the client and server that allows the two to be decoupled from each other. Uniform Interface can be further described by four interface constraints:
-    1. Identification of Resources
-      - Resources are identified in requests using URIs
-    2. Manipulation of Resources through Representations
-      - Providing you have permission to, you should have enough information to modify or delete a resource once given the representation of the resource
-    3. Self-descriptive messages
-      - States that each request/response describes how to process each message
-    4. Hypermedia as the engine of application state (HATEOAS)
-      - HATEOAS states that the client should be able to interact with the service entirely through hypermedia. For example, if you had a REST API that dealt with tasks, you would end up seeing something like:
-
-```xml
-
-<?xml version="1.0"?>
-
-<task>
-
-    <task_number>12345</task_number>
-
-    <name>Some Name Here</name>
-
-    <link rel="update" href="/tasks/12345/update" />
-
-    <link rel="complete" href="/tasks/12345/complete" />
-
-    <link rel="archive" href="/tasks/12345/archive" />
-
-    <link rel="delete" href="/tasks/12345/delete" />
-
-</task>
-
-```
-
+    - This one defines the interface between the client and server that allows the two to be decoupled from each other. Uniform Interface can be further described by four interface constraints:
+        1. Identification of Resources
+            - Resources are identified in requests using URIs
+        2. Manipulation of Resources through Representations
+            - Providing you have permission to, you should have enough information to modify or delete a resource once given the representation of the resource
+        3. Self-descriptive messages
+            - States that each request/response describes how to process each message
+        4. Hypermedia as the engine of application state (HATEOAS)
+            - HATEOAS states that the client should be able to interact with the service entirely through hypermedia.
 5. Layered System
-
-  - The system should be composed of hierarchical layers by constraining component behavior such that each component cannot interact with any layer beyond the immediate layer in which they are interacting with. So, the client would not be able to interact directly with the end server if there is a cache server in between them. The client would interact with the cache server which would in turn interact with the server.
-
+    - The system should be composed of hierarchical layers by constraining component behavior such that each component cannot interact with any layer beyond the immediate layer in which they are interacting with. So, the client would not be able to interact directly with the end server if there is a cache server in between them. The client would interact with the cache server which would in turn interact with the server.
 6. Code-On-Demand (Optional)
-
-  - Basically, this states that additional functionality can be distributed in the form of scripts through the API.
+    - Basically, this states that additional functionality can be distributed in the form of scripts through the API.
 
 ### Examples of REST ###
-
-Continuing on with the task example provided below, we will look at a few examples. The remaining guides will also utilize the task example as well.
+The remaining gudies will cover the creatation of a task list REST web service. Here we will look at a few examples that will utilize the task list example.
 
 If we wanted to get a list of all task, we would utilize the GET HTTP method:
 
 ```
-
 GET http://example.com/tasks HTTP/1.1
-
 ```
 
 Say we wanted to create a new task, for that we would utilize the POST HTTP method:
 
 ```xml
-
 POST http://example.com/tasks HTTP/1.1
 
 <?xml version="1.0"?>
-
 <task>
-
     <name>Some Name Here</name>
-
 </task>
-
 ```
 
 If there is a specific task that you would like to see, we would use GET like above and provide it with the task_number:
 
 ```xml
-
 GET http://example.com/tasks/12345 HTTP/1.1
-
 ```
 
 To update the name of the task that we just retrieve we would use the PUT verb and could do something like:
 
 ```xml
-
 PUT http://example.com/tasks/12345 HTTP/1.1
 
 <?xml version="1.0"?>
-
 <task>
-
     <name>New Name Here</name>
-
 </task>
-
 ```
 
 And assuming we had permission to do so, we can delete it by, you guessed it, the DELETE method:
 
 ```xml
-
 DELETE http://example.com/tasks/12345 HTTP/1.1
-
 ```
 
 For further examples, follow along with the rest of the series and see how we go about implementing a basic REST API for tasks, and then take it a step further and see how do implement the same API across different languages.
 
 ### References: ###
-
 [^1]: Fielding, Roy Thomas. _Architectural Styles and the Design of Network-based Software Architectures_. Doctoral dissertation, University of California, Irvine, 2000.
