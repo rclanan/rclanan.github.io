@@ -17,4 +17,4 @@ Before the initial launch I setup a custom landing page for newletter signups an
 ## Landing page
 <img class="client-image" src="http://cdn.utopianconcept.com/clients/ihs/landing_page.png" alt="Infinity Hair Solutions - Landing Page">
 
-If you are interested in getting your own site up and running feel free to [contact me](http://utopianconcept.com/contact/ "Contact Me"). I am avliable for hire on a [freelancing](http://utopianconcept.com/freelance/ "Freelancing Information") basis. In the meantime feel free to browse the new site over at <a href="www.infinityhairsolutions.com" title="Infinity Hair Solutions" target="_blank">www.infinityhairsolutions.com</a>.
+If you are interested in getting your own site up and running feel free to [contact me](http://utopianconcept.com/contact/ "Contact Me"). I am avliable for hire on a [freelancing](http://utopianconcept.com/freelance/ "Freelancing Information") basis. In the meantime feel free to browse the new site over at <a href="http://www.infinityhairsolutions.com" title="Infinity Hair Solutions" target="_blank">www.infinityhairsolutions.com</a>.

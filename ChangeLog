@@ -1,3 +1,12 @@
+commit fd6294f
+Author: Ray Clanan <rclanan@utopianconcept.com>
+Date:   2013-11-27
+
+    update reading time that wasnt working in github
+
+ChangeLog
+_layouts/post.html
+
 commit 1ecaaf7
 Author: Ray Clanan <rclanan@utopianconcept.com>
 Date:   2013-11-27
