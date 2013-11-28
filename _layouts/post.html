@@ -7,7 +7,6 @@ layout: page
   <h1 itemprop="name">
     <a href="{{ site.production_url }}{{ page.url}}" itemprop="url">{{ page.title }}</a>
   </h1>
-  <small><abbr title="Estimated">Est.</abbr> reading time: {{ content | reading_time | pluralize: "minute" }}</small>
   </header>
   <section class="byline">
     <meta itemprop="description" content="{{ page.summary }}">

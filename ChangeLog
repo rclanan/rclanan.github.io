@@ -1,3 +1,22 @@
+commit 1ecaaf7
+Author: Ray Clanan <rclanan@utopianconcept.com>
+Date:   2013-11-27
+
+    Add Infinity Site Launch Post
+
+ChangeLog
+_assets/styles.less
+_layouts/post.html
+_plugins/pluralize.rb
+_plugins/read_time.rb
+_posts/2013-11-27-client-site-launch-infinity-hair-solutions.md
+category/client/index.html
+css/styles.css
+index.html
+tags/PrestaShop/index.html
+tags/client/index.html
+tags/ecommerce/index.html
+
 commit 642c559
 Author: Ray Clanan <rclanan@utopianconcept.com>
 Date:   2013-08-22
