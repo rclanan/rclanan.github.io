@@ -7,6 +7,7 @@ layout: page
   <h1 itemprop="name">
     <a href="{{ site.production_url }}{{ page.url}}" itemprop="url">{{ page.title }}</a>
   </h1>
+  <small><abbr title="Estimated">Est.</abbr> reading time: {{ content | reading_time | pluralize: "minute" }}</small>
   </header>
   <section class="byline">
     <meta itemprop="description" content="{{ page.summary }}">
@@ -20,7 +21,7 @@ layout: page
         {% else %}
             None
         {% endif %}
-      | Tags
+      | Tags:
         {% if page.tags %}
           {% for tag in page.tags %}
             <a href="/tags/{{ tag }}" title="View posts tagged with &quot;{{ tag }}&quot;"><span class="label">{{ tag }}</span></a>
