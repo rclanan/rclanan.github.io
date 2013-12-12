@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="lt-ie10 lt-ie9"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="lt-ie10"> <![endif]-->
+<!--[if gt IE 10]><!--><html lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="//fonts.googleapis.com" rel="dns-prefetch" />
+  <link href="//ajax.googleapis.com/" rel="dns-prefetch" />
+  <link href="//www.google-analytics.com" rel="dns-prefetch" />
+  <link href="//html5shim.googlecode.com" rel="dns-prefetch" />
+  
+      <title>Creating a Mock Web Service in .NET &ndash; Utopian Concept LLC</title>
+      <meta content="Creating a Mock Web Service in .NET" property="og:title">
+      <meta content="Creating a Mock Web Service in .NET" name="twitter:title">
+    
+  <meta content="Utopian Concept LLC" property="og:site_name">
+  
+      <meta content="Utopian Concept LLC is a bespoke development company. Experienced with all aspects of development ranging from web, mobile, desktop, and client/server." name="description">
+      <meta content="Utopian Concept LLC is a bespoke development company. Experienced with all aspects of development ranging from web, mobile, desktop, and client/server." property="og:description">
+      <meta content="Utopian Concept LLC is a bespoke development company. Experienced with all aspects of development ranging from web, mobile, desktop, and client/server." name="twitter:description">
+  
+  <meta name="author" content="Ray Clanan" />
+  <link href="https://plus.google.com/117308858606542676324/posts" rel="author">
+  <meta name="twitter:site" content="@utopianconcept">
+  <meta name="twitter:creator" content="@rclanan">
+  
+  <meta name='og:email' content="rclanan@utopianconcept.com">
+  
+  
+  <meta name='og:phone_number' content="+1 317-586-2186">
+  
+  <link rel="alternate" type="application/atom+xml" title="Atom" href="/atom.xml" />
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link href="http://utopianconcept.com/posts/creating-a-mock-web-service-in-.net" rel="canonical">
+  <link type="text/plain" rel="author" href="http://utopianconcept.com/humans.txt">
+  
+    <meta content="article" property="og:type">
+  
+  <meta content="summary" name="twitter:card">
+  
+    <meta content="http://utopianconcept.com/posts/creating-a-mock-web-service-in-.net" property="og:url">
+    <meta content="http://utopianconcept.com/posts/creating-a-mock-web-service-in-.net" name="twitter:url">
+  
+  
+    <meta http-equiv="date" content="Thursday, 08  2013 00:00:00 GMT" />
+    <meta content="2013-08-08T00:00:00-04:00" property="article:published_time">
+    <meta content="http://utopianconcept.com/about/" property="article:author">
+  
+  
+    <meta property="og:image" content="http://utopianconcept.com/images/logo-high-resolution.png">
+    <meta name="twitter:image:src" content="http://utopianconcept.com/images/logo-high-resolution.png">
+  
+  
+    <meta property="article:section" content="coding">
+  
+  
+    
+    <meta property="article:tag" content=".net">
+    
+    <meta property="article:tag" content="mock">
+    
+    <meta property="article:tag" content="web">
+    
+    <meta property="article:tag" content="service">
+    
+    <meta property="article:tag" content="howto">
+    
+  
+  
+    <meta property="fb:admins" content="ray.clanan" />
+    <meta property="fb:app_id" content="619415181409836"/>
+  
+
+  
+    <meta name="keywords" content=".net,mock,web,service,howto" />
+  
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300'
+    rel='stylesheet' type='text/css'>
+  <link href="/css/styles.css" rel="stylesheet">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-57x57-precomposed.png">
+
+  <meta name="robots" content="INDEX,FOLLOW" />
+</head>
+
+<body>
+  <header id="navbar" class="navbar navbar-fixed-top" role="banner">
+    <div class="container">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/" title="Utopian Concept LLC Index">Utopian Concept LLC</a>
+      <nav class="nav-collapse collapse navbar-responsive-collapse" role="navigation">
+        <ul class="nav navbar-nav pull-right hidden-print lowercase">
+          <li><a title="See the post list" href="/">Posts</a></li>
+          <li><a title="About me" href="/about">About</a></li>
+          <li><a title="Technology I use" href="/technology">Technology</a></li>
+          <li><a title="Some of my side projects" href="/labs">Labs</a></li>
+          <li><a title="Freelancing Information" href="/freelance">Hire Me</a></li>
+          <li><a title="Contact me" href="/contact">Contact</a></li>
+          <li><a title="Recommendations" href="/recommendations">Recommendations</a></li>
+          <li><a title="Atom Feed" href="/atom.xml">RSS</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  
+
+
+<section class="container" role="main">
+  <article class="content" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+  <h2 itemprop="name headline">
+    <a href="/posts/creating-a-mock-web-service-in-.net" itemprop="url">Creating a Mock Web Service in .NET</a>
+  </h2>
+  </header>
+  <section class="byline">
+    <meta itemprop="description" content="A brief walk through on how to create a mock web service in .net">
+    Written by
+      <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">
+            <a href="https://plus.google.com/117308858606542676324" itemprop="url" rel="author">Ray Clanan</a>
+        </span>
+    </span>
+    on
+    <i class="icon-calendar"></i> <time title="2013-08-08T00:00:00-04:00" pubdate="2013-08-08T00:00:00-04:00" itemprop="datePublished">August  8, 2013</time>
+    <span class="post-details pull-right">
+      <small>Categories:
+        
+          
+            <a href="coding" title="View posts categorized with &quot;coding&quot;"><span class="label">coding</span></a>
+          
+        
+      | Tags:
+        
+          
+            <a href="/tags/.net" title="View posts tagged with &quot;.net&quot;"><span class="label">.net</span></a>
+          
+            <a href="/tags/mock" title="View posts tagged with &quot;mock&quot;"><span class="label">mock</span></a>
+          
+            <a href="/tags/web" title="View posts tagged with &quot;web&quot;"><span class="label">web</span></a>
+          
+            <a href="/tags/service" title="View posts tagged with &quot;service&quot;"><span class="label">service</span></a>
+          
+            <a href="/tags/howto" title="View posts tagged with &quot;howto&quot;"><span class="label">howto</span></a>
+          
+        
+        | <a href="http://utopianconcept.com/posts/creating-a-mock-web-service-in-.net"><span class="label label-info">Permalink</span></a>
+
+        | <a href="http://www.instapaper.com/hello2?url=http://utopianconcept.com/posts/creating-a-mock-web-service-in-.net&amp;title=Creating a Mock Web Service in .NET" title="Save Creating a Mock Web Service in .NET to Instapaper" target="_blank">Read later</a>
+        </small>
+    </span>
+  </section>
+
+  <section class="entry" itemprop="articleBody">
+    <p>Earlier this week at a client&rsquo;s I had to trace down where an exception was coming from when making a web service call. I had access to the client&rsquo;s front end code, the part that actually made the calls to the web service in question but didn&rsquo;t have access to the code for the web service. In order to replicate this, I figured the best route would be to create a mock web service that I could than throw exceptions or custom return values that I would like to test.</p>
+
+<p>Creating a mock web service has numerous benefits in terms of testing. Some of those might include:</p>
+
+<ul>
+<li>By passing a web service that charges you for every service call.</li>
+<li>Serve up different scenarios for &ldquo;expected&rdquo; results.</li>
+<li>Simulate the web service being down or not available.</li>
+<li>The service is still being developed and you need to continue on with your development.</li>
+<li>Test exceptions that might be thrown from the web service.</li>
+</ul>
+
+<p>With the later bullet point being my case, I start off by grabbing the <a href="http://en.wikipedia.org/wiki/Web_Services_Description_Language">WSDL</a> file from the existing running web service. To do this you can just append ?wsdl to the path and it will generate the WSDL XML for you. Save this out to your local machine.</p>
+
+<p>After acquiring the WSDL XML, we will use the <a href="http://msdn.microsoft.com/en-us/library/7h3ystb6.aspx">wsdl.exe</a> file provided by Visual Studio to create our service interface. Open up the <a href="http://msdn.microsoft.com/en-us/library/ms229859.aspx">Visual Studio Command Prompt</a>, and type:
+<code>
+wsdl /language:CS /namespace:Your.Namespace /out:Output\Directory /protocol:SOAP /serverinterface yourwsdlxmlfile.wsdl
+</code>
+This should create a .cs file in the /out directory that will contain the interface that you need to implement to create a mock web service.</p>
+
+<p>In Visual Studio, create a new ASP.NET Empty Web Application from the Web installed templates under Add New Project. Add the .cs file to that was generated to this project, and then add a new web service.</p>
+
+<p>In the code behind of this web service, change the class to implement the interface name of the .cs file that you just added to the project. Once that is done, tell Visual Studio to implement the interface which will give you stubs for the web service methods. Add the [WebMethod] attribute to each of the method calls to make them accessible via the web service. From here you can either leave the default throw in place or add your own custom code that you want your mock service to implement.</p>
+
+<p>If you run the application you should be able to navigate to your mock web service. If that is successful, then you can go to your existing client code and add a web service to the generated URL that points to the newly created mock web service.</p>
+
+<p>Have fun testing your web service! Just don&rsquo;t forget to point the web reference back to the original web service instead of your mock service before deploying.</p>
+
+<p>Until next time&hellip;</p>
+
+  </section>
+
+  <footer>
+    <div class="pull"></div>
+      <div class="row">
+    <!-- AddThis Button BEGIN -->
+    <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+    <a class="addthis_button_facebook"></a>
+    <a class="addthis_button_twitter"></a>
+    <a class="addthis_button_linkedin"></a>
+    <a class="addthis_button_pinterest_share"></a>
+    <a class="addthis_button_hackernews"></a>
+    <a class="addthis_button_reddit"></a>
+    <a class="addthis_button_google_plusone_share"></a>
+    <a class="addthis_button_compact"></a><a class="addthis_counter addthis_bubble_style"></a>
+    </div>
+    <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-520fdca5596ba758"></script>
+    <!-- AddThis Button END -->
+</div>
+      <div id="related-post" class="row">
+        <h4>Related Posts</h4>
+        
+          
+            
+          
+        
+          
+            
+              
+                <p  itemscope itemtype="http://schema.org/BlogPosting">
+                  <a href="/posts/a-gudie-to-creating-a-basic-rest-api-series-introduction" rel="bookmark" title="Permanet link to A guide to creating a basic REST API - Series Introduction" itemprop="url">A guide to creating a basic REST API - Series Introduction</a>
+                  <span> - <i class="icon-calendar"></i> <time title="2013-08-08T00:00:00-04:00" pubdate="2013-08-08T00:00:00-04:00" itemprop="datePublished">August  8, 2013</time></span>
+                </p>
+              
+            
+          
+        
+          
+            
+              
+                <p  itemscope itemtype="http://schema.org/BlogPosting">
+                  <a href="/posts/creating-a-wix-installer-for-a-.net-web-project" rel="bookmark" title="Permanet link to Creating a WiX installer for a .NET Web Project" itemprop="url">Creating a WiX installer for a .NET Web Project</a>
+                  <span> - <i class="icon-calendar"></i> <time title="2013-08-08T00:00:00-04:00" pubdate="2013-08-08T00:00:00-04:00" itemprop="datePublished">August  8, 2013</time></span>
+                </p>
+              
+            
+          
+        
+          
+            
+              
+            
+          
+        
+          
+            
+          
+        
+      </div>
+      <div id="email-capture" class="row">
+          <div class="col-lg-6 col-lg-offset-3 text-center">
+            <div class="row"><div class="col-lg-12">
+              <p>Subscribe to my mailing list
+              </p>
+            </div>
+            <div class="col-lg-12">
+              <div id="mc_embed_signup" class="row">
+              <form action="http://utopianconcept.us7.list-manage.com/subscribe/post?u=6319e8bccb7eca0c94e55b132&amp;id=380501b246" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                  <div class="col-lg-6 col-lg-offset-3 text-center mc-field-group">
+                    <div class="input-group">
+                      <input type="hidden" value="Creating a Mock Web Service in .NET" name="ARTICLE" class="" id="mce-ARTICLE">
+                      <input type="email" value="" name="EMAIL" class="form-control required email" id="mce-EMAIL" placeholder="email address" required>
+                      <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit" name="subscribe" id="mc-embedded-subscribe">Subscribe</button>
+                      </span>
+                    </div>
+                    <div class="col-lg-4 mce-responses">
+                      <div class="response" id="mce-error-response" style="display:none"></div>
+                      <div class="response" id="mce-success-response" style="display:none"></div>
+                    </div>
+                  </div>
+                </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <hr />
+      
+      <section class="comments" id="comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'utopianconcept';
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+      
+  </footer>
+</article>
+
+</section>
+
+
+  <footer id="footer" class="hidden-print" role="contentinfo">
+    <section class="meta">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-2 col-lg-offset-1">
+            <a href="https://twitter.com/utopianconcept" itemprop="url" target="_blank">
+              <i class="icon icon-twitter icon-4x"></i>
+              <div>Follow me on Twitter</div>
+            </a>
+          </div>
+          <div class="col-lg-2 next">
+            <a href="https://github.com/rclanan" itemprop="url" target="_blank">
+              <i class="icon icon-github icon-4x"></i>
+              <div>
+                See my github profile
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-2 next">
+            <a href="http://www.linkedin.com/in/raymondclanan" itemprop="url" target="_blank">
+              <i class="icon icon-linkedin icon-4x"></i>
+              <div>
+                See my linkedin profile
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-2 next">
+            <a href="http://www.facebook.com/ray.clanan" itemprop="url" target="_blank">
+              <i class="icon icon-facebook icon-4x"></i>
+              <div>
+                Connect on Facebook
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-2 next">
+            <a href="mailto:rclanan@utopianconcept.com" itemprop="url" target="_blank">
+              <i class="icon icon-envelope icon-4x"></i>
+              <div>
+                Drop me an email
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 col-lg-offset-3">
+            <p class="disclaimer">
+              <small>
+                <strong>Disclaimer:</strong> This is my personal site. What I say here is mine and mine alone.
+                My opinions have no bearing on my employer, and likewise, my employer has no claim over
+                the ownership of the content on this site.
+              </small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </footer>
+  
+<script type="text/javascript">
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-42068834-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+</script>
+
+
+  <script type="text/javascript">
+var clicky_site_ids = clicky_site_ids || [];
+clicky_site_ids.push(100642577);
+(function() {
+  var s = document.createElement('script');
+  s.type = 'text/javascript';
+  s.async = true;
+  s.src = '//static.getclicky.com/js';
+  ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+})();
+</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100642577ns.gif" /></p></noscript>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="/js/scripts.js"></script>
+
+</body>
+</html>

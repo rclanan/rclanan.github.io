@@ -1,0 +1,14 @@
+#!/bin/sh
+#
+# I use this script in development mode, just to easily update
+# the 3rd party code (bs and font awesome).
+#
+
+set -e
+
+echo "Updating all submodules..."
+git submodule foreach git pull
+
+echo "Updating fonts..."
+rm -rf font/*
+cp -rf _assets/fontawesome/font/* font/
