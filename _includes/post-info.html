@@ -1,0 +1,13 @@
+<ul class="post-info">
+  <li>Date: {{ post.date | date_to_string }}</li>
+
+  {% if page.category %}
+          {% for category in page.category %}
+    <li>Category: {{ category | category_link }}</li>
+          {% endfor %}
+  {% endif %}
+
+  {% if post.tags %}
+    <li>Tagged with: {{ post.tags | tag_link | array_to_sentence_string }}</li>
+  {% endif %}
+</ul>

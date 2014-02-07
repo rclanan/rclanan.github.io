@@ -13,6 +13,7 @@ layout: nil
     <lastBuildDate>{{ site.time | date: "%a, %d %b %Y %H:%M:%S %z" }}</lastBuildDate>
 
     {% for post in site.posts %}
+    {% unless post.draft %}
     <item>
       <title>{{ post.title }}</title>
       <link>{{ site.production_url }}{{ post.url }}</link>
@@ -21,6 +22,7 @@ layout: nil
       <guid>{{ site.production_url }}{{ post.id }}</guid>
       <description>{{ post.content | xml_escape }}</description>
     </item>
+    {% endunless %}
     {% endfor %}
 
   </channel>

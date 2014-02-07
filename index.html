@@ -9,10 +9,10 @@ sitemap:
 
 <section class="content">
   <ul class="listing">
-    {% for post in site.posts %}
+    {% for post in site.posts limit:5 %}
     <li itemscope itemtype="http://schema.org/BlogPosting">
       <meta itemprop="description" content="{{ post.summary }}">
-      <a href="{{ site.production_url }}{{ post.url}}" rel="bookmark" title="Permalink to {{ post.title }}" itemprop="url">{{ post.title }}</a>
+      <a href="{{ post.url }}" rel="bookmark" title="Permalink to {{ post.title }}" itemprop="url">{{ post.title }}</a>
       <br />
       <small>Categories:
                 {% if post.category %}
@@ -30,10 +30,16 @@ sitemap:
                 {% else %}
                     None
                 {% endif %}
-             | <a href="{{ site.production_url }}{{ post.url}}" itemprop="url"><span class="label label-info">Permalink</span></a>
-             | <a href="http://www.instapaper.com/hello2?url={{ site.production_url }}{{ post.url }}&amp;title={{ post.title }}" title="Save {{ post.title }} to Instapaper" target="_blank">Read later</a>
+             | <a href="{{ post.url }}" itemprop="url"><span class="label label-info">Permalink</span></a>
+             | <a href="http://www.instapaper.com/hello2?url={{ site.production_url }}{{ post.url }}&amp;title={{ post.title | cgi_escape }}" title="Save {{ post.title }} to Instapaper" target="_blank">Read later</a>
         </small>
-      <span class="pull-right"><i class="icon-calendar"></i> <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%B %e, %Y" }}</time></span>
+      <span class="pull-right">Written by
+      <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">
+            <a href="https://plus.google.com/{{ site.googleplus_user }}" itemprop="url" rel="author">Ray Clanan</a>
+        </span>
+    </span>
+    on <i class="icon-calendar"></i> <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%B %e, %Y" }}</time></span>
     </li>
     {% endfor %}
   </ul>

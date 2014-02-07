@@ -1,17 +1,65 @@
 markdown: redcarpet
+
+redcarpet:
+  extensions:
+    - no_intra_emphasis
+    - fenced_code_blocks
+    - autolink
+    - strikethrough
+    - superscript
+    - smart
+
+zipballs:
+  sources: _downloads
+  dirname: downloads
+
+tags:
+  template: _layouts/archive
+
+categories:
+  template: _layouts/archive
+
+archives:
+  template: _layouts/archive
+
+assets:
+  dirname: assets
+  baseurl: http://cdn.utopianconcept.com/assets/
+  sources:
+    - _assets/javascripts
+    - _assets/stylesheets
+    - _assets/images
+  js_compressor: uglifier
+  css_compressor: sass
+  cachebust: none
+  cache: false
+  gzip: [ text/css, application/javascript ]
+  debug: false
+
+excerpt_separator: "<!-- more -->"
+
+future:      false
+show_drafts: false
+limit_posts: 0
+source:      .
+destination: ./_site
+plugins:     ./_plugins
+layouts:     ./_layouts
 pygments: true
 permalink: /posts/:title
+paginate_path: 'page:num'
 paginate: 10
+changefreq: always
 tag_page_dir: tag
 tag_feed_dir: tag
 tag_page_layout: tag_page
 tag_feed_layout: tag_feed
-exclude: ["README.md", "Rakefile", "Makefile"]
-redcarpet:
-  extensions: ["smart"]
+exclude: ['public', 'Gemfile', 'Gemfile.lock', 'Procfile', 'Rakefile', 'README.md']
+
 title : Utopian Concept LLC
 production_url : http://utopianconcept.com
-description: "Utopian Concept LLC is a bespoke development company based in the United States. Experienced with all aspects of development ranging from web, mobile, desktop, and client/server."
+description: "Utopian Concept LLC is a bespoke development company. Experienced with all aspects of development ranging from web, mobile, desktop, and client/server."
+keywords: "application web development freelance mobile desktop client server"
 disqus_shortname: utopianconcept
 googleplus_user: 117308858606542676324
 facebook:

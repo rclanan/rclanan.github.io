@@ -4,18 +4,25 @@ layout: page
 
 <article class="content" itemscope itemtype="http://schema.org/BlogPosting">
   <header>
-  <h1 itemprop="name">
-    <a href="{{ site.production_url }}{{ page.url}}" itemprop="url">{{ page.title }}</a>
-  </h1>
+  <h2 itemprop="name headline">
+    <a href="{{ page.url}}" itemprop="url">{{ page.title }}</a>
+  </h2>
   </header>
   <section class="byline">
     <meta itemprop="description" content="{{ page.summary }}">
+    Written by
+      <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">
+            <a href="https://plus.google.com/{{ site.googleplus_user }}" itemprop="url" rel="author">Ray Clanan</a>
+        </span>
+    </span>
+    on
     <i class="icon-calendar"></i> <time title="{{ page.date | date_to_xmlschema }}" pubdate="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%B %e, %Y" }}</time>
     <span class="post-details pull-right">
       <small>Categories:
         {% if page.category %}
           {% for category in page.category %}
-            <a href="/category/{{ category }}" title="View posts categorized with &quot;{{ page.category }}&quot;"><span class="label">{{ category }}</span></a>
+            <a href="{{ page.category }}" title="View posts categorized with &quot;{{ page.category }}&quot;"><span class="label">{{ category }}</span></a>
           {% endfor %}
         {% else %}
             None
@@ -33,6 +40,7 @@ layout: page
         | <a href="http://www.instapaper.com/hello2?url={{ site.production_url }}{{ page.url }}&amp;title={{ page.title }}" title="Save {{ page.title }} to Instapaper" target="_blank">Read later</a>
         </small>
     </span>
+    <span class="reading-time"></span>
   </section>
 
   <section class="entry" itemprop="articleBody">
@@ -42,6 +50,21 @@ layout: page
   <footer>
     <div class="pull"></div>
       {% include sharing.html %}
+      <div id="related-post" class="row">
+        <h4>Related Posts</h4>
+        {% for post in site.posts %}
+          {% for category in post.category %}
+            {% if category == page.category %}
+              {% if post.title != page.title %}
+                <p  itemscope itemtype="http://schema.org/BlogPosting">
+                  <a href="{{ post.url }}" rel="bookmark" title="Permanet link to {{ post.title }}" itemprop="url">{{ post.title }}</a>
+                  <span> - <i class="icon-calendar"></i> <time title="{{ page.date | date_to_xmlschema }}" pubdate="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%B %e, %Y" }}</time></span>
+                </p>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+      </div>
       <div id="email-capture" class="row">
           <div class="col-lg-6 col-lg-offset-3 text-center">
             <div class="row"><div class="col-lg-12">

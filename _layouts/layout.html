@@ -3,7 +3,7 @@
 <!--[if IE 9]> <html lang="en" class="lt-ie10"> <![endif]-->
 <!--[if gt IE 10]><!--><html lang="en"><!--<![endif]-->
 <head>
-  <meta content="utf-8" />
+  <meta charset="utf-8" />
   <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="//fonts.googleapis.com" rel="dns-prefetch" />
@@ -51,7 +51,7 @@
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
   <link rel="shortcut icon" href="/favicon.ico">
   <link href="{{ site.production_url }}{{ page.url }}" rel="canonical">
-
+  <link type="text/plain" rel="author" href="{{ site.production_url }}/humans.txt">
   {% if page.title %}
     <meta content="article" property="og:type">
   {% else %}
@@ -63,6 +63,7 @@
     <meta content="{{ site.production_url }}{{ page.url }}" name="twitter:url">
   {% endif %}
   {% if page.date %}
+    <meta http-equiv="date" content="{{page.date |date: '%A, %d  %Y %H:%M:%S GMT'}}" />
     <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
     <meta content="{{ site.production_url }}/about/" property="article:author">
   {% endif %}
@@ -86,6 +87,12 @@
     <meta property="fb:app_id" content="{{ site.facebook.appid }}"/>
   {% endif %}
 
+  {% if page.tags %}
+    <meta name="keywords" content="{{ page.tags | join: ','}}" />
+  {% else %}
+    <meta name="keywords" content="{{ site.keywords | join: ','}}" />
+  {% endif %}
+
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300'
     rel='stylesheet' type='text/css'>
   <link href="/css/styles.css" rel="stylesheet">
@@ -98,6 +105,8 @@
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png">
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png">
   <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-57x57-precomposed.png">
+
+  <meta name="robots" content="{{page.index}}INDEX,{{page.follow}}FOLLOW" />
 </head>
 
 <body>
@@ -108,7 +117,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">{{ site.title }}</a>
+      <a class="navbar-brand" href="/" title="{{ site.title }} Index">{{ site.title }}</a>
       <nav class="nav-collapse collapse navbar-responsive-collapse" role="navigation">
         <ul class="nav navbar-nav pull-right hidden-print lowercase">
           <li><a title="See the post list" href="/">Posts</a></li>
@@ -186,7 +195,7 @@
   {% include analytics.html %}
   {% include getclicky.html %}
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="/js/Countable.js"></script>
 <script src="/js/scripts.js"></script>
-
 </body>
 </html>

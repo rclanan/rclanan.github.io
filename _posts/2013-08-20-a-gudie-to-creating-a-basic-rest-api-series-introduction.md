@@ -7,8 +7,8 @@ category: coding
 summary: An introduction into a series of guides on creating a basic REST API in multiple languages
 ---
 
-In this new series, I plan on creating a collection of guides that will demonstrate how to create the same basic REST API in different programming languages.
-
+In this new series, I plan on creating a collection of guides that will demonstrate how to create the same basic REST API in different programming languages
+.
 As some of you who know me may know, I am very passionate about programming. I love learning a new language and comparing it to languages that I have already picked up. I am not entirely sure why I like so many different languages and I cannot, in all seriousness, answer which is my favorite language suffices to say I am enamored with all aspects of programming in general.
 
 Now with that being said, one of the best ways that I learn to pick up a new language, is to dive in and create something that I created before in a different language, sort of like the premise of creating the hello world application that most books start with, however I feel that approach is too simplistic of an example so I decided to create this series on creating a basic REST API. This will be more so for my own personal reference as are all the blog post that I write but maybe this can also become somewhat of a [Rosetta Stone](http://en.wikipedia.org/wiki/Rosetta_Stone) for someone else trying to pick up a new language as well.
@@ -188,3 +188,4 @@ For further examples, follow along with the rest of the series and see how we go
 
 ### References: ###
 [^1]: Fielding, Roy Thomas. _Architectural Styles and the Design of Network-based Software Architectures_. Doctoral dissertation, University of California, Irvine, 2000.
+
