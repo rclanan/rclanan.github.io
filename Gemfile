@@ -13,7 +13,8 @@ gem 'jekyll-assets'
 #gem 'maruku'
 gem 'sass'
 gem 'uglifier'
-#gem 'github-pages'
+gem 'github-pages'
+gem 'jekyll-sitemap'
 
 group :development do
   gem 'guard'

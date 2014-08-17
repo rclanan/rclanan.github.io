@@ -45,10 +45,11 @@ source:      .
 destination: ./_site
 plugins:     ./_plugins
 layouts:     ./_layouts
-pygments: true
+highlighter: pygments
 permalink: /posts/:title
 paginate_path: 'page:num'
 paginate: 10
+paginator.per_page: 5
 changefreq: always
 tag_page_dir: tag
 tag_feed_dir: tag
@@ -77,4 +78,12 @@ author :
   flattr: rclanan
   gittip: rclanan
   coderwall: rclanan
-  gravatar: 4fdaf861a4e2146ef4d2cac924453029
+  gravatar: 4fdaf861a4e2146ef4d2cac924453029i
+gems:
+  - jekyll-sitemap
+github:
+  hostname: "utopianconcept.com"
+  pages_hostname: "rclanan.github.io"
+  repository_url: "https://github.com/rclanan/rclanan.github.io"
+  owner_name: "rclanan"
+  owner_url: "https://github.com/rclanan"

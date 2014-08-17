@@ -5,7 +5,7 @@ FROM rclanan/docker-ruby
 
 MAINTAINER Ray Clanan <rclanan@utopianconcept.com>
 
-RUN gem install \ 
+RUN gem install \
   github-pages \
   jekyll \
   jekyll-redirect-from \
@@ -14,7 +14,7 @@ RUN gem install \
   rouge \
   therubyracer
 
-ADD ./ /data/rclanan.github.io
+ADD . /data/rclanan.github.io
 
 VOLUME ["/data"]
 
@@ -25,5 +25,3 @@ RUN /bin/bash -l -c "bundle install"
 EXPOSE 4000
 
 ENTRYPOINT ["jekyll"]
-
-CMD ["serve","--watch"]
