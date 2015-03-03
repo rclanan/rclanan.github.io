@@ -1,64 +1,95 @@
-(function ()  {
-  'use strict';
-}());
-module.exports = function (grunt) {
+'use strict';
+module.exports = function(grunt) {
+
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-
-    concat: {
-      options: {
-        separator: '\r\n'
-      },
-      dist: {
-        src: ['_assets/javascripts/tooltips.js'],
-        dest: '_assets/scripts.js'
-      }
-    },
-
-    uglify: {
-      options: {
-        banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
-      },
-      dist: {
-        files: {
-          '_assets/scripts.min.js':  ['<%= concat.dist.dest %>']
-        }
-      }
-    },
-
     jshint: {
-      files: ['gruntfile.js', '_assets/javascripts/*.js', '_assets/scripts.js'],
       options: {
-        globals : {
-          jQuery: true,
-          console: true,
-          module: true
-        }
-      }
+        jshintrc: '.jshintrc'
+      },
+      all: [
+        'Gruntfile.js',
+        'js/*.js',
+        '!js/main.js'
+      ]
     },
-
-    compass: {
+    watch: {
+      js: {
+        files: [
+          '<%= jshint.all %>'
+        ],
+        tasks: ['jshint', 'uglify'],
+        options: {
+          livereload: true
+        }
+      },
+    },
+    uglify: {
       dist: {
         options: {
-          sassDir: '_assets/scss',
-          cssDir: '_assets/stylesheets',
-          environment: 'development',
-          outputStyle: 'compressed'
+          banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %> */',
+          compress: true,
+          beautify: false,
+          mangle: false
+        },
+        files: {
+          'js/main.js': [
+            'js/plugins/*.js',
+            'js/_*.js'
+          ]
         }
       }
     },
-
-    watch: {
-      files: ['<%= jshint.files %>', '_assets/scss/**/*.scss'],
-      tasks: ['concat', 'uglify', 'jshint', 'compass']
-    }
+    imagemin: {
+      dist: {
+        options: {
+          optimizationLevel: 7,
+          progressive: true
+        },
+        files: [{
+          expand: true,
+          cwd: 'images/',
+          src: '{,*/}*.{png,jpg,jpeg}',
+          dest: 'images/'
+        }]
+      }
+    },
+    imgcompress: {
+      dist: {
+        options: {
+          optimizationLevel: 7,
+          progressive: true
+        },
+        files: [{
+          expand: true,
+          cwd: 'images/',
+          src: '{,*/}*.{png,jpg,jpeg}',
+          dest: 'images/'
+        }]
+      }
+    },
+    svgmin: {
+      dist: {
+        files: [{
+          expand: true,
+          cwd: 'images/',
+          src: '{,*/}*.svg',
+          dest: 'images/'
+        }]
+      }
+    },
   });
 
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
+  // Load tasks
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.registerTask('default', ['concat', 'uglify', 'jshint', 'compass', 'watch']);
-};
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-newer');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
+  grunt.loadNpmTasks('grunt-svgmin');
+  grunt.loadNpmTasks('grunt-imgcompress');
 
+  // Register tasks
+  grunt.registerTask('scripts', ['watch', 'uglify']);
+  grunt.registerTask('images', ['newer:imgcompress', 'newer:svgmin']);
+};

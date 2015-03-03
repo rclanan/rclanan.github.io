@@ -1,22 +1,17 @@
-source 'https://rubygems.org'
+# Skinny Bones Gemfile
+source "https://rubygems.org"
 
+gem "jekyll"
+gem "jekyll-sitemap"
+gem "sass"
+gem "bourbon"
+gem "neat"
+gem "octopress", "~> 3.0.0.rc.12"
+gem "jekyll-assets"
+gem "uglifier"
+gem "font-awesome-sass", "~> 4.2.0"
+gem "autoprefixer-rails"
+gem "jekyll-archives"
+gem "rouge"
 gem 'rake'
-gem 'rdiscount'
-gem 'jekyll'
-gem 'RedCloth'
-gem 'rmagick'
-gem 'asset_sync'
-gem 'newrelic_rpm'
-
-#gem 'jekyll-asset-pipeline'
-gem 'jekyll-assets'
-#gem 'maruku'
-gem 'sass'
-gem 'uglifier'
-gem 'github-pages'
-gem 'jekyll-sitemap'
-
-group :development do
-  gem 'guard'
-  gem 'guard-livereload'
-end
+gem 'rake-jekyll'

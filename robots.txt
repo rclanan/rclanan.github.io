@@ -1,11 +1,4 @@
----
-layout: null
-published: true
----
-
-# www.robotstxt.org/
-# http://code.google.com/web/controlcrawlindex/
+# Allow crawling of all content
 User-agent: *
-Disallow: 
-
-Sitemap: {{ site.production_url }}/sitemap.xml
+Disallow:
+Sitemap: https://utopianconcept.com/sitemap.xml

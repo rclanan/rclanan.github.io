@@ -1,0 +1,31 @@
+# Site navigation links
+
+- title: articles
+  url: /articles/
+  excerpt: "Random articles on development, design, and anything else I decide to write about."
+  image:
+
+- title: screencast
+  url: /screencast/
+  excerpt: "Development related screencast - Coming soon"
+  image:
+
+- title: work
+  url: /work/
+  excerpt: "Examples for showcasing my work."
+  image:
+
+- title: hire me
+  url: /freelance/
+  excerpt: "Information on my services"
+  image:
+
+- title: contact
+  url: /contact/
+  excerpt: "Contact information"
+  image:
+
+- title: about
+  url: /about/
+  excerpt: "Just a little about who I am"
+  image:

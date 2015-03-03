@@ -1,6 +1,8 @@
 web:
-  build: .
-  volumes:
-    - .:/data/rclanan.github.io
-  ports:
-    - "4000:4000"
+    build: .
+    ports:
+        - "4000:4000"
+    volumes:
+        - .:/src
+    environment:
+        - INSTANCE_TYPE=web-server

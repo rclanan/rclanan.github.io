@@ -1,3 +1,7 @@
 language: ruby
-script: bundle exec jekyll build
-install: bundle install
+sudo: true
+rvm: 2.2.0
+script: bundle exec rake deploy
+env:
+  global:
+    secure: ZFOx9K5MaGCOf1zhhL0RMgx3HoJ+IFzZuNXJz0N490nXqc9+AWUUv5m+pzoq9i89Po6kbnfY+XQ0KUEb4dAmIWm2bGPwvr9FHaqACu791smDEIYRKLdt+vTBRfnDYuCUjTr0LgE5UtW88CUNhikxb4N5XVZMy7vpQU18lM4Zz40=

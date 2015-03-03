@@ -1,89 +1,71 @@
-markdown: redcarpet
+# Site wide configuration
 
-redcarpet:
-  extensions:
-    - no_intra_emphasis
-    - fenced_code_blocks
-    - autolink
-    - strikethrough
-    - superscript
-    - smart
-
-zipballs:
-  sources: _downloads
-  dirname: downloads
-
-tags:
-  template: _layouts/archive
-
-categories:
-  template: _layouts/archive
-
-archives:
-  template: _layouts/archive
-
-assets:
-  dirname: assets
-  baseurl: http://cdn.utopianconcept.com/assets/
-  sources:
-    - _assets/javascripts
-    - _assets/stylesheets
-    - _assets/images
-  js_compressor: uglifier
-  css_compressor: sass
-  cachebust: none
-  cache: false
-  gzip: [ text/css, application/javascript ]
-  debug: false
-
-excerpt_separator: "<!-- more -->"
-
-future:      false
-show_drafts: false
-limit_posts: 0
-source:      .
-destination: ./_site
-plugins:     ./_plugins
-layouts:     ./_layouts
-highlighter: pygments
-permalink: /posts/:title
-paginate_path: 'page:num'
-paginate: 10
-paginator.per_page: 5
-changefreq: always
-tag_page_dir: tag
-tag_feed_dir: tag
-tag_page_layout: tag_page
-tag_feed_layout: tag_feed
-exclude: ['public', 'Gemfile', 'Gemfile.lock', 'Procfile', 'Rakefile', 'README.md']
-
-title : Utopian Concept LLC
-production_url : http://utopianconcept.com
+title: Utopian Concept LLC
 description: "Utopian Concept LLC is a bespoke development company. Experienced with all aspects of development ranging from web, mobile, desktop, and client/server."
-keywords: "application web development freelance mobile desktop client server"
-disqus_shortname: utopianconcept
-googleplus_user: 117308858606542676324
-facebook:
-  appid: 619415181409836
-analytics: UA-42068834-1
-author :
-  name : Ray Clanan
-  github : rclanan
-  twitter: utopianconcept
-  twitter_related: rclanan
-  linkedin : raymondclanan
-  facebook : ray.clanan
-  email: rclanan@utopianconcept.com
-  phone: +1 317-586-2186
-  flattr: rclanan
-  gittip: rclanan
-  coderwall: rclanan
-  gravatar: 4fdaf861a4e2146ef4d2cac924453029i
+logo: # 120x120 px default image used for Twitter summary card
+teaser: default-teaser.jpg # 400x250 px default teaser image used in image archive grid
+locale: en_US
+url: http://localhost:4000
+
+# Jekyll configuration
+
+sass:
+    sass_dir: _sass
+    style: compressed
+permalink: /:categories/:title/
+lsi: true
+markdown: kramdown
+kramdown:
+  toc_levels: 1..2
+highlighter: rouge
 gems:
   - jekyll-sitemap
-github:
-  hostname: "utopianconcept.com"
-  pages_hostname: "rclanan.github.io"
-  repository_url: "https://github.com/rclanan/rclanan.github.io"
-  owner_name: "rclanan"
-  owner_url: "https://github.com/rclanan"
+  - jekyll-archives
+
+# Site owner
+owner:
+  name: Ray Clanan
+  email: rclanan@utopianconcept.com
+  twitter: utopianconcept
+  facebook: utopianconcept
+  instagram: rclanan
+  stackoverflow: https://stackoverflow.com/users/139002/rclanan #http://stackoverflow.com/users/123456/username
+  linkedin: raymondclanan #username
+  tumblr: rclanan #username
+  lastfm: rclanan #username
+  pinterest: rclanan #username
+  dribbble: rclanan #username
+  youtube: rclanan #username
+  soundcloud: rclanan #username
+  github: utopianconcept
+  github-repo: https://github.com/rclanan/rclanan.github.io
+  google:
+    ad-client: ca-pub-9088055479182184
+    ad-slot: 1766459353
+    analytics: UA-42068834-1
+    plus: https://plus.google.com/+UtopianConceptLLCFranklin/posts
+    verify:
+  bing:
+    verify: 9BAC30D0133304B52E5D583E9639401F
+  alexa:
+    verify: sGS-ACEaZN_7mmf7rVEEkq4Ky6w
+  yandex:
+    verify: 78c0d8d209910284
+  bio: "Another day, another byte processed."
+  avatar: bio-photo.jpg # 160x160 px image for author byline
+disqus-shortname: utopianconcept
+
+# Plugin: jekyll-archives
+
+jekyll-archives:
+  enabled:
+    - tags
+    - year
+  layouts:
+    year: year_index
+    tag: tag_index
+  permalinks:
+    year: /:year/
+    tag: /tag/:name/
+
+exclude: ["lib", "config.rb", ".sass-cache", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "*.sublime-project", "*.sublime-workspace", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "node_modules", "Gruntfile.js", "package.json"]
