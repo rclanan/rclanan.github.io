@@ -8,8 +8,8 @@ cache:
 sudo: false
 
 before_script:
-  - npm install -g bower
-  - bower install
+  - npm install -g bower grunt
+  - grunt uglify
 
 before_install:
   - 'echo ''gem: --no-document'' > ~/.gemrc'
