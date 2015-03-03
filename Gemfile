@@ -13,5 +13,3 @@ gem "font-awesome-sass", "~> 4.2.0"
 gem "autoprefixer-rails"
 gem "jekyll-archives"
 gem "rouge"
-gem 'rake'
-gem 'rake-jekyll'

@@ -1,7 +1,10 @@
 language: ruby
 sudo: true
 rvm: 2.2.0
-script: bundle exec rake deploy
+script: bundle exec rake travis
 env:
   global:
     secure: WlT3lKOCG5GwAWDB2vZ756isJv4ShBKTVlxzvfEoObGB744HOet5YXBDQDN5HM9KkvjpLc3oeJDi1PWFd7zF53Rnd0/Cjwo9yfpMlSGF5EazwrTq9j91hsIHHJyi1jkQ6dvlPT/9YkUnNmNPd0TYHveE16v7kl3mHab35BcTYIQ=
+branches:
+  only:
+    - master
