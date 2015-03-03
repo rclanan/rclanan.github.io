@@ -9,7 +9,9 @@ sudo: false
 
 before_script:
   - npm install -g bower grunt
+  - npm install
   - grunt uglify
+  - grunt imagemin
 
 before_install:
   - 'echo ''gem: --no-document'' > ~/.gemrc'
