@@ -1,10 +1,24 @@
-language: ruby
-sudo: true
-rvm: 2.2.0
+language: [ ruby, node_js ]
+rvm: [ 2.2.0 ]
+node_js: [ 0.12 ]
+cache:
+  bundler: true
+  directories:
+    - bower_components
+sudo: false
+
+before_script:
+  - npm install -g bower
+  - bower install
+
+before_install:
+  - 'echo ''gem: --no-document'' > ~/.gemrc'
+
 script: bundle exec rake travis
-env:
-  global:
-    secure: WlT3lKOCG5GwAWDB2vZ756isJv4ShBKTVlxzvfEoObGB744HOet5YXBDQDN5HM9KkvjpLc3oeJDi1PWFd7zF53Rnd0/Cjwo9yfpMlSGF5EazwrTq9j91hsIHHJyi1jkQ6dvlPT/9YkUnNmNPd0TYHveE16v7kl3mHab35BcTYIQ=
+
 branches:
   only:
     - source
+
+env:
+  - secure: WlT3lKOCG5GwAWDB2vZ756isJv4ShBKTVlxzvfEoObGB744HOet5YXBDQDN5HM9KkvjpLc3oeJDi1PWFd7zF53Rnd0/Cjwo9yfpMlSGF5EazwrTq9j91hsIHHJyi1jkQ6dvlPT/9YkUnNmNPd0TYHveE16v7kl3mHab35BcTYIQ=

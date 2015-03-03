@@ -1,3 +1,30 @@
+require 'fileutils'
+require 'rake'
+require 'tmpdir'
+require 'yaml'
+
+config = YAML.load_file '_config.yml'
+dev_config = '_config.yml,_config.dev.yml'
+
+config[:destination] ||= '_site/'
+config[:sub_content] ||= []
+destination = File.join config[:destination], '/'
+
+# Set "rake draft" as default task
+task :default => :draft
+
+# Spawn a server and kill it gracefully when interrupt is received
+def spawn *cmd
+  pid = Process.spawn 'bundle', 'exec', *cmd
+
+  switch = true
+  Signal.trap 'SIGINT' do
+    Process.kill( :QUIT, pid ) && Process.wait
+    switch = false
+  end
+  while switch do sleep 1 end
+  end
+
 
 ##############
 # Jekyll tasks
@@ -10,9 +37,24 @@ task :serve do
 end # task :serve
 
 # Usage: rake build
-desc "Build production Jekyll site"
 task :build do
-  system "bundle exec jekyll build"
+  sh 'bundle', 'exec', 'jekyll', 'build'
+
+  config[:sub_content].each do |content|
+    repo = content[0]
+    branch = content[1]
+    dir = content[2]
+    rev = content[3]
+    Dir.chdir config[:destination] do
+      FileUtils.mkdir_p dir
+      sh "git clone -b #{branch} #{repo} #{dir}"
+      Dir.chdir dir do
+        sh "git checkout #{rev}" if rev
+        FileUtils.remove_entry_secure '.git'
+        FileUtils.remove_entry_secure '.nojekyll' if File.exists? '.nojekyll'
+      end if dir
+    end if Dir.exists? config[:destination]
+  end
 end # task :build
 
 # Usage: rake drafts
@@ -68,7 +110,7 @@ desc 'Notify various services about new content'
 task :notify => [:pingomatic, :sitemapgoogle, :sitemapbing] do
 end # task :notify
 
-desc 'Generate site from Travis CI and publish to GitHub Pages.'
+desc 'Generate site from Travis CI and publish site to GitHub Pages.'
 task :travis do
   # if this is a pull request, do a simple build of the site and stop
   if ENV['TRAVIS_PULL_REQUEST'].to_s.to_i > 0
