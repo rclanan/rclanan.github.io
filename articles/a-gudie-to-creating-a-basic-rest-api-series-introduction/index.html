@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  
+  <title>
+    
+    
+    
+    A guide to creating a basic REST API - Series Introduction • 
+    
+    Utopian Concept LLC
+  </title>
+  <meta name="description" content="An introduction into a series of guides on creating a basic REST API in multiple languages">
+  
+  
+  	
+		<!-- Twitter Cards -->
+		<meta name="twitter:title" content="A guide to creating a basic REST API - Series Introduction">
+		<meta name="twitter:description" content="An introduction into a series of guides on creating a basic REST API in multiple languages">
+		<meta name="twitter:site" content="@utopianconcept">
+		<meta name="twitter:creator" content="@utopianconcept">
+		
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:image" content="http://utopianconcept.com/images/rest-series-intro-feature.jpg">
+		
+	
+		<!-- Open Graph -->
+		<meta property="og:locale" content="en_US">
+		<meta property="og:type" content="article">
+		<meta property="og:title" content="A guide to creating a basic REST API - Series Introduction">
+		<meta property="og:description" content="An introduction into a series of guides on creating a basic REST API in multiple languages">
+		<meta property="og:url" content="http://utopianconcept.com/articles/a-gudie-to-creating-a-basic-rest-api-series-introduction/">
+		<meta property="og:site_name" content="Utopian Concept LLC">
+  <link rel="canonical" href="http://utopianconcept.com/articles/a-gudie-to-creating-a-basic-rest-api-series-introduction/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="http://utopianconcept.com/sitemap.xml">
+
+  <link href="http://feeds.feedburner.com/UtopianConcept" type="application/atom+xml" rel="alternate" title="Utopian Concept LLC &#8211; Everything">
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="cleartype" content="on">
+
+  <!-- Webmaster Tools verifications -->
+  
+  <meta name="msvalidate.01" content="9BAC30D0133304B52E5D583E9639401F">
+  <meta name="alexaVerifyID" content="sGS-ACEaZN_7mmf7rVEEkq4Ky6w">
+  <meta name="yandex-verification" content="78c0d8d209910284">
+
+  <link rel="author" href="https://plus.google.com/+UtopianConceptLLCFranklin/posts?rel=author">
+
+  <link rel="stylesheet" href="http://utopianconcept.com/css/main.css">
+
+  <!-- Defer loading of Google Webfonts -->
+  <script>
+  ~function (document) {
+    var elem = document.createElement('link');
+    var head = document.getElementsByTagName('head')[0];
+    elem.rel = 'stylesheet';
+    elem.href = '//fonts.googleapis.com/css?family=Lato:400,700,400italic|Alegreya:400italic,400,700';
+    elem.media = 'only x';
+    head.appendChild(elem);
+    setTimeout(function () {
+      elem.media = 'all';
+    });
+  }(document);
+</script>
+<!-- no-js fallback -->
+<noscript>
+  <link href="//fonts.googleapis.com/css?family=Lato:400,700,400italic|Alegreya:400italic,400,700" rel="stylesheet" type="text/css">
+</noscript>
+
+<!-- HTML5 Shiv and Media Query Support for IE -->
+<!--[if lt IE 9]>
+<script src="http://utopianconcept.com/js/vendor/html5shiv.min.js"></script>
+<script src="http://utopianconcept.com/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<link rel="apple-touch-icon" sizes="57x57" href="http://utopianconcept.com/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="http://utopianconcept.com/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="http://utopianconcept.com/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="http://utopianconcept.com/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="http://utopianconcept.com/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="http://utopianconcept.com/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="http://utopianconcept.com/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="http://utopianconcept.com/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="http://utopianconcept.com/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="http://utopianconcept.com/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="http://utopianconcept.com/android-chrome-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="http://utopianconcept.com/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="http://utopianconcept.com/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="http://utopianconcept.com/manifest.json">
+<meta name="msapplication-TileColor" content="#40393e">
+<meta name="msapplication-TileImage" content="http://utopianconcept.com/mstile-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+</head>
+
+<body id="js-body">
+  <!--[if lt IE 9]><div class="notice-danger center"><h4><p>Your browser is quite old!</h4><p>Why not <a href="http://whatbrowser.org/">upgrade to a more modern one</a> to better enjoy this site?</p></div><![endif]-->
+  <header id="masthead">
+  <div class="masthead-contents">
+    <div class="logo-wrap">
+      <a href="http://utopianconcept.com/" class="site-title">Utopian Concept LLC</a>
+    </div>
+    <nav role="navigation" class="menu top-menu">
+      <ul class="menu-item">
+	
+    <li><a href="/articles/">articles</a></li>
+  
+    <li><a href="/screencast/">screencast</a></li>
+  
+    <li><a href="/work/">work</a></li>
+  
+    <li><a href="/freelance/">hire me</a></li>
+  
+    <li><a href="/contact/">contact</a></li>
+  
+    <li><a href="/about/">about</a></li>
+  
+</ul>
+    </nav>
+  </div><!-- /.masthead-contents -->
+</header><!-- /.masthead -->
+
+  <div id="page-wrapper">
+    <div id="main" role="main">
+	<article class="wrap" itemscope itemtype="http://schema.org/Article">
+		<div class="page-feature-header overlay">
+			
+			<div class="page-image">
+				<img src="http://utopianconcept.com/images/rest-series-intro-feature.jpg" class="page-feature-image" alt="A guide to creating a basic REST API - Series Introduction" itemprop="image">
+				<div class="image-credit">Image credit: <a href="https://stocksnap.io/photo/AFB41CF89E" itemprop="citation">Provided by StockSnap.io</a></div><!-- /.image-credit -->
+
+			</div><!-- /.page-image -->
+			
+			<div class="page-title">
+				<h1><span>A guide to creating a basic REST API - Series Introduction</span></h1>
+				
+			</div><!-- /.page-title -->
+		</div><!-- /.page-header -->
+		<div class="inner-wrap">
+			<nav class="breadcrumbs">
+
+  <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="http://utopianconcept.com" itemprop="url"><span itemprop="title">Home</span></a> › 
+  </span>
+  <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+    <a href="http://utopianconcept.com/articles/" itemprop="url">
+      <span itemprop="title">
+        
+        
+          Articles
+            
+        
+      </span>
+    </a> › 
+  </span>
+
+
+</nav><!-- /.breadcrumbs -->
+
+			<div id="content" class="page-content" itemprop="articleBody">
+				<p>In this new series, I plan on creating a collection of guides that will demonstrate how to create the same basic REST API in different programming languages.</p>
+
+<p>As some of you who know me may know, I am very passionate about programming. I love learning a new language and comparing it to languages that I have already picked up. I am not entirely sure why I like so many different languages and I cannot, in all seriousness, answer which is my favorite language suffices to say I am enamored with all aspects of programming in general.</p>
+
+<p>Now with that being said, one of the best ways that I learn to pick up a new language, is to dive in and create something that I created before in a different language, sort of like the premise of creating the hello world application that most books start with, however I feel that approach is too simplistic of an example so I decided to create this series on creating a basic REST API. This will be more so for my own personal reference as are all the blog post that I write but maybe this can also become somewhat of a <a href="http://en.wikipedia.org/wiki/Rosetta_Stone">Rosetta Stone</a> for someone else trying to pick up a new language as well.</p>
+
+<p>The first guide that I will create will deal with languages that I already have experience with just to get me into the flow of creating the guides. The follow-up guides will be for languages that are new to me. If there are any requests for a particular guide then I will be happy to do those as well. Also, I welcome any comments in which the guides can be improved.</p>
+
+<nav class="toc">
+<ul id="markdown-toc">
+  <li><a href="#what-is-an-api" id="markdown-toc-what-is-an-api">What is an API?</a></li>
+  <li><a href="#examples-of-a-web-api" id="markdown-toc-examples-of-a-web-api">Examples of a Web API</a></li>
+  <li><a href="#http-methods-and-http-status-codes" id="markdown-toc-http-methods-and-http-status-codes">HTTP Methods and HTTP Status Codes</a></li>
+  <li><a href="#what-is-rest" id="markdown-toc-what-is-rest">What is REST?</a></li>
+</ul>
+
+</nav>
+
+<hr />
+
+<h4 id="disclaimer--i-do-not-claim-to-be-an-expert-on-rest-apis-or-for-that-matter-in-all-the-languages-that-i-am-going-to-try-and-cover-as-such-please-do-not-regard-these-as-best-practices-but-rather-a-stepping-stone-on-yours-and-mine-path-of-learning">**Disclaimer: ** <em>I do not claim to be an expert on REST, APIs, or for that matter in all the languages that I am going to try and cover. As such, please do not regard these as best practices but rather a stepping stone on yours (and mine) path of learning.</em></h4>
+
+<hr />
+
+<p>With all of that out of the way, let's say we get on with the guide. In this introduction, I am just going to cover the basics questions.</p>
+
+<ol>
+  <li>What is an API?</li>
+  <li>Examples of a Web API</li>
+  <li>HTTP Methods and HTTP Status Codes</li>
+  <li>What is REST?</li>
+  <li>Examples of REST</li>
+</ol>
+
+<h2 id="what-is-an-api">What is an API?</h2>
+
+<p>An API or <strong>A</strong>pplication <strong>P</strong>rogramming <strong>I</strong>nterface can be defined as a contract (or <a href="http://www.merriam-webster.com/dictionary/interface">interface</a>) in which other applications utilize to interact with your system. In doing so this provides externally exposed features into your rather closed environment.</p>
+
+<p>For this simplistic categorization of APIs, we can think of them coming in two flavors, one being software APIs and the other being web APIs. The focus of this series will be REST APIs which is a type of Web APIs.</p>
+
+<p>Software APIs typically are related to software libraries or frameworks and are generally geared more towards desktop or client/server type applications.</p>
+
+<p>Web APIs on the other hand deal with HTTP (<strong>H</strong>yper<strong>t</strong>ext <strong>T</strong>ransfer <strong>P</strong>rotocol) methods and HTTP Status Codes. More on those later, but the methods are the actions which typically control the API and the status codes along with a  response message is the result of what the API passes back.</p>
+
+<h2 id="examples-of-a-web-api">Examples of a Web API</h2>
+
+<p>Many of the most popular websites have published public APIs these days. Not all of these examples are of REST APIs as well as the ones that do include REST API they also include other types of APIs like SOAP. Some examples of these popular APIs are:</p>
+
+<ol>
+  <li><a href="https://code.google.com/">Google API</a>
+    <ul>
+      <li>Allows you to integration with maps, email, Google+, and more.</li>
+    </ul>
+  </li>
+  <li><a href="https://developers.facebook.com/docs/reference/apis/">Facebook API</a>
+    <ul>
+      <li>Provides integrations like the ability to 'Like' and share pages from your website.</li>
+    </ul>
+  </li>
+  <li><a href="https://dev.twitter.com/">Twitter API</a>
+    <ul>
+      <li>With this integration you can automate sending tweets when different events occur as well as read tweets via the API</li>
+    </ul>
+  </li>
+  <li><a href="http://www.salesforce.com/us/developer/docs/api/index.htm">Salesforce.com</a>
+    <ul>
+      <li>Allows you to access information about your contacts, send messages, among other things</li>
+    </ul>
+  </li>
+  <li><a href="https://developer.linkedin.com/apis">LinkedIn API</a>
+    <ul>
+      <li>Allows you to perform searches, share content, etc.</li>
+    </ul>
+  </li>
+  <li><a href="http://developer.github.com/v3/">Github API</a>
+    <ul>
+      <li>Provides the ability to create and search among Issues, Gists, Git Data, People, as well as a host of other features</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="http-methods-and-http-status-codes">HTTP Methods and HTTP Status Codes</h2>
+
+<h5 id="http-methods">HTTP Methods</h5>
+
+<p>HTTP methods are defined in the <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html">RFC 2616</a> put out by the <a href="http://www.w3.org/">World Wide Web Consortium (W3C)</a>. These HTTP methods are commonly referred to as <em>"verbs"</em>. Currently there are a total of eight different verbs that are defined by the HTTP/1.1 protocol. Below these verbs are defined as well as their typical usage.</p>
+
+<ol>
+  <li>OPTIONS
+    <ul>
+      <li>Used to request what options are available for the request/response</li>
+    </ul>
+  </li>
+  <li>GET
+    <ul>
+      <li>Used to retrieve information about a resource</li>
+    </ul>
+  </li>
+  <li>HEAD
+    <ul>
+      <li>Same as GET except only returns the header information</li>
+    </ul>
+  </li>
+  <li>POST
+    <ul>
+      <li>Used for creating a new resource</li>
+    </ul>
+  </li>
+  <li>PUT
+    <ul>
+      <li>Used for updating a resource</li>
+    </ul>
+  </li>
+  <li>DELETE
+    <ul>
+      <li>Used for deleting a resource</li>
+    </ul>
+  </li>
+  <li>TRACE
+    <ul>
+      <li>Used for tracing the request message</li>
+    </ul>
+  </li>
+  <li>CONNECT
+    <ul>
+      <li>Used for proxies</li>
+    </ul>
+  </li>
+</ol>
+
+<p>In a typical REST API we usually only concern ourselves with GET, POST, PUT, DELETE, which form the basis of <a href="http://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a> (Create, Read, Update, and Delete). The most commonly used HTTP method that most people unknowingly utilize is the GET verb. Since GET is used as a way to retrieve information about a resource, which is what is used to load web pages into a browser. Have you ever filled out an online form? Then you have most likely used POST, though there are other options as well. Some browsers do not implement all the HTTP methods nor do they need to.</p>
+
+<h5 id="http-status-codes">HTTP Status Codes</h5>
+
+<p>HTTP Status Codes are also defined in the <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10">RFC 2616</a> put out by the W3C. There are numerous types of status codes so for further information please refer to <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10">section ten of the RFC</a>. I will name a few that you are most likely to use the most, though they all have recommended use cases that are associated with them.</p>
+
+<ol>
+  <li>Successful Codes - 2xx
+    <ul>
+      <li>200 - OK</li>
+      <li>Request has succeeded</li>
+      <li>201 - Created</li>
+      <li>New resource has been created</li>
+      <li>204 - No Content</li>
+      <li>Request has been accepted</li>
+    </ul>
+  </li>
+  <li>Redirect Codes - 3xx
+    <ul>
+      <li>304 - Not Modified</li>
+      <li>Indicates resource has not been modified since last requested</li>
+    </ul>
+  </li>
+  <li>Client Error Codes - 4xx
+    <ul>
+      <li>400 - Bad Request</li>
+      <li>Request could not be understood</li>
+      <li>401 - Unauthorized</li>
+      <li>Missing or invalid authentication information</li>
+      <li>403 - Forbidden</li>
+      <li>User is not authorized to perform the operation or resource is unavailable</li>
+      <li>404 - Not Found</li>
+      <li>Requested resource was not found</li>
+      <li>409 - Conflict</li>
+      <li>A resource conflict</li>
+    </ul>
+  </li>
+  <li>Server Error Codes - 5xx
+    <ul>
+      <li>500 - Internal Server Error</li>
+      <li>General catch-all for thrown exceptions</li>
+      <li>503 - Service Unavailable</li>
+      <li>Service cannot be used at the time of the request</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="what-is-rest">What is REST?</h2>
+
+<p>REST stands for <strong>Re</strong>presentational <strong>S</strong>tate <strong>T</strong>ransfer. For the best understanding of the REST architecture, I would refer to man who came up with the idea, <a href="http://www.ics.uci.edu/~fielding/">Roy Thomas Fielding</a>. In his <a href="http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm">dissertation</a><sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>,<em>Architectural Styles and the Design of Network-based Software Architectures</em>, details on REST can be found in <a href="http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm">chapter 5</a>.</p>
+
+<p>REST works on the basic principle of resources. A resource can be anything from a person, to a task, to a blog post. While, REST does not have an official standard that must be followed there are best practices and recommendations put forth in the dissertations and the RFC, amongst other places on the internet. I will not attempt to set for any of those in these guides as I am just trying to show the basic functionality of REST APIs in implemented in different languages. Even though there isn’t a set standard there are six defined constraints that attempt to define what exactly makes a RESTful API.</p>
+
+<p>The six constraints are:</p>
+
+<ol>
+  <li>Client-Server
+    <ul>
+      <li>This one deals with the separation of concern between the client and server. If the interface between the two remains unchanged then the client and/or server can be replaced and developed independently of each other.</li>
+    </ul>
+  </li>
+  <li>Stateless
+    <ul>
+      <li>By definition, REST means statelessness; therefore the state is handle the request is embedded in the request itself.</li>
+    </ul>
+  </li>
+  <li>Cache
+    <ul>
+      <li>This one basically states that a resource must be cacheable and define themselves as such to the client.</li>
+    </ul>
+  </li>
+  <li>Uniform Interface
+    <ul>
+      <li>This one defines the interface between the client and server that allows the two to be decoupled from each other. Uniform Interface can be further described by four interface constraints:</li>
+    </ul>
+  </li>
+  <li>Identification of Resources
+    <ul>
+      <li>Resources are identified in requests using URIs</li>
+    </ul>
+  </li>
+  <li>Manipulation of Resources through Representations
+    <ul>
+      <li>Providing you have permission to, you should have enough information to modify or delete a resource once given the representation of the resource</li>
+    </ul>
+  </li>
+  <li>Self-descriptive messages
+    <ul>
+      <li>States that each request/response describes how to process each message</li>
+    </ul>
+  </li>
+  <li>Hypermedia as the engine of application state (HATEOAS)
+    <ul>
+      <li>HATEOAS states that the client should be able to interact with the service entirely through hypermedia.</li>
+    </ul>
+  </li>
+  <li>Layered System
+    <ul>
+      <li>The system should be composed of hierarchical layers by constraining component behavior such that each component cannot interact with any layer beyond the immediate layer in which they are interacting with. So, the client would not be able to interact directly with the end server if there is a cache server in between them. The client would interact with the cache server which would in turn interact with the server.</li>
+    </ul>
+  </li>
+  <li>Code-On-Demand (Optional)
+    <ul>
+      <li>Basically, this states that additional functionality can be distributed in the form of scripts through the API.</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="examples-of-rest">Examples of REST</h3>
+<p>The remaining guides will cover the creation of a task list REST web service. Here we will look at a few examples that will utilize the task list example.</p>
+
+<p>If we wanted to get a list of all task, we would utilize the GET HTTP method:</p>
+
+<pre><code>GET http://example.com/tasks HTTP/1.1
+</code></pre>
+
+<p>Say we wanted to create a new task, for that we would utilize the POST HTTP method:</p>
+
+<pre><code>POST http://example.com/tasks HTTP/1.1
+
+&lt;?xml version="1.0"?&gt;
+&lt;task&gt;
+&lt;name&gt;Some Name Here&lt;/name&gt;
+&lt;/task&gt;
+</code></pre>
+
+<p>If there is a specific task that you would like to see, we would use GET like above and provide it with the task_number:</p>
+
+<pre><code>GET http://example.com/tasks/12345 HTTP/1.1
+</code></pre>
+
+<p>To update the name of the task that we just retrieve we would use the PUT verb and could do something like:</p>
+
+<pre><code>PUT http://example.com/tasks/12345 HTTP/1.1
+
+&lt;?xml version="1.0"?&gt;
+&lt;task&gt;
+&lt;name&gt;New Name Here&lt;/name&gt;
+&lt;/task&gt;
+</code></pre>
+
+<p>And assuming we had permission to do so, we can delete it by, you guessed it, the DELETE method:</p>
+
+<pre><code>DELETE http://example.com/tasks/12345 HTTP/1.1
+</code></pre>
+
+<p>For further examples, follow along with the rest of the series and see how we go about implementing a basic REST API for tasks, and then take it a step further and see how do implement the same API across different languages.</p>
+
+<h3 id="references">References:</h3>
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>Fielding, Roy Thomas. <em>Architectural Styles and the Design of Network-based Software Architectures</em>. Doctoral dissertation, University of California, Irvine, 2000. <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+				<div class="share-this">
+	<span class="label">Share this:</span>
+  <ul class="share-this-buttons">
+    <li>
+      <a class="btn-social twitter" onclick="ga('send', 'event', 'link', 'click', 'Twitter share');" href="https://twitter.com/intent/tweet?text=A%20guide%20to%20creating%20a%20basic%20REST%20API%20-%20Series%20Introduction&amp;url=http://utopianconcept.com/articles/a-gudie-to-creating-a-basic-rest-api-series-introduction/&amp;via=utopianconcept" target="_blank"><i class="fa fa-twitter fa-fw" aria-hidden="true"></i><span class="share-text">Twitter</span></a>
+    </li>
+    <li>
+      <a class="btn-social js-social-share facebook" onclick="ga('send', 'event', 'link', 'click', 'Facebook share');" href="https://www.facebook.com/sharer/sharer.php?u=http://utopianconcept.com/articles/a-gudie-to-creating-a-basic-rest-api-series-introduction/" target="_blank"><i class="fa fa-facebook fa-fw" aria-hidden="true"></i><span class="share-text">Facebook</span></a>
+    </li>
+    <li>
+    	<a class="btn-social js-social-share google-plus" onclick="ga('send', 'event', 'link', 'click', 'Google+ share');" href="https://plus.google.com/share?url=http://utopianconcept.com/articles/a-gudie-to-creating-a-basic-rest-api-series-introduction/" target="_blank"><i class="fa fa-google-plus fa-fw" aria-hidden="true"></i><span class="share-text">Google+</span></a>
+    </li>
+  </ul>
+</div><!-- /.share-this -->
+
+				<footer class="page-footer">
+					<div class="author-wrapper">
+  <div class="author-image">
+  	<a href="http://utopianconcept.com/about/"><img src="/images/bio-photo.jpg" alt="Ray Clanan"></a>
+  </div><!-- /.author-image -->
+  <div class="author-content">
+  	<h3 class="author-name">About <span itemprop="author">Ray Clanan</span></h3>
+  	<p class="author-bio">Another day, another byte processed. <a href="http://utopianconcept.com/about/">More about me</a>.</p>
+    <p class="author-follow"><a href="https://twitter.com/utopianconcept" class="twitter-follow-button" data-show-count="true" data-size="large"data-dnt="true">Follow @utopianconcept</a></p>
+  </div><!-- /.author-content -->
+</div><!-- /.author-wrapper -->
+
+					<div class="page-meta">
+	
+    <span><i class="fa fa-folder-open-o fa-fw"></i> &nbsp; <a href="http://utopianconcept.com/tag/web/" title="web" rel="tag">web</a>, <a href="http://utopianconcept.com/tag/api/" title="API" rel="tag">API</a>, <a href="http://utopianconcept.com/tag/rest/" title="REST" rel="tag">REST</a>, <a href="http://utopianconcept.com/tag/guide/" title="guide" rel="tag">guide</a>, <a href="http://utopianconcept.com/tag/series/" title="series" rel="tag">series</a></span>
+  
+	
+    <span><i class="fa fa-clock-o fa-fw"></i> &nbsp; Updated <time datetime="2013-08-20T00:00:00Z" itemprop="datePublished">August 20, 2013</time></span>
+  
+</div><!-- /.page-meta -->
+				</footer><!-- /.footer -->
+			</div><!-- /.content -->
+		</div><!-- /.inner-wrap -->
+		<div class="sidebar">
+			
+			<div class="ads"><ins class="adsbygoogle r-ads"
+	style="display:inline-block"
+	data-ad-client="ca-pub-9088055479182184"
+	data-ad-slot="1766459353"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div><!-- /.ads -->
+		</div><!-- /.sidebar -->
+	</article><!-- /.wrap -->
+	
+	<div class="wrap">
+		<div class="related-posts">
+  <h3>Read This Next</h3>
+  <div class="tiles">
+  
+    <article class="tile" itemscope itemtype="http://schema.org/Article">
+	<a href="http://utopianconcept.com/articles/creating-a-wix-installer-for-a-.net-web-project/" title="Creating a WiX installer for a .NET Web Project" class="post-teaser">
+    <img src="http://utopianconcept.com/images/preload-400.png" data-original="http://utopianconcept.com/images/wix-teaser.png" class="load" alt="teaser" itemprop="image">
+    <noscript><img src="http://utopianconcept.com/images/wix-teaser.png" alt="teaser" itemprop="image"></noscript>
+	</a>
+	<h2 class="post-title" itemprop="name"><a href="http://utopianconcept.com/articles/creating-a-wix-installer-for-a-.net-web-project/">Creating a WiX installer for a .NET Web Project</a></h2>
+  <p class="entry-date date published"><time datetime="2013-08-12" itemprop="datePublished">August 12, 2013</time></p>
+	<p class="post-excerpt" itemprop="description">A brief walk through on how to create a WiX installer for a .NET web project</p>
+</article><!-- /.tile -->
+  
+    <article class="tile" itemscope itemtype="http://schema.org/Article">
+	<a href="http://utopianconcept.com/articles/creating-a-mock-web-service-in-.net/" title="Creating a Mock Web Service in .NET" class="post-teaser">
+    <img src="http://utopianconcept.com/images/preload-400.png" data-original="http://utopianconcept.com/images/mock-web-teaser.jpg" class="load" alt="teaser" itemprop="image">
+    <noscript><img src="http://utopianconcept.com/images/mock-web-teaser.jpg" alt="teaser" itemprop="image"></noscript>
+	</a>
+	<h2 class="post-title" itemprop="name"><a href="http://utopianconcept.com/articles/creating-a-mock-web-service-in-.net/">Creating a Mock Web Service in .NET</a></h2>
+  <p class="entry-date date published"><time datetime="2013-08-08" itemprop="datePublished">August 08, 2013</time></p>
+	<p class="post-excerpt" itemprop="description">A brief walk through on how to create a mock web service in .net</p>
+</article><!-- /.tile -->
+  
+    <article class="tile" itemscope itemtype="http://schema.org/Article">
+	<a href="http://utopianconcept.com/work/client-site-launch-infinity-hair-solutions/" title="Client site launch" class="post-teaser">
+    <img src="http://utopianconcept.com/images/preload-400.png" data-original="http://utopianconcept.com/images/infinity-hair-solutions-teaser.png" class="load" alt="teaser" itemprop="image">
+    <noscript><img src="http://utopianconcept.com/images/infinity-hair-solutions-teaser.png" alt="teaser" itemprop="image"></noscript>
+	</a>
+	<h2 class="post-title" itemprop="name"><a href="http://utopianconcept.com/work/client-site-launch-infinity-hair-solutions/">Client site launch</a></h2>
+  <p class="entry-date date published"><time datetime="2013-11-27" itemprop="datePublished">November 27, 2013</time></p>
+	<p class="post-excerpt" itemprop="description">After I setup my site and started blogging I landed a few client projects. The first of which went live today. It is a customized theme developed in [PrestaS...</p>
+</article><!-- /.tile -->
+  
+    <article class="tile" itemscope itemtype="http://schema.org/Article">
+	<a href="http://utopianconcept.com/articles/hello-world/" title="Obligatory Hello World" class="post-teaser">
+    <img src="http://utopianconcept.com/images/preload-400.png" data-original="http://utopianconcept.com/images/hello-world-teaser.jpg" class="load" alt="teaser" itemprop="image">
+    <noscript><img src="http://utopianconcept.com/images/hello-world-teaser.jpg" alt="teaser" itemprop="image"></noscript>
+	</a>
+	<h2 class="post-title" itemprop="name"><a href="http://utopianconcept.com/articles/hello-world/">Obligatory Hello World</a></h2>
+  <p class="entry-date date published"><time datetime="2013-08-07" itemprop="datePublished">August 07, 2013</time></p>
+	<p class="post-excerpt" itemprop="description">The obligatory hello world post</p>
+</article><!-- /.tile -->
+  
+  </div>
+</div>
+	</div><!-- /.wrap -->
+	
+	
+	<div class="wrap">
+		<aside class="inner-wrap"><div class="comments">
+	<h3>Leave a Comment</h3>
+	<div id="disqus_thread"></div>
+	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div><!-- /.comments --></aside>
+		<div class="sidebar ads"><ins class="adsbygoogle r-ads-comments"
+	style="display:inline-block"
+	data-ad-client="ca-pub-9088055479182184"
+	data-ad-slot="1766459353"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div><!-- /.ads -->
+	</div><!-- /.wrap -->
+	
+</div><!-- /#main -->
+
+    <footer role="contentinfo" id="site-footer">
+  <div class="wrap">
+  	<nav role="navigation" class="menu">
+  		<ul class="footer-links">
+  		
+  			<li><a href="/about/">About</a></li>
+  		
+  			<li><a href="/subscribe/">Subscribe</a></li>
+  		
+  			<li><a href="/support/">Sponsor</a></li>
+  		
+  			<li><a href="/terms/">Terms</a></li>
+  		
+  			<li><a href="/sitemap/"><i class="fa fa-sitemap"></i> Sitemap</a></li>
+  		
+  		</ul>
+  		<ul class="social-circles">
+  			<li><a href="https://twitter.com/utopianconcept" onclick="ga('send', 'event', 'link', 'click', 'Twitter follow');">
+  				<span class="twitter fa-stack fa-lg">
+  				  <i class="fa fa-circle fa-stack-2x"></i>
+  				  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+  				</span>
+  			</a></li>
+  			<li><a href="https://www.facebook.com/utopianconcept" onclick="ga('send', 'event', 'link', 'click', 'Facebook follow');">
+  				<span class="facebook fa-stack fa-lg">
+  				  <i class="fa fa-circle fa-stack-2x"></i>
+  				  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+  				</span>
+  			</a></li>
+  			<li><a href="https://plus.google.com/+UtopianConceptLLCFranklin/posts" onclick="ga('send', 'event', 'link', 'click', 'Google+ follow');">
+  				<span class="google-plus fa-stack fa-lg">
+  				  <i class="fa fa-circle fa-stack-2x"></i>
+  				  <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+  				</span>
+  			</a></li>
+  			<li><a href="http://instagram.com/rclanan" onclick="ga('send', 'event', 'link', 'click', 'Instagram follow');">
+  				<span class="instagram fa-stack fa-lg">
+  				  <i class="fa fa-circle fa-stack-2x"></i>
+  				  <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+  				</span>
+  			</a></li>
+        <li><a href="https://github.com/utopianconcept" onclick="ga('send', 'event', 'link', 'click', 'Github follow');">
+          <span class="github fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+          </span>
+        </a></li>
+  			<li><a href="http://feeds.feedburner.com/UtopianConcept" onclick="ga('send', 'event', 'link', 'click', 'RSS feed');">
+  				<span class="rss fa-stack fa-lg">
+  				  <i class="fa fa-circle fa-stack-2x"></i>
+  				  <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+  				</span>
+  			</a></li>
+  		</ul>
+  	</nav><!-- /.menu -->
+  	<p class="to-top"><a href="#masthead"><i class="fa fa-arrow-up"></i> &nbsp; Back to top</a></p>
+  	<p class="copyright">&#169; 2013&#8211;2015 Ray Clanan, <a href="/humans.txt">a real human being</a>. <a href="https://github.com/rclanan/rclanan.github.io" title="Utopian Concept source on GitHub">View Source</a></p>
+    <p class="copyright">
+      Site and theme pieced together from <a href="http://mademistakes.com">Made Mistakes</a> and <a href="https://mademistakes.com/work/skinny-bones-jekyll/">Skinny Bones</a>
+    </p>
+  </div>
+</footer>
+
+  </div>
+
+  <script src="http://utopianconcept.com/js/vendor/jquery-1.9.1.min.js"></script>
+  <script src="http://utopianconcept.com/js/main.js"></script>
+
+  <!-- Google Universal Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-42068834-1', 'utopianconcept.com');
+    ga('require', 'linkid', 'linkid.js');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+  </script>
+
+  
+  <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'utopianconcept';
+    var disqus_title = 'A guide to creating a basic REST API - Series Introduction';
+    var disqus_url = 'http://utopianconcept.com/articles/a-gudie-to-creating-a-basic-rest-api-series-introduction/';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+      var s = document.createElement('script'); s.async = true;
+      s.type = 'text/javascript';
+      s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+      (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  
+
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</body>
+
+</html>

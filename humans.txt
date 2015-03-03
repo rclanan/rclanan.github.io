@@ -10,9 +10,12 @@
   Font Awesome Creator: Dave Gandy
   Site: http://fortawesome.github.com/Font-Awesome/
 
+  Skinny Bones: Micheal Rose
+  Site: mademistakes.com
+
 /* SITE */
   Language: English
   Doctype:HTML5
   Standards: HTML5, CSS3
   Components: Modernizr, jQuery, Twitter Bootstrap, Font Awesome
-  Software: Sublime Text 2, Jekyll
+  Software: Atom.io, Jekyll
