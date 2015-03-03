@@ -72,4 +72,5 @@ end # task :notify
 desc 'Deploy to github'
 Rake::Jekyll::GitDeployTask.new(:deploy) do |t|
   t.deploy_branch = 'master'
+  t.override_committer = 'Ray Clanan <rclanan@utopianconcept.com>'
 end
