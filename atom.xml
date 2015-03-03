@@ -11,7 +11,7 @@
   <subtitle>Utopian Concept LLC is a bespoke development company. Experienced with all aspects of development ranging from web, mobile, desktop, and client/server.</subtitle>
   <link href="http://utopianconcept.com/atom.xml" rel="self"/>
   <link href="http://utopianconcept.com/" rel="alternate" type="text/html"/>
-  <updated>2015-03-03T04:25:12+00:00</updated>
+  <updated>2015-03-03T07:07:48+00:00</updated>
   <id>http://utopianconcept.com/</id>
   <author>
     <name>Ray Clanan</name>
@@ -19,6 +19,34 @@
     <email>rclanan@utopianconcept.com</email>
   </author>
 
+  
+  <entry>
+    <title>Obligatory Hello World - Redux</title>
+    <link href="http://utopianconcept.com/articles/hello-world-redux/"/>
+    <updated>2015-03-03T00:00:00+00:00</updated>
+    <id>http://utopianconcept.com/articles/hello-world-redux</id>
+    <author>
+      <name>Ray Clanan</name>
+      <uri>http://utopianconcept.com/</uri>
+      <email>rclanan@utopianconcept.com</email>
+    </author>
+    <content type="html">
+      &lt;img src=&quot;http://utopianconcept.com/images/hello-world-feature.jpg&quot; alt=&quot;Obligatory Hello World - Redux feature&quot;&gt;&lt;br/&gt;
+      &lt;p&gt;After getting this blog up previously, I started out with with really good intentions as do we all. After that I became very wrapped up in my freelancing projects that I apparently somewhat fell off the face of the web. I come back and fast forward a year, my blog has gone stale.&lt;/p&gt;
+
+&lt;p&gt;Well it’s back now! I have upgraded Jekyll, which is the static site blog generator that creates this site and updated the theme a bit.&lt;/p&gt;
+
+&lt;p&gt;I am shifting focus a bit and have taken a step back from being heavy into freelancing and want to focus on creating my overall brand as well as focus on some products and services that I have had on my todo list for a while now. One of those I have made mention to elsewhere on this site in terms of screencast that I will be starting up shortly to accompany my blog post.&lt;/p&gt;
+
+&lt;p&gt;I am still doing freelancing as well, though I have taken a step back and am very selective on the work that I will accept.   I don’t want to overwhelm myself again and not have any time for my own projects or to improve my personal brand.&lt;/p&gt;
+
+&lt;p&gt;If you have any topics that you would like to see me cover in a blog post or a screencast feel free to let me know. If you are interested in obtaining my services on a freelancing project. Feel free to reach out to me, though it will depend on the project details and my availability at the time. More information on my freelancing services as well as ways to contact me can be found via the &lt;a href=&quot;{site.url}/freelance/&quot;&gt;hire me&lt;/a&gt; link or the &lt;a href=&quot;{site.url}/contact/&quot;&gt;contact link&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;As always, until next time…&lt;/p&gt;
+
+      &lt;p&gt;&lt;a href=&quot;http://utopianconcept.com/articles/hello-world-redux/&quot; rel=&quot;nofollow&quot;&gt;Obligatory Hello World - Redux&lt;/a&gt; was originally published by &lt;a href=&quot;http://utopianconcept.com/about/&quot; rel=&quot;nofollow&quot;&gt;Ray Clanan&lt;/a&gt; on &lt;a href=&quot;http://utopianconcept.com&quot; rel=&quot;nofollow&quot;&gt;Utopian Concept LLC&lt;/a&gt;.&lt;/p&gt;
+    </content>
+  </entry>
   
   <entry>
     <title>Client site launch</title>

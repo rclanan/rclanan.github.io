@@ -7,32 +7,32 @@
     
     
     
-    Creating a Mock Web Service in .NET • 
+    Obligatory Hello World - Redux • 
     
     Utopian Concept LLC
   </title>
-  <meta name="description" content="A brief walk through on how to create a mock web service in .net">
+  <meta name="description" content="The obligatory hello world post - Redux">
   
   
   	
 		<!-- Twitter Cards -->
-		<meta name="twitter:title" content="Creating a Mock Web Service in .NET">
-		<meta name="twitter:description" content="A brief walk through on how to create a mock web service in .net">
+		<meta name="twitter:title" content="Obligatory Hello World - Redux">
+		<meta name="twitter:description" content="The obligatory hello world post - Redux">
 		<meta name="twitter:site" content="@utopianconcept">
 		<meta name="twitter:creator" content="@utopianconcept">
 		
 		<meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:image" content="http://utopianconcept.com/images/mock-web-feature.jpg">
+		<meta name="twitter:image" content="http://utopianconcept.com/images/hello-world-feature.jpg">
 		
 	
 		<!-- Open Graph -->
 		<meta property="og:locale" content="en_US">
 		<meta property="og:type" content="article">
-		<meta property="og:title" content="Creating a Mock Web Service in .NET">
-		<meta property="og:description" content="A brief walk through on how to create a mock web service in .net">
-		<meta property="og:url" content="http://utopianconcept.com/articles/creating-a-mock-web-service-in-.net/">
+		<meta property="og:title" content="Obligatory Hello World - Redux">
+		<meta property="og:description" content="The obligatory hello world post - Redux">
+		<meta property="og:url" content="http://utopianconcept.com/articles/hello-world-redux/">
 		<meta property="og:site_name" content="Utopian Concept LLC">
-  <link rel="canonical" href="http://utopianconcept.com/articles/creating-a-mock-web-service-in-.net/">
+  <link rel="canonical" href="http://utopianconcept.com/articles/hello-world-redux/">
   <link rel="sitemap" type="application/xml" title="Sitemap" href="http://utopianconcept.com/sitemap.xml">
 
   <link href="http://feeds.feedburner.com/UtopianConcept" type="application/atom+xml" rel="alternate" title="Utopian Concept LLC &#8211; Everything">
@@ -130,13 +130,13 @@
 		<div class="page-feature-header overlay">
 			
 			<div class="page-image">
-				<img src="http://utopianconcept.com/images/mock-web-feature.jpg" class="page-feature-image" alt="Creating a Mock Web Service in .NET" itemprop="image">
-				<div class="image-credit">Image credit: <a href="https://stocksnap.io/photo/T73FC0GBMI" itemprop="citation">Provided by StockSnap.io</a></div><!-- /.image-credit -->
+				<img src="http://utopianconcept.com/images/hello-world-feature.jpg" class="page-feature-image" alt="Obligatory Hello World - Redux" itemprop="image">
+				<div class="image-credit">Image credit: <a href="https://stocksnap.io/photo/81F9A2BA2D" itemprop="citation">Provided by StockSnap.io</a></div><!-- /.image-credit -->
 
 			</div><!-- /.page-image -->
 			
 			<div class="page-title">
-				<h1><span>Creating a Mock Web Service in .NET</span></h1>
+				<h1><span>Obligatory Hello World - Redux</span></h1>
 				
 			</div><!-- /.page-title -->
 		</div><!-- /.page-header -->
@@ -162,47 +162,29 @@
 </nav><!-- /.breadcrumbs -->
 
 			<div id="content" class="page-content" itemprop="articleBody">
-				<p>Earlier this week at a client’s I had to trace down where an exception was coming from when making a web service call. I had access to the client’s front end code, the part that actually made the calls to the web service in question but didn’t have access to the code for the web service. In order to replicate this, I figured the best route would be to create a mock web service that I could then throw exceptions or custom return values that I would like to test.</p>
+				<p>After getting this blog up previously, I started out with with really good intentions as do we all. After that I became very wrapped up in my freelancing projects that I apparently somewhat fell off the face of the web. I come back and fast forward a year, my blog has gone stale.</p>
 
-<p>Creating a mock web service has numerous benefits in terms of testing. Some of those might include:</p>
+<p>Well it’s back now! I have upgraded Jekyll, which is the static site blog generator that creates this site and updated the theme a bit.</p>
 
-<ul>
-  <li>By passing a web service that charges you for every service call.</li>
-  <li>Serve up different scenarios for “expected” results.</li>
-  <li>Simulate the web service being down or not available.</li>
-  <li>The service is still being developed and you need to continue on with your development.</li>
-  <li>Test exceptions that might be thrown from the web service.</li>
-</ul>
+<p>I am shifting focus a bit and have taken a step back from being heavy into freelancing and want to focus on creating my overall brand as well as focus on some products and services that I have had on my todo list for a while now. One of those I have made mention to elsewhere on this site in terms of screencast that I will be starting up shortly to accompany my blog post.</p>
 
-<p>With the later bullet point being my case, I start off by grabbing the <a href="http://en.wikipedia.org/wiki/Web_Services_Description_Language">WSDL</a> file from the existing running web service. To do this you can just append ?wsdl to the path and it will generate the WSDL XML for you. Save this out to your local machine.</p>
+<p>I am still doing freelancing as well, though I have taken a step back and am very selective on the work that I will accept.   I don’t want to overwhelm myself again and not have any time for my own projects or to improve my personal brand.</p>
 
-<p>After acquiring the WSDL XML, we will use the <a href="http://msdn.microsoft.com/en-us/library/7h3ystb6.aspx">wsdl.exe</a> file provided by Visual Studio to create our service interface. Open up the <a href="http://msdn.microsoft.com/en-us/library/ms229859.aspx">Visual Studio Command Prompt</a>, and type:
-<code>
-wsdl /language:CS /namespace:Your.Namespace /out:Output\Directory /protocol:SOAP /serverinterface yourwsdlxmlfile.wsdl
-</code>
-This should create a .cs file in the /out directory that will contain the interface that you need to implement to create a mock web service.</p>
+<p>If you have any topics that you would like to see me cover in a blog post or a screencast feel free to let me know. If you are interested in obtaining my services on a freelancing project. Feel free to reach out to me, though it will depend on the project details and my availability at the time. More information on my freelancing services as well as ways to contact me can be found via the <a href="{site.url}/freelance/">hire me</a> link or the <a href="{site.url}/contact/">contact link</a>.</p>
 
-<p>In Visual Studio, create a new ASP.NET Empty Web Application from the Web installed templates under Add New Project. Add the .cs file to that was generated to this project, and then add a new web service.</p>
-
-<p>In the code behind of this web service, change the class to implement the interface name of the .cs file that you just added to the project. Once that is done, tell Visual Studio to implement the interface which will give you stubs for the web service methods. Add the [WebMethod] attribute to each of the method calls to make them accessible via the web service. From here you can either leave the default throw in place or add your own custom code that you want your mock service to implement.</p>
-
-<p>If you run the application you should be able to navigate to your mock web service. If that is successful, then you can go to your existing client code and add a web service to the generated URL that points to the newly created mock web service.</p>
-
-<p>Have fun testing your web service! Just don’t forget to point the web reference back to the original web service instead of your mock service before deploying.</p>
-
-<p>Until next time…</p>
+<p>As always, until next time…</p>
 
 				<div class="share-this">
 	<span class="label">Share this:</span>
   <ul class="share-this-buttons">
     <li>
-      <a class="btn-social twitter" onclick="ga('send', 'event', 'link', 'click', 'Twitter share');" href="https://twitter.com/intent/tweet?text=Creating%20a%20Mock%20Web%20Service%20in%20.NET&amp;url=http://utopianconcept.com/articles/creating-a-mock-web-service-in-.net/&amp;via=utopianconcept" target="_blank"><i class="fa fa-twitter fa-fw" aria-hidden="true"></i><span class="share-text">Twitter</span></a>
+      <a class="btn-social twitter" onclick="ga('send', 'event', 'link', 'click', 'Twitter share');" href="https://twitter.com/intent/tweet?text=Obligatory%20Hello%20World%20-%20Redux&amp;url=http://utopianconcept.com/articles/hello-world-redux/&amp;via=utopianconcept" target="_blank"><i class="fa fa-twitter fa-fw" aria-hidden="true"></i><span class="share-text">Twitter</span></a>
     </li>
     <li>
-      <a class="btn-social js-social-share facebook" onclick="ga('send', 'event', 'link', 'click', 'Facebook share');" href="https://www.facebook.com/sharer/sharer.php?u=http://utopianconcept.com/articles/creating-a-mock-web-service-in-.net/" target="_blank"><i class="fa fa-facebook fa-fw" aria-hidden="true"></i><span class="share-text">Facebook</span></a>
+      <a class="btn-social js-social-share facebook" onclick="ga('send', 'event', 'link', 'click', 'Facebook share');" href="https://www.facebook.com/sharer/sharer.php?u=http://utopianconcept.com/articles/hello-world-redux/" target="_blank"><i class="fa fa-facebook fa-fw" aria-hidden="true"></i><span class="share-text">Facebook</span></a>
     </li>
     <li>
-    	<a class="btn-social js-social-share google-plus" onclick="ga('send', 'event', 'link', 'click', 'Google+ share');" href="https://plus.google.com/share?url=http://utopianconcept.com/articles/creating-a-mock-web-service-in-.net/" target="_blank"><i class="fa fa-google-plus fa-fw" aria-hidden="true"></i><span class="share-text">Google+</span></a>
+    	<a class="btn-social js-social-share google-plus" onclick="ga('send', 'event', 'link', 'click', 'Google+ share');" href="https://plus.google.com/share?url=http://utopianconcept.com/articles/hello-world-redux/" target="_blank"><i class="fa fa-google-plus fa-fw" aria-hidden="true"></i><span class="share-text">Google+</span></a>
     </li>
   </ul>
 </div><!-- /.share-this -->
@@ -221,10 +203,10 @@ This should create a .cs file in the /out directory that will contain the interf
 
 					<div class="page-meta">
 	
-    <span><i class="fa fa-folder-open-o fa-fw"></i> &nbsp; <a href="http://utopianconcept.com/tag/net/" title=".net" rel="tag">.net</a>, <a href="http://utopianconcept.com/tag/mock/" title="mock" rel="tag">mock</a>, <a href="http://utopianconcept.com/tag/web/" title="web" rel="tag">web</a>, <a href="http://utopianconcept.com/tag/service/" title="service" rel="tag">service</a>, <a href="http://utopianconcept.com/tag/howto/" title="howto" rel="tag">howto</a></span>
+    <span><i class="fa fa-folder-open-o fa-fw"></i> &nbsp; <a href="http://utopianconcept.com/tag/intro/" title="intro" rel="tag">intro</a></span>
   
 	
-    <span><i class="fa fa-clock-o fa-fw"></i> &nbsp; Updated <time datetime="2013-08-08T00:00:00Z" itemprop="datePublished">August 08, 2013</time></span>
+    <span><i class="fa fa-clock-o fa-fw"></i> &nbsp; Updated <time datetime="2015-03-03T00:00:00Z" itemprop="datePublished">March 03, 2015</time></span>
   
 </div><!-- /.page-meta -->
 				</footer><!-- /.footer -->
@@ -248,16 +230,6 @@ This should create a .cs file in the /out directory that will contain the interf
   <div class="tiles">
   
     <article class="tile" itemscope itemtype="http://schema.org/Article">
-	<a href="http://utopianconcept.com/articles/creating-a-wix-installer-for-a-.net-web-project/" title="Creating a WiX installer for a .NET Web Project" class="post-teaser">
-    <img src="http://utopianconcept.com/images/preload-400.png" data-original="http://utopianconcept.com/images/wix-teaser.png" class="load" alt="teaser" itemprop="image">
-    <noscript><img src="http://utopianconcept.com/images/wix-teaser.png" alt="teaser" itemprop="image"></noscript>
-	</a>
-	<h2 class="post-title" itemprop="name"><a href="http://utopianconcept.com/articles/creating-a-wix-installer-for-a-.net-web-project/">Creating a WiX installer for a .NET Web Project</a></h2>
-  <p class="entry-date date published"><time datetime="2013-08-12" itemprop="datePublished">August 12, 2013</time></p>
-	<p class="post-excerpt" itemprop="description">A brief walk through on how to create a WiX installer for a .NET web project</p>
-</article><!-- /.tile -->
-  
-    <article class="tile" itemscope itemtype="http://schema.org/Article">
 	<a href="http://utopianconcept.com/articles/a-gudie-to-creating-a-basic-rest-api-series-introduction/" title="A guide to creating a basic REST API - Series Introduction" class="post-teaser">
     <img src="http://utopianconcept.com/images/preload-400.png" data-original="http://utopianconcept.com/images/rest-series-intro-teaser.jpg" class="load" alt="teaser" itemprop="image">
     <noscript><img src="http://utopianconcept.com/images/rest-series-intro-teaser.jpg" alt="teaser" itemprop="image"></noscript>
@@ -268,13 +240,23 @@ This should create a .cs file in the /out directory that will contain the interf
 </article><!-- /.tile -->
   
     <article class="tile" itemscope itemtype="http://schema.org/Article">
-	<a href="http://utopianconcept.com/articles/hello-world-redux/" title="Obligatory Hello World - Redux" class="post-teaser">
-    <img src="http://utopianconcept.com/images/preload-400.png" data-original="http://utopianconcept.com/images/hello-world-teaser.jpg" class="load" alt="teaser" itemprop="image">
-    <noscript><img src="http://utopianconcept.com/images/hello-world-teaser.jpg" alt="teaser" itemprop="image"></noscript>
+	<a href="http://utopianconcept.com/articles/creating-a-wix-installer-for-a-.net-web-project/" title="Creating a WiX installer for a .NET Web Project" class="post-teaser">
+    <img src="http://utopianconcept.com/images/preload-400.png" data-original="http://utopianconcept.com/images/wix-teaser.png" class="load" alt="teaser" itemprop="image">
+    <noscript><img src="http://utopianconcept.com/images/wix-teaser.png" alt="teaser" itemprop="image"></noscript>
 	</a>
-	<h2 class="post-title" itemprop="name"><a href="http://utopianconcept.com/articles/hello-world-redux/">Obligatory Hello World - Redux</a></h2>
-  <p class="entry-date date published"><time datetime="2015-03-03" itemprop="datePublished">March 03, 2015</time></p>
-	<p class="post-excerpt" itemprop="description">The obligatory hello world post - Redux</p>
+	<h2 class="post-title" itemprop="name"><a href="http://utopianconcept.com/articles/creating-a-wix-installer-for-a-.net-web-project/">Creating a WiX installer for a .NET Web Project</a></h2>
+  <p class="entry-date date published"><time datetime="2013-08-12" itemprop="datePublished">August 12, 2013</time></p>
+	<p class="post-excerpt" itemprop="description">A brief walk through on how to create a WiX installer for a .NET web project</p>
+</article><!-- /.tile -->
+  
+    <article class="tile" itemscope itemtype="http://schema.org/Article">
+	<a href="http://utopianconcept.com/articles/creating-a-mock-web-service-in-.net/" title="Creating a Mock Web Service in .NET" class="post-teaser">
+    <img src="http://utopianconcept.com/images/preload-400.png" data-original="http://utopianconcept.com/images/mock-web-teaser.jpg" class="load" alt="teaser" itemprop="image">
+    <noscript><img src="http://utopianconcept.com/images/mock-web-teaser.jpg" alt="teaser" itemprop="image"></noscript>
+	</a>
+	<h2 class="post-title" itemprop="name"><a href="http://utopianconcept.com/articles/creating-a-mock-web-service-in-.net/">Creating a Mock Web Service in .NET</a></h2>
+  <p class="entry-date date published"><time datetime="2013-08-08" itemprop="datePublished">August 08, 2013</time></p>
+	<p class="post-excerpt" itemprop="description">A brief walk through on how to create a mock web service in .net</p>
 </article><!-- /.tile -->
   
     <article class="tile" itemscope itemtype="http://schema.org/Article">
@@ -284,7 +266,7 @@ This should create a .cs file in the /out directory that will contain the interf
 	</a>
 	<h2 class="post-title" itemprop="name"><a href="http://utopianconcept.com/work/client-site-launch-infinity-hair-solutions/">Client site launch</a></h2>
   <p class="entry-date date published"><time datetime="2013-11-27" itemprop="datePublished">November 27, 2013</time></p>
-	<p class="post-excerpt" itemprop="description">After I setup my site and started blogging I landed a few client projects. The first of which went live today. It is a customized theme developed in [PrestaS...</p>
+	<p class="post-excerpt" itemprop="description">After I setup my site and started blogging I landed a few client projects. The first of which went live today. It is a customized theme developed in PrestaSh...</p>
 </article><!-- /.tile -->
   
   </div>
@@ -393,8 +375,8 @@ This should create a .cs file in the /out directory that will contain the interf
   <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     var disqus_shortname = 'utopianconcept';
-    var disqus_title = 'Creating a Mock Web Service in .NET';
-    var disqus_url = 'http://utopianconcept.com/articles/creating-a-mock-web-service-in-.net/';
+    var disqus_title = 'Obligatory Hello World - Redux';
+    var disqus_url = 'http://utopianconcept.com/articles/hello-world-redux/';
     /* * * DON'T EDIT BELOW THIS LINE * * */
     (function () {
       var s = document.createElement('script'); s.async = true;
