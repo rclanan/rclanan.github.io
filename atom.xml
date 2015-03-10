@@ -11,7 +11,7 @@
   <subtitle>Utopian Concept LLC is a bespoke development company. Experienced with all aspects of development ranging from web, mobile, desktop, and client/server.</subtitle>
   <link href="http://utopianconcept.com/atom.xml" rel="self"/>
   <link href="http://utopianconcept.com/" rel="alternate" type="text/html"/>
-  <updated>2015-03-03T07:07:48+00:00</updated>
+  <updated>2015-03-10T11:58:38-04:00</updated>
   <id>http://utopianconcept.com/</id>
   <author>
     <name>Ray Clanan</name>
@@ -23,7 +23,7 @@
   <entry>
     <title>Obligatory Hello World - Redux</title>
     <link href="http://utopianconcept.com/articles/hello-world-redux/"/>
-    <updated>2015-03-03T00:00:00+00:00</updated>
+    <updated>2015-03-03T00:00:00-05:00</updated>
     <id>http://utopianconcept.com/articles/hello-world-redux</id>
     <author>
       <name>Ray Clanan</name>
@@ -40,7 +40,7 @@
 
 &lt;p&gt;I am still doing freelancing as well, though I have taken a step back and am very selective on the work that I will accept.   I don’t want to overwhelm myself again and not have any time for my own projects or to improve my personal brand.&lt;/p&gt;
 
-&lt;p&gt;If you have any topics that you would like to see me cover in a blog post or a screencast feel free to let me know. If you are interested in obtaining my services on a freelancing project. Feel free to reach out to me, though it will depend on the project details and my availability at the time. More information on my freelancing services as well as ways to contact me can be found via the &lt;a href=&quot;{site.url}/freelance/&quot;&gt;hire me&lt;/a&gt; link or the &lt;a href=&quot;{site.url}/contact/&quot;&gt;contact link&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you have any topics that you would like to see me cover in a blog post or a screencast feel free to let me know. If you are interested in obtaining my services on a freelancing project. Feel free to reach out to me, though it will depend on the project details and my availability at the time. More information on my freelancing services as well as ways to contact me can be found via the &lt;a href=&quot;http://utopianconcept.com/freelance/&quot;&gt;hire me&lt;/a&gt; link or the &lt;a href=&quot;http://utopianconcept.com/contact/&quot;&gt;contact link&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;As always, until next time…&lt;/p&gt;
 
@@ -51,7 +51,7 @@
   <entry>
     <title>Client site launch</title>
     <link href="http://utopianconcept.com/work/client-site-launch-infinity-hair-solutions/"/>
-    <updated>2013-11-27T00:00:00+00:00</updated>
+    <updated>2013-11-27T00:00:00-05:00</updated>
     <id>http://utopianconcept.com/work/client-site-launch-infinity-hair-solutions</id>
     <author>
       <name>Ray Clanan</name>
@@ -70,7 +70,7 @@
 &lt;h2 id=&quot;landing-page&quot;&gt;Landing page&lt;/h2&gt;
 &lt;p&gt;&lt;img class=&quot;client-image&quot; src=&quot;http://cdn.utopianconcept.com/clients/ihs/landing_page.png&quot; alt=&quot;Infinity Hair Solutions - Landing Page&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;If you are interested in getting your own site up and running feel free to &lt;a href=&quot;http://utopianconcept.com/contact/&quot; title=&quot;Contact Me&quot;&gt;contact me&lt;/a&gt;. I am avliable for hire on a &lt;a href=&quot;http://utopianconcept.com/freelance/&quot; title=&quot;Freelancing Information&quot;&gt;freelancing&lt;/a&gt; basis. In the meantime feel free to browse the new site over at &lt;a href=&quot;http://www.infinityhairsolutions.com&quot; title=&quot;Infinity Hair Solutions&quot; target=&quot;_blank&quot;&gt;www.infinityhairsolutions.com&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you are interested in getting your own site up and running feel free to &lt;a href=&quot;http://utopianconcept.com/contact/&quot; title=&quot;Contact Me&quot;&gt;contact me&lt;/a&gt;. I am available for hire on a &lt;a href=&quot;http://utopianconcept.com/freelance/&quot; title=&quot;Freelancing Information&quot;&gt;freelancing&lt;/a&gt; basis. In the meantime feel free to browse the new site over at &lt;a href=&quot;http://www.infinityhairsolutions.com&quot; title=&quot;Infinity Hair Solutions&quot; target=&quot;_blank&quot;&gt;www.infinityhairsolutions.com&lt;/a&gt;.&lt;/p&gt;
 
       &lt;p&gt;&lt;a href=&quot;http://utopianconcept.com/work/client-site-launch-infinity-hair-solutions/&quot; rel=&quot;nofollow&quot;&gt;Client site launch&lt;/a&gt; was originally published by &lt;a href=&quot;http://utopianconcept.com/about/&quot; rel=&quot;nofollow&quot;&gt;Ray Clanan&lt;/a&gt; on &lt;a href=&quot;http://utopianconcept.com&quot; rel=&quot;nofollow&quot;&gt;Utopian Concept LLC&lt;/a&gt;.&lt;/p&gt;
     </content>
@@ -79,7 +79,7 @@
   <entry>
     <title>A guide to creating a basic REST API - Series Introduction</title>
     <link href="http://utopianconcept.com/articles/a-gudie-to-creating-a-basic-rest-api-series-introduction/"/>
-    <updated>2013-08-20T00:00:00+00:00</updated>
+    <updated>2013-08-20T00:00:00-04:00</updated>
     <id>http://utopianconcept.com/articles/a-gudie-to-creating-a-basic-rest-api-series-introduction</id>
     <author>
       <name>Ray Clanan</name>
@@ -382,7 +382,7 @@
   <entry>
     <title>Creating a WiX installer for a .NET Web Project</title>
     <link href="http://utopianconcept.com/articles/creating-a-wix-installer-for-a-.net-web-project/"/>
-    <updated>2013-08-12T00:00:00+00:00</updated>
+    <updated>2013-08-12T00:00:00-04:00</updated>
     <id>http://utopianconcept.com/articles/creating-a-wix-installer-for-a-.net-web-project</id>
     <author>
       <name>Ray Clanan</name>
@@ -638,7 +638,7 @@ SummaryCodepage=&quot; 1252&quot; /&amp;gt;
   <entry>
     <title>Creating a Mock Web Service in .NET</title>
     <link href="http://utopianconcept.com/articles/creating-a-mock-web-service-in-.net/"/>
-    <updated>2013-08-08T00:00:00+00:00</updated>
+    <updated>2013-08-08T00:00:00-04:00</updated>
     <id>http://utopianconcept.com/articles/creating-a-mock-web-service-in-.net</id>
     <author>
       <name>Ray Clanan</name>
@@ -684,7 +684,7 @@ This should create a .cs file in the /out directory that will contain the interf
   <entry>
     <title>Obligatory Hello World</title>
     <link href="http://utopianconcept.com/articles/hello-world/"/>
-    <updated>2013-08-07T00:00:00+00:00</updated>
+    <updated>2013-08-07T00:00:00-04:00</updated>
     <id>http://utopianconcept.com/articles/hello-world</id>
     <author>
       <name>Ray Clanan</name>
