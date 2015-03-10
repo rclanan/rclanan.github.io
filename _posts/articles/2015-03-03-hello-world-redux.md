@@ -21,6 +21,6 @@ I am shifting focus a bit and have taken a step back from being heavy into freel
 
 I am still doing freelancing as well, though I have taken a step back and am very selective on the work that I will accept.   I don’t want to overwhelm myself again and not have any time for my own projects or to improve my personal brand.
 
-If you have any topics that you would like to see me cover in a blog post or a screencast feel free to let me know. If you are interested in obtaining my services on a freelancing project. Feel free to reach out to me, though it will depend on the project details and my availability at the time. More information on my freelancing services as well as ways to contact me can be found via the [hire me]({site.url}/freelance/) link or the [contact link]({site.url}/contact/). 
+If you have any topics that you would like to see me cover in a blog post or a screencast feel free to let me know. If you are interested in obtaining my services on a freelancing project. Feel free to reach out to me, though it will depend on the project details and my availability at the time. More information on my freelancing services as well as ways to contact me can be found via the [hire me](http://utopianconcept.com/freelance/) link or the [contact link](http://utopianconcept.com/contact/).
 
 As always, until next time...

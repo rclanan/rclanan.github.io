@@ -22,7 +22,7 @@ module.exports = function(grunt) {
         options: {
           livereload: true
         }
-      },
+      }
     },
     uglify: {
       dist: {
@@ -77,7 +77,7 @@ module.exports = function(grunt) {
           dest: 'images/'
         }]
       }
-    },
+    }
   });
 
   // Load tasks
