@@ -11,7 +11,7 @@
   <subtitle>Utopian Concept LLC is a bespoke development company. Experienced with all aspects of development ranging from web, mobile, desktop, and client/server.</subtitle>
   <link href="http://utopianconcept.com/articles-feed.xml" rel="self"/>
   <link href="http://utopianconcept.com/" rel="alternate" type="text/html"/>
-  <updated>2015-03-10T11:58:38-04:00</updated>
+  <updated>2015-03-10T16:05:37+00:00</updated>
   <id>http://utopianconcept.com/</id>
   <author>
     <name>Ray Clanan</name>
@@ -23,7 +23,7 @@
   <entry>
     <title>Obligatory Hello World - Redux</title>
     <link href="http://utopianconcept.com/articles/hello-world-redux/"/>
-    <updated>2015-03-03T00:00:00-05:00</updated>
+    <updated>2015-03-03T00:00:00+00:00</updated>
     <id>http://utopianconcept.com/articles/hello-world-redux</id>
     <author>
       <name>Ray Clanan</name>
@@ -51,7 +51,7 @@
   <entry>
     <title>A guide to creating a basic REST API - Series Introduction</title>
     <link href="http://utopianconcept.com/articles/a-gudie-to-creating-a-basic-rest-api-series-introduction/"/>
-    <updated>2013-08-20T00:00:00-04:00</updated>
+    <updated>2013-08-20T00:00:00+00:00</updated>
     <id>http://utopianconcept.com/articles/a-gudie-to-creating-a-basic-rest-api-series-introduction</id>
     <author>
       <name>Ray Clanan</name>
@@ -354,7 +354,7 @@
   <entry>
     <title>Creating a WiX installer for a .NET Web Project</title>
     <link href="http://utopianconcept.com/articles/creating-a-wix-installer-for-a-.net-web-project/"/>
-    <updated>2013-08-12T00:00:00-04:00</updated>
+    <updated>2013-08-12T00:00:00+00:00</updated>
     <id>http://utopianconcept.com/articles/creating-a-wix-installer-for-a-.net-web-project</id>
     <author>
       <name>Ray Clanan</name>
@@ -610,7 +610,7 @@ SummaryCodepage=&quot; 1252&quot; /&amp;gt;
   <entry>
     <title>Creating a Mock Web Service in .NET</title>
     <link href="http://utopianconcept.com/articles/creating-a-mock-web-service-in-.net/"/>
-    <updated>2013-08-08T00:00:00-04:00</updated>
+    <updated>2013-08-08T00:00:00+00:00</updated>
     <id>http://utopianconcept.com/articles/creating-a-mock-web-service-in-.net</id>
     <author>
       <name>Ray Clanan</name>
@@ -656,7 +656,7 @@ This should create a .cs file in the /out directory that will contain the interf
   <entry>
     <title>Obligatory Hello World</title>
     <link href="http://utopianconcept.com/articles/hello-world/"/>
-    <updated>2013-08-07T00:00:00-04:00</updated>
+    <updated>2013-08-07T00:00:00+00:00</updated>
     <id>http://utopianconcept.com/articles/hello-world</id>
     <author>
       <name>Ray Clanan</name>
