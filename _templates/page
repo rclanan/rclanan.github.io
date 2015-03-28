@@ -8,5 +8,8 @@ image:
   feature:
   teaser:
   thumb:
+  credit:
+  creditlink:
+share: false
 ads: false
 ---

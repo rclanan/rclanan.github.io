@@ -11,7 +11,7 @@ config[:sub_content] ||= []
 destination = File.join config[:destination], '/'
 
 # Set "rake draft" as default task
-task :default => :draft
+task :default => :drafts
 
 # Spawn a server and kill it gracefully when interrupt is received
 def spawn *cmd
