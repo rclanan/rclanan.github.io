@@ -1,12 +1,15 @@
 ---
-layout: {{ layout }}
+layout: article
 title: {{ title }}
 modified:
-categories: {{ dir }}
+category: {{ dir }}
 excerpt:
 tags: []
 image:
   feature:
   teaser:
   thumb:
+  credit:
+  creditlink:
+comments: true
 ---

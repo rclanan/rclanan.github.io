@@ -9,5 +9,7 @@ image:
   feature:
   teaser:
   thumb:
-ads: false  
+  credit:
+  creditlink:
+ads: false
 ---
