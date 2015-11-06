@@ -11,7 +11,7 @@
   <subtitle>Utopian Concept LLC is a bespoke development company. Experienced with all aspects of development ranging from web, mobile, desktop, and client/server.</subtitle>
   <link href="http://utopianconcept.com/atom.xml" rel="self"/>
   <link href="http://utopianconcept.com/" rel="alternate" type="text/html"/>
-  <updated>2015-11-06T18:15:12+00:00</updated>
+  <updated>2015-11-06T20:33:46+00:00</updated>
   <id>http://utopianconcept.com/</id>
   <author>
     <name>Ray Clanan</name>
@@ -19,6 +19,184 @@
     <email>rclanan@utopianconcept.com</email>
   </author>
 
+  
+  <entry>
+    <title>REST API testing with frisby.js</title>
+    <link href="http://utopianconcept.com/articles/frisbyjs/"/>
+    <updated>2015-11-06T00:00:00+00:00</updated>
+    <id>http://utopianconcept.com/articles/frisbyjs</id>
+    <author>
+      <name>Ray Clanan</name>
+      <uri>http://utopianconcept.com/</uri>
+      <email>rclanan@utopianconcept.com</email>
+    </author>
+    <content type="html">
+      &lt;img src=&quot;http://utopianconcept.com/images/frisbyjs-feature.png&quot; alt=&quot;REST API testing with frisby.js feature&quot;&gt;&lt;br/&gt;
+      &lt;p&gt;&lt;em&gt;NOTE: This article assumes that node and npm are already setup and use are using this on an existing project. The demo project can be found on github.com at: &lt;a href=&quot;https://github.com/rclanan/frisby-demo&quot;&gt;https://github.com/rclanan/frisby-demo&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;A colleague of mine, &lt;a href=&quot;http://www.jamiekurtz.com/&quot;&gt;Jamie Kurtz&lt;/a&gt;, recently introduced me to a cool little tool called frisby.js. To quote &lt;a href=&quot;http://frisbyjs.com&quot;&gt;frisby.js&lt;/a&gt;, Frisby is a REST API testing framework built on node.js and Jasmine that makes
+testing API endpoints easy, fast, and fun.&lt;/p&gt;
+
+&lt;p&gt;After using it for a little over a week to do some basic testing of a new REST web API that we were working on, I would have to agree that it is very easy and fast to pick up and use. As such, I just wanted to do a quick write up on it to help demo it to other developers. I created a lightning talk demo to present at one of our team lunches and this post is basically an extension of that talk.&lt;/p&gt;
+
+&lt;p&gt;First steps, to install frisby.js, add it to your node.js project by running:
+&lt;code&gt;npm install --save-dev frisby&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;We will also need &lt;a href=&quot;https://www.npmjs.com/package/jasmine-node&quot;&gt;jasmine-node&lt;/a&gt;, which is used to run the actual frisby.js test. To install jasmine-node run:
+&lt;code&gt;npm install -g jasmine-node&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;To make running the test easier, I would also recommend adding a new script to the package.json file. Label the script &lt;code&gt;test&lt;/code&gt; and set the value to &lt;code&gt;jasmine-node .&lt;/code&gt;. The period in this case is the path of where your test files are stored. Since I am using the &lt;a href=&quot;https://github.com/rclanan/frisby-demo&quot;&gt;demo project&lt;/a&gt;, my tests are directly on the root of the project.
+&lt;code&gt;json
+&quot;scripts&quot;: {
+    &quot;test&quot;: &quot;jasmine-node .&quot;
+  },
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;I also like to create another script called &lt;code&gt;test:live&lt;/code&gt; and set the value of &lt;code&gt;jasmine-node . --autotest&lt;/code&gt;, which allows for the automatic execution of the specs after changes in the specs. If you want to run after changes outside of the specs, you can add &lt;code&gt;--watch &amp;lt;path&amp;gt;&lt;/code&gt;.
+&lt;code&gt;json
+&quot;scripts&quot;: {
+    &quot;test&quot;: &quot;jasmine-node .&quot;,
+    &quot;test:live&quot;: &quot;jasmine-node . --autotest&quot;
+  },
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;With that in place, we now can run our test by either using &lt;code&gt;npm test&lt;/code&gt; or &lt;code&gt;npm run test:live&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now onto the test themselves! Since I am just trying to demo frisby.js and not how to develop a full blown REST API, I am going to use a handy site called &lt;a href=&quot;http://jsonplaceholder.typicode.com/&quot;&gt;JSONPlaceholder&lt;/a&gt;. JSONPlaceHolder, is a fake online REST API for testing and prototyping.&lt;/p&gt;
+
+&lt;p&gt;For the first test, we are going to just test to make sure the status code is what we expect and the header contains the proper content-type we expect to get back on the response. I am going to make a GET request to /posts, which should return back JSON data and a status code of 200.&lt;/p&gt;
+
+&lt;p&gt;To start with, we need to import the frisby library into our test file. In the demo, this file is first-spec.js.
+&lt;code&gt;javascript
+ var frisby = require(&#39;frisby&#39;);
+&lt;/code&gt;
+Now to create the actual test itself. First, we use the &lt;code&gt;create&lt;/code&gt; method to name the test, then since this is a GET request, we will use the &lt;code&gt;get&lt;/code&gt; method and pass in the URL of where we are issuing the command to. After that, we &lt;code&gt;toss&lt;/code&gt; the frisby, I mean test!
+ &lt;code&gt;javascript
+ frisby.create(&#39;JSONPlaceholder - Posts API test: GET /posts&#39;)
+  .get(&#39;http://jsonplaceholder.typicode.com/posts&#39;)
+  .toss();
+&lt;/code&gt;
+This will create our test for us, but doesn’t do much good without a few extra methods, which in this case, are referred to as expectations via the &lt;a href=&quot;http://frisbyjs.com/docs/api/&quot;&gt;frisby.js documentation&lt;/a&gt;. In our first test, I stated that we are going to test the status code and the content header, so we need to add the &lt;code&gt;expectStatus&lt;/code&gt; and &lt;code&gt;expectHeader&lt;/code&gt; or &lt;code&gt;expectHeaderContains&lt;/code&gt;. I am going to use &lt;code&gt;expectHeaderContains&lt;/code&gt; as it’s the less strict version of &lt;code&gt;expectHeader&lt;/code&gt;, but either method should work.
+&lt;code&gt;javascript
+frisby.create(&#39;JSONPlaceholder - Posts API test: GET /posts&#39;)
+  .get(&#39;http://jsonplaceholder.typicode.com/posts&#39;)
+  .expectStatus(200)
+  .expectHeaderContains(&#39;content-type&#39;, &#39;application/json&#39;)
+  .toss();
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;With the first test complete, if you haven’t already started &lt;code&gt;test:live&lt;/code&gt; then from a command line, issue the following: &lt;code&gt;npm test&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;The output should look similar to this:
+```console
+.&lt;/p&gt;
+
+&lt;p&gt;Finished in 0.906 seconds
+1 test, 2 assertions, 0 failures, 0 skipped
+```&lt;/p&gt;
+
+&lt;p&gt;Since the next couple of tests all follow the same format, I am going to bundle up a few of the steps and just show/talk about the test itself.&lt;/p&gt;
+
+&lt;p&gt;For the next test, I am going to test the results of the same GET request that we used in the first test. This time though, I am going to add &lt;code&gt;expectJSONTypes&lt;/code&gt; that will test that the results data type match what we expect to get back. The JSON data set contains an array of items with each item having the structure of:
+&lt;code&gt;json
+{
+    &quot;userId&quot;: 1,
+    &quot;id&quot;: 1,
+    &quot;title&quot;: &quot;sunt aut facere repellat provident occaecati excepturi optio reprehenderit&quot;,
+    &quot;body&quot;: &quot;quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto&quot;
+  }
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;For testing every item in the array with the above structure, our &lt;code&gt;expectJSONTypes&lt;/code&gt; will look like:
+&lt;code&gt;javascript
+.expectJSONTypes(&#39;*&#39;, {
+    userId: Number,
+    id: Number,
+    title: String,
+    body: String
+  })
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;If you notice the asterisk, that denotes that we want to test the elements of the entire array. To test a single item in the array we can use a question mark instead.
+&lt;code&gt;javascript
+.expectJSONTypes(&#39;?&#39;, {
+    userId: Number,
+    id: Number,
+    title: String,
+    body: String
+  })
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Now that we have tested the status code, the content header, the data types, let’s create a new test that will test the actual JSON data itself. For that, I am going to still use a GET request but change URL to just return the first post with an id of 1. To test the actual JSON data that is returned, we use &lt;code&gt;expectJSON&lt;/code&gt;.
+&lt;code&gt;javascript
+frisby.create(&#39;JSONPlaceholder - Posts API test: GET /posts/1&#39;)
+  .get(&#39;http://jsonplaceholder.typicode.com/posts/1&#39;)
+  .expectStatus(200)
+  .expectHeaderContains(&#39;content-type&#39;, &#39;application/json&#39;)
+  .expectJSONTypes({
+    userId: Number,
+    id: Number,
+    title: String,
+    body: String
+  })
+  .expectJSON({
+    userId: 1,
+    id: 1,
+    title: &quot;sunt aut facere repellat provident occaecati excepturi optio reprehenderit&quot;,
+    body: &quot;quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto&quot;
+  })
+  .toss();
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;The other way we could have achieved the same result would be to chain the test together. To call additional test or perform additional logic we can utilize the “Helper” &lt;code&gt;afterJSON&lt;/code&gt;:
+```javascript
+frisby.create(‘JSONPlaceholder - Posts API test: GET /posts’)
+  .get(‘http://jsonplaceholder.typicode.com/posts’)
+  .expectStatus(200)
+  .expectHeaderContains(‘content-type’, ‘application/json’)
+  .expectJSONTypes(‘*’, {
+    userId: Number,
+    id: Number,
+    title: String,
+    body: String
+  })
+  .afterJSON(function(json) {
+    var firstPost = json[0];&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;frisby.create(&#39;JSONPlaceholder - Posts API test: GET /posts/1&#39;)
+  .get(&#39;http://jsonplaceholder.typicode.com/posts/&#39; + firstPost.id)
+  .expectStatus(200)
+  .expectHeaderContains(&#39;content-type&#39;, &#39;application/json&#39;)
+  .expectJSONTypes({
+    userId: Number,
+    id: Number,
+    title: String,
+    body: String
+  })
+  .expectJSON({
+    userId: 1,
+    id: 1,
+    title: &quot;sunt aut facere repellat provident occaecati excepturi optio reprehenderit&quot;,
+    body: &quot;quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto&quot;
+  })
+  .toss();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;})
+  .toss();
+```&lt;/p&gt;
+
+&lt;p&gt;Using the above methods should allow you to get started writing some quick test for your REST API. So far, I am really liking the simplicity of frisby.js. If you know of any other cool libraries to help improve unit testing and overall code quality, hit me up as I am always looking for new tools/ideas on how to improve my code quality and overall workflow!&lt;/p&gt;
+
+&lt;h2 id=&quot;extra&quot;&gt;Extra&lt;/h2&gt;
+
+&lt;p&gt;Just a quick note about another method that I find to be very useful when generating these test is the &lt;code&gt;inspectJSON&lt;/code&gt; method. Before I reread the documentation, I was utilizing the &lt;code&gt;afterJSON&lt;/code&gt; method to &lt;code&gt;console.log&lt;/code&gt; the JSON data that was returned out to the console so I could verify what I was testing. The &lt;code&gt;inspectJSON&lt;/code&gt; method used the node.js pretty print utility method &lt;a href=&quot;https://nodejs.org/api/util.html#util_util_inspect_object_options&quot;&gt;util.inspect&lt;/a&gt; to provide a colored console output. Frisby.js also provides a &lt;code&gt;inspectBody&lt;/code&gt; method that will just dump the raw parsed/marked up output to the screen as well.&lt;/p&gt;
+
+&lt;p&gt;As always, until next time…&lt;/p&gt;
+
+      &lt;p&gt;&lt;a href=&quot;http://utopianconcept.com/articles/frisbyjs/&quot; rel=&quot;nofollow&quot;&gt;REST API testing with frisby.js&lt;/a&gt; was originally published by &lt;a href=&quot;http://utopianconcept.com/about/&quot; rel=&quot;nofollow&quot;&gt;Ray Clanan&lt;/a&gt; on &lt;a href=&quot;http://utopianconcept.com&quot; rel=&quot;nofollow&quot;&gt;Utopian Concept LLC&lt;/a&gt;.&lt;/p&gt;
+    </content>
+  </entry>
   
   <entry>
     <title>Obligatory Hello World - Redux</title>
