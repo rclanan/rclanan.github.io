@@ -2,8 +2,10 @@
 	<h2 class="post-title" itemprop="name"><a href="{{ contribution.url }}">{{ contribution.title }}</a></h2>
 	<p class="post-excerpt" itemprop="description">{{ contribution.excerpt | strip_html | truncate: 160 }}</p>
   <ul class="metadata">
+		{% for category in contribution.categories %}
     <li>
-      {{ contribution.categories | join: ', ' }}
+      {{ category }}
     </li>
+		{% endfor %}
   </ul>
 </article><!-- /.tile -->
