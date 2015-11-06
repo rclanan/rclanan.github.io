@@ -27,21 +27,27 @@ Below you will find a selection of my most recent blog posts, screencast, and wo
 
 <div class="tiles tiles-3-4">
 {% for post in site.categories.articles limit:4 %}
-{% include post-grid.html %}
+  {% include post-grid.html %}
 {% endfor %}
 </div><!-- /.tiles-3-4 -->
 
 <nav class="toc toc-left">
 <ul>
   <li><h6><a href="{{ site.url }}/work/">Work I've Done <i class="fa fa-long-arrow-right"></i></a></h6></li>
-  {% for post in site.categories.work limit:6 %}
+  {% for post in site.categories.work limit:3 %}
     <li><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></li>
+  {% endfor %}
+  {% for contribution in site.data.opensource limit:3 %}
+    <li><a href="{{ contribution.url }}">{{ contribution.title }}</a></li>
   {% endfor %}
 </ul>
 </nav><!-- /.toc-left -->
 
 <div class="tiles tiles-3-4">
-{% for post in site.categories.work limit:12 %}
-{% include post-grid.html %}
+{% for post in site.categories.work limit:6 %}
+  {% include post-grid.html %}
+{% endfor %}
+{% for contribution in site.data.opensource limit:6 %}
+  {% include contribution-grid.html %}
 {% endfor %}
 </div><!-- /.tiles-3-4 -->
