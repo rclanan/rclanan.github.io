@@ -1,5 +1,25 @@
 # Open Source contribution links
 
+- title: Rust
+  url: https://github.com/rust-lang/rust
+  categories:
+    - Language
+  excerpt: "A safe, concurrent, practical language."
+
+- title: Servo
+  url: https://github.com/servo/servo
+  categories:
+    - Rust
+    - Browser
+  excerpt: "The Servo Browser Engine"
+
+- title: Vagrant
+  url: https://github.com/mitchellh/vagrant
+  categories:
+    - Ruby
+    - Virtualization
+  excerpt: "Vagrant is a tool for building and distributing development environments."
+
 - title: constants.js
   url: https://github.com/fusionalliance/constants.js
   categories:
@@ -82,23 +102,3 @@
     - JavaScript
     - Backbone.js
   excerpt: "Immutable Collections and Models for Backbone.js"
-
-- title: Rust
-  url: https://github.com/rust-lang/rust
-  categories:
-    - Language
-  excerpt: "A safe, concurrent, practical language."
-
-- title: Servo
-  url: https://github.com/servo/servo
-  categories:
-    - Rust
-    - Browser
-  excerpt: "The Servo Browser Engine"
-
-- title: Vagrant
-  url: https://github.com/mitchellh/vagrant
-  categories:
-    - Ruby
-    - Virtualization
-  excerpt: "Vagrant is a tool for building and distributing development environments."
