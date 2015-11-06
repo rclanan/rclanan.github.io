@@ -30,35 +30,35 @@
   categories:
     - FuelPHP
     - Framework
-  excerpt: "The core of the FuelPHP framework http://fuelphp.com"
+  excerpt: "The core of the FuelPHP framework"
 
 - title: Fuel - ORM
   url: https://github.com/fuel/orm
   categories:
     - FuelPHP
     - ORM
-  excerpt: "The ORM package for FuelPHP http://fuelphp.com/docs/packages/orm/intro.html"
+  excerpt: "The ORM package for FuelPHP"
 
 - title: Fuel - Auth
   url: https://github.com/fuel/auth
   categories:
     - FuelPHP
     - Authentication
-  excerpt: "An Authentication package for FuelPHP http://fuelphp.com/docs/packages/auth/intro.html"
+  excerpt: "An Authentication package for FuelPHP"
 
 - title: Fuel - Docs
   url: https://github.com/fuel/docs
   categories:
     - FuelPHP
     - Documentation
-  excerpt: "Documentation for FuelPHP http://fuelphp.com/docs"
+  excerpt: "Documentation for FuelPHP"
 
 - title: Fuel - Auth
   url: https://github.com/fuel/auth
   categories:
     - FuelPHP
     - Authentication
-  excerpt: "An Authentication package for FuelPHP http://fuelphp.com/docs/packages/auth/intro.html"
+  excerpt: "An Authentication package for FuelPHP"
 
 - title: MarkPad
   url: https://github.com/Code52/DownmarkerWPF
@@ -67,27 +67,27 @@
     - Editor
     - WPF
     - .NET
-  excerpt: "MarkPad - a visual Markdown editor (inspired by the Downmarker project) http://code52.org/DownmarkerWPF/"
+  excerpt: "MarkPad - a visual Markdown editor (inspired by the Downmarker project)"
 
 - title: ESLint
   url: https://github.com/eslint/eslint
   categories:
     - JavaScript
     - Linter
-  excerpt: "A fully pluggable tool for identifying and reporting on patterns in JavaScript. http://eslint.org"
+  excerpt: "A fully pluggable tool for identifying and reporting on patterns in JavaScript."
 
 - title: backbone.freeze
   url: https://github.com/Conductor/backbone.freeze
   categories:
     - JavaScript
     - Backbone.js
-  excerpt: "Immutable Collections and Models for Backbone.js http://conductor.github.io/backbone.freeze/"
+  excerpt: "Immutable Collections and Models for Backbone.js"
 
 - title: Rust
   url: https://github.com/rust-lang/rust
   categories:
     - Language
-  excerpt: "A safe, concurrent, practical language. http://www.rust-lang.org"
+  excerpt: "A safe, concurrent, practical language."
 
 - title: Servo
   url: https://github.com/servo/servo
@@ -101,4 +101,4 @@
   categories:
     - Ruby
     - Virtualization
-  excerpt: "Vagrant is a tool for building and distributing development environments. http://www.vagrantup.com"
+  excerpt: "Vagrant is a tool for building and distributing development environments."
