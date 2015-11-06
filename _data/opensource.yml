@@ -1,0 +1,104 @@
+# Open Source contribution links
+
+- title: constants.js
+  url: https://github.com/fusionalliance/constants.js
+  categories:
+    - JavaScript
+    - Browserify
+    - Common.js
+  excerpt: "Utility methods to get and set constants as well as providing default constants in JavaScript"
+
+- title: dictionary.js
+  url: https://github.com/fusionalliance/dictionary.js
+  categories:
+    - JavaScript
+    - Browserify
+    - Common.js
+  excerpt: "Dictionary handling library for name-value storage in JavaScript "
+
+- title: eslint-plugin-fasec
+  url: https://github.com/fusionalliance/eslint-plugin-fasec
+  categories:
+    - ESLint
+    - Plugin
+    - JavaScript
+    - Security
+  excerpt: "Fusion Alliance Security for Node.js - ESLint Plugins"
+
+- title: Fuel - Core
+  url: https://github.com/fuel/core
+  categories:
+    - FuelPHP
+    - Framework
+  excerpt: "The core of the FuelPHP framework http://fuelphp.com"
+
+- title: Fuel - ORM
+  url: https://github.com/fuel/orm
+  categories:
+    - FuelPHP
+    - ORM
+  excerpt: "The ORM package for FuelPHP http://fuelphp.com/docs/packages/orm/intro.html"
+
+- title: Fuel - Auth
+  url: https://github.com/fuel/auth
+  categories:
+    - FuelPHP
+    - Authentication
+  excerpt: "An Authentication package for FuelPHP http://fuelphp.com/docs/packages/auth/intro.html"
+
+- title: Fuel - Docs
+  url: https://github.com/fuel/docs
+  categories:
+    - FuelPHP
+    - Documentation
+  excerpt: "Documentation for FuelPHP http://fuelphp.com/docs"
+
+- title: Fuel - Auth
+  url: https://github.com/fuel/auth
+  categories:
+    - FuelPHP
+    - Authentication
+  excerpt: "An Authentication package for FuelPHP http://fuelphp.com/docs/packages/auth/intro.html"
+
+- title: MarkPad
+  url: https://github.com/Code52/DownmarkerWPF
+  categories:
+    - Markdown
+    - Editor
+    - WPF
+    - .NET
+  excerpt: "MarkPad - a visual Markdown editor (inspired by the Downmarker project) http://code52.org/DownmarkerWPF/"
+
+- title: ESLint
+  url: https://github.com/eslint/eslint
+  categories:
+    - JavaScript
+    - Linter
+  excerpt: "A fully pluggable tool for identifying and reporting on patterns in JavaScript. http://eslint.org"
+
+- title: backbone.freeze
+  url: https://github.com/Conductor/backbone.freeze
+  categories:
+    - JavaScript
+    - Backbone.js
+  excerpt: "Immutable Collections and Models for Backbone.js http://conductor.github.io/backbone.freeze/"
+
+- title: Rust
+  url: https://github.com/rust-lang/rust
+  categories:
+    - Language
+  excerpt: "A safe, concurrent, practical language. http://www.rust-lang.org"
+
+- title: Servo
+  url: https://github.com/servo/servo
+  categories:
+    - Rust
+    - Browser
+  excerpt: "The Servo Browser Engine"
+
+- title: Vagrant
+  url: https://github.com/mitchellh/vagrant
+  categories:
+    - Ruby
+    - Virtualization
+  excerpt: "Vagrant is a tool for building and distributing development environments. http://www.vagrantup.com"

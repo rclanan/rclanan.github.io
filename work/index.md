@@ -10,4 +10,7 @@ excerpt: "A small selection of things I’ve developed or contributed to."
 {% for post in site.categories.work %}
   {% include post-grid.html %}
 {% endfor %}
+{% for contribution in site.data.opensource %}
+  {% include contribution-grid.html %}
+{% endfor %}
 </div><!-- /.tiles -->
