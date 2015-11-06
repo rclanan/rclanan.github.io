@@ -174,14 +174,14 @@
 
 <p>To make running the test easier, I would also recommend adding a new script to the package.json file. Label the script <code>test</code> and set the value to <code>jasmine-node .</code>. The period in this case is the path of where your test files are stored. Since I am using the <a href="https://github.com/rclanan/frisby-demo">demo project</a>, my tests are directly on the root of the project.</p>
 
-<pre><code class="language-JSON">"scripts": {
+<pre><code class="language-json">"scripts": {
     "test": "jasmine-node ."
 },
 </code></pre>
 
 <p>I also like to create another script called <code>test:live</code> and set the value of <code>jasmine-node . --autotest</code>, which allows for the automatic execution of the specs after changes in the specs. If you want to run after changes outside of the specs, you can add <code>--watch &lt;path&gt;</code>.</p>
 
-<pre><code class="language-JSON">"scripts": {
+<pre><code class="language-json">"scripts": {
     "test": "jasmine-node .",
     "test:live": "jasmine-node . --autotest"
 },
@@ -195,19 +195,19 @@
 
 <p>To start with, we need to import the frisby library into our test file. In the demo, this file is first-spec.js.</p>
 
-<pre><code class="language-JavaScript"> var frisby = require('frisby');
+<pre><code class="language-javascript"> var frisby = require('frisby');
 </code></pre>
 
 <p>Now to create the actual test itself. First, we use the <code>create</code> method to name the test, then since this is a GET request, we will use the <code>get</code> method and pass in the URL of where we are issuing the command to. After that, we <code>toss</code> the frisby, I mean test!</p>
 
-<pre><code class="language-JavaScript">frisby.create('JSONPlaceholder - Posts API test: GET /posts')
+<pre><code class="language-javascript">frisby.create('JSONPlaceholder - Posts API test: GET /posts')
     .get('http://jsonplaceholder.typicode.com/posts')
     .toss();
 </code></pre>
 
 <p>This will create our test for us, but doesn’t do much good without a few extra methods, which in this case, are referred to as expectations via the <a href="http://frisbyjs.com/docs/api/">frisby.js documentation</a>. In our first test, I stated that we are going to test the status code and the content header, so we need to add the <code>expectStatus</code> and <code>expectHeader</code> or <code>expectHeaderContains</code>. I am going to use <code>expectHeaderContains</code> as it’s the less strict version of <code>expectHeader</code>, but either method should work.</p>
 
-<pre><code class="language-JavaScript">frisby.create('JSONPlaceholder - Posts API test: GET /posts')
+<pre><code class="language-javascript">frisby.create('JSONPlaceholder - Posts API test: GET /posts')
     .get('http://jsonplaceholder.typicode.com/posts')
     .expectStatus(200)
     .expectHeaderContains('content-type', 'application/json')
@@ -218,7 +218,7 @@
 
 <p>The output should look similar to this:</p>
 
-<pre><code class="language-Shell">.
+<pre><code class="language-shell">.
 
 Finished in 0.906 seconds
 1 test, 2 assertions, 0 failures, 0 skipped
@@ -228,7 +228,7 @@ Finished in 0.906 seconds
 
 <p>For the next test, I am going to test the results of the same GET request that we used in the first test. This time though, I am going to add <code>expectJSONTypes</code> that will test that the results data type match what we expect to get back. The JSON data set contains an array of items with each item having the structure of:</p>
 
-<pre><code class="language-JSON">{
+<pre><code class="language-json">{
     "userId": 1,
     "id": 1,
     "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
@@ -238,7 +238,7 @@ Finished in 0.906 seconds
 
 <p>For testing every item in the array with the above structure, our <code>expectJSONTypes</code> will look like:</p>
 
-<pre><code class="language-JavaScript">.expectJSONTypes('*', {
+<pre><code class="language-javascript">.expectJSONTypes('*', {
     userId: Number,
     id: Number,
     title: String,
@@ -248,7 +248,7 @@ Finished in 0.906 seconds
 
 <p>If you notice the asterisk, that denotes that we want to test the elements of the entire array. To test a single item in the array we can use a question mark instead.</p>
 
-<pre><code class="language-JavaScript">.expectJSONTypes('?', {
+<pre><code class="language-javascript">.expectJSONTypes('?', {
     userId: Number,
     id: Number,
     title: String,
@@ -258,7 +258,7 @@ Finished in 0.906 seconds
 
 <p>Now that we have tested the status code, the content header, the data types, let’s create a new test that will test the actual JSON data itself. For that, I am going to still use a GET request but change URL to just return the first post with an id of 1. To test the actual JSON data that is returned, we use <code>expectJSON</code>.</p>
 
-<pre><code class="language-JavaScript">frisby.create('JSONPlaceholder - Posts API test: GET /posts/1')
+<pre><code class="language-javascript">frisby.create('JSONPlaceholder - Posts API test: GET /posts/1')
     .get('http://jsonplaceholder.typicode.com/posts/1')
     .expectStatus(200)
     .expectHeaderContains('content-type', 'application/json')
@@ -279,7 +279,7 @@ Finished in 0.906 seconds
 
 <p>The other way we could have achieved the same result would be to chain the test together. To call additional test or perform additional logic we can utilize the “Helper” <code>afterJSON</code>:</p>
 
-<pre><code class="language-JavaScript">frisby.create('JSONPlaceholder - Posts API test: GET /posts')
+<pre><code class="language-javascript">frisby.create('JSONPlaceholder - Posts API test: GET /posts')
     .get('http://jsonplaceholder.typicode.com/posts')
     .expectStatus(200)
     .expectHeaderContains('content-type', 'application/json')
@@ -316,7 +316,7 @@ Finished in 0.906 seconds
 
 <p>Using the above methods should allow you to get started writing some quick test for your REST API. So far, I am really liking the simplicity of frisby.js. If you know of any other cool libraries to help improve unit testing and overall code quality, hit me up as I am always looking for new tools/ideas on how to improve my code quality and overall workflow!</p>
 
-<h1 id="extra">Extra</h1>
+<h1 id="extra---debugging-information">Extra - Debugging Information</h1>
 <p>Just a quick note about another method that I find to be very useful when generating these test is the <code>inspectJSON</code> method. Before I reread the documentation, I was utilizing the <code>afterJSON</code> method to <code>console.log</code> the JSON data that was returned out to the console so I could verify what I was testing. The <code>inspectJSON</code> method used the node.js pretty print utility method <a href="https://nodejs.org/api/util.html#util_util_inspect_object_options">util.inspect</a> to provide a colored console output. Frisby.js also provides a <code>inspectBody</code> method that will just dump the raw parsed/marked up output to the screen as well.</p>
 
 <p>As always, until next time…</p>
