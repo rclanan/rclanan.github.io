@@ -164,30 +164,29 @@
 			<div id="content" class="page-content" itemprop="articleBody">
 				<p><em>NOTE: This article assumes that node and npm are already setup and use are using this on an existing project. The demo project can be found on github.com at: <a href="https://github.com/rclanan/frisby-demo">https://github.com/rclanan/frisby-demo</a></em></p>
 
-<p>A colleague of mine, <a href="http://www.jamiekurtz.com/">Jamie Kurtz</a>, recently introduced me to a cool little tool called frisby.js. To quote <a href="http://frisbyjs.com">frisby.js</a>, Frisby is a REST API testing framework built on node.js and Jasmine that makes
-testing API endpoints easy, fast, and fun.</p>
+<p>A colleague of mine, <a href="http://www.jamiekurtz.com/">Jamie Kurtz</a>, recently introduced me to a cool little tool called frisby.js. To quote <a href="http://frisbyjs.com">frisby.js</a>, Frisby is a REST API testing framework built on node.js and Jasmine that makes testing API endpoints easy, fast, and fun.</p>
 
 <p>After using it for a little over a week to do some basic testing of a new REST web API that we were working on, I would have to agree that it is very easy and fast to pick up and use. As such, I just wanted to do a quick write up on it to help demo it to other developers. I created a lightning talk demo to present at one of our team lunches and this post is basically an extension of that talk.</p>
 
-<p>First steps, to install frisby.js, add it to your node.js project by running:
-<code>npm install --save-dev frisby</code></p>
+<p>First steps, to install frisby.js, add it to your node.js project by running: <code>npm install --save-dev frisby</code></p>
 
-<p>We will also need <a href="https://www.npmjs.com/package/jasmine-node">jasmine-node</a>, which is used to run the actual frisby.js test. To install jasmine-node run:
-<code>npm install -g jasmine-node</code></p>
+<p>We will also need <a href="https://www.npmjs.com/package/jasmine-node">jasmine-node</a>, which is used to run the actual frisby.js test. To install jasmine-node run: <code>npm install -g jasmine-node</code></p>
 
-<p>To make running the test easier, I would also recommend adding a new script to the package.json file. Label the script <code>test</code> and set the value to <code>jasmine-node .</code>. The period in this case is the path of where your test files are stored. Since I am using the <a href="https://github.com/rclanan/frisby-demo">demo project</a>, my tests are directly on the root of the project.
-<code>json
+<p>To make running the test easier, I would also recommend adding a new script to the package.json file. Label the script <code>test</code> and set the value to <code>jasmine-node .</code>. The period in this case is the path of where your test files are stored. Since I am using the <a href="https://github.com/rclanan/frisby-demo">demo project</a>, my tests are directly on the root of the project.</p>
+
+<p><code>JSON
 "scripts": {
     "test": "jasmine-node ."
-  },
+},
 </code></p>
 
-<p>I also like to create another script called <code>test:live</code> and set the value of <code>jasmine-node . --autotest</code>, which allows for the automatic execution of the specs after changes in the specs. If you want to run after changes outside of the specs, you can add <code>--watch &lt;path&gt;</code>.
-<code>json
+<p>I also like to create another script called <code>test:live</code> and set the value of <code>jasmine-node . --autotest</code>, which allows for the automatic execution of the specs after changes in the specs. If you want to run after changes outside of the specs, you can add <code>--watch &lt;path&gt;</code>.</p>
+
+<p><code>JSON
 "scripts": {
     "test": "jasmine-node .",
     "test:live": "jasmine-node . --autotest"
-  },
+},
 </code></p>
 
 <p>With that in place, we now can run our test by either using <code>npm test</code> or <code>npm run test:live</code>.</p>
@@ -196,29 +195,35 @@ testing API endpoints easy, fast, and fun.</p>
 
 <p>For the first test, we are going to just test to make sure the status code is what we expect and the header contains the proper content-type we expect to get back on the response. I am going to make a GET request to /posts, which should return back JSON data and a status code of 200.</p>
 
-<p>To start with, we need to import the frisby library into our test file. In the demo, this file is first-spec.js.
-<code>javascript
+<p>To start with, we need to import the frisby library into our test file. In the demo, this file is first-spec.js.</p>
+
+<p><code>JavaScript
  var frisby = require('frisby');
-</code>
-Now to create the actual test itself. First, we use the <code>create</code> method to name the test, then since this is a GET request, we will use the <code>get</code> method and pass in the URL of where we are issuing the command to. After that, we <code>toss</code> the frisby, I mean test!
- <code>javascript
- frisby.create('JSONPlaceholder - Posts API test: GET /posts')
-  .get('http://jsonplaceholder.typicode.com/posts')
-  .toss();
-</code>
-This will create our test for us, but doesn’t do much good without a few extra methods, which in this case, are referred to as expectations via the <a href="http://frisbyjs.com/docs/api/">frisby.js documentation</a>. In our first test, I stated that we are going to test the status code and the content header, so we need to add the <code>expectStatus</code> and <code>expectHeader</code> or <code>expectHeaderContains</code>. I am going to use <code>expectHeaderContains</code> as it’s the less strict version of <code>expectHeader</code>, but either method should work.
-<code>javascript
+</code></p>
+
+<p>Now to create the actual test itself. First, we use the <code>create</code> method to name the test, then since this is a GET request, we will use the <code>get</code> method and pass in the URL of where we are issuing the command to. After that, we <code>toss</code> the frisby, I mean test!</p>
+
+<p><code>JavaScript
 frisby.create('JSONPlaceholder - Posts API test: GET /posts')
-  .get('http://jsonplaceholder.typicode.com/posts')
-  .expectStatus(200)
-  .expectHeaderContains('content-type', 'application/json')
-  .toss();
+    .get('http://jsonplaceholder.typicode.com/posts')
+    .toss();
+</code></p>
+
+<p>This will create our test for us, but doesn’t do much good without a few extra methods, which in this case, are referred to as expectations via the <a href="http://frisbyjs.com/docs/api/">frisby.js documentation</a>. In our first test, I stated that we are going to test the status code and the content header, so we need to add the <code>expectStatus</code> and <code>expectHeader</code> or <code>expectHeaderContains</code>. I am going to use <code>expectHeaderContains</code> as it’s the less strict version of <code>expectHeader</code>, but either method should work.</p>
+
+<p><code>JavaScript
+frisby.create('JSONPlaceholder - Posts API test: GET /posts')
+    .get('http://jsonplaceholder.typicode.com/posts')
+    .expectStatus(200)
+    .expectHeaderContains('content-type', 'application/json')
+    .toss();
 </code></p>
 
 <p>With the first test complete, if you haven’t already started <code>test:live</code> then from a command line, issue the following: <code>npm test</code></p>
 
-<p>The output should look similar to this:
-```console
+<p>The output should look similar to this:</p>
+
+<p>```Shell
 .</p>
 
 <p>Finished in 0.906 seconds
@@ -227,99 +232,102 @@ frisby.create('JSONPlaceholder - Posts API test: GET /posts')
 
 <p>Since the next couple of tests all follow the same format, I am going to bundle up a few of the steps and just show/talk about the test itself.</p>
 
-<p>For the next test, I am going to test the results of the same GET request that we used in the first test. This time though, I am going to add <code>expectJSONTypes</code> that will test that the results data type match what we expect to get back. The JSON data set contains an array of items with each item having the structure of:
-<code>json
+<p>For the next test, I am going to test the results of the same GET request that we used in the first test. This time though, I am going to add <code>expectJSONTypes</code> that will test that the results data type match what we expect to get back. The JSON data set contains an array of items with each item having the structure of:</p>
+
+<p><code>JSON
 {
     "userId": 1,
     "id": 1,
     "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
     "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
-  }
+}
 </code></p>
 
-<p>For testing every item in the array with the above structure, our <code>expectJSONTypes</code> will look like:
-<code>javascript
+<p>For testing every item in the array with the above structure, our <code>expectJSONTypes</code> will look like:</p>
+
+<p><code>JavaScript
 .expectJSONTypes('*', {
     userId: Number,
     id: Number,
     title: String,
     body: String
-  })
+})
 </code></p>
 
-<p>If you notice the asterisk, that denotes that we want to test the elements of the entire array. To test a single item in the array we can use a question mark instead.
-<code>javascript
+<p>If you notice the asterisk, that denotes that we want to test the elements of the entire array. To test a single item in the array we can use a question mark instead.</p>
+
+<p><code>JavaScript
 .expectJSONTypes('?', {
     userId: Number,
     id: Number,
     title: String,
     body: String
-  })
+})
 </code></p>
 
-<p>Now that we have tested the status code, the content header, the data types, let’s create a new test that will test the actual JSON data itself. For that, I am going to still use a GET request but change URL to just return the first post with an id of 1. To test the actual JSON data that is returned, we use <code>expectJSON</code>.
-<code>javascript
+<p>Now that we have tested the status code, the content header, the data types, let’s create a new test that will test the actual JSON data itself. For that, I am going to still use a GET request but change URL to just return the first post with an id of 1. To test the actual JSON data that is returned, we use <code>expectJSON</code>.</p>
+
+<p><code>JavaScript
 frisby.create('JSONPlaceholder - Posts API test: GET /posts/1')
-  .get('http://jsonplaceholder.typicode.com/posts/1')
-  .expectStatus(200)
-  .expectHeaderContains('content-type', 'application/json')
-  .expectJSONTypes({
-    userId: Number,
-    id: Number,
-    title: String,
-    body: String
-  })
-  .expectJSON({
-    userId: 1,
-    id: 1,
-    title: "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-    body: "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
-  })
-  .toss();
+    .get('http://jsonplaceholder.typicode.com/posts/1')
+    .expectStatus(200)
+    .expectHeaderContains('content-type', 'application/json')
+    .expectJSONTypes({
+        userId: Number,
+        id: Number,
+        title: String,
+        body: String
+    })
+    .expectJSON({
+        userId: 1,
+        id: 1,
+        title: "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+        body: "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+    })
+    .toss();
 </code></p>
 
-<p>The other way we could have achieved the same result would be to chain the test together. To call additional test or perform additional logic we can utilize the “Helper” <code>afterJSON</code>:
-```javascript
+<p>The other way we could have achieved the same result would be to chain the test together. To call additional test or perform additional logic we can utilize the “Helper” <code>afterJSON</code>:</p>
+
+<p>```JavaScript
 frisby.create(‘JSONPlaceholder - Posts API test: GET /posts’)
-  .get(‘http://jsonplaceholder.typicode.com/posts’)
-  .expectStatus(200)
-  .expectHeaderContains(‘content-type’, ‘application/json’)
-  .expectJSONTypes(‘*’, {
-    userId: Number,
-    id: Number,
-    title: String,
-    body: String
-  })
-  .afterJSON(function(json) {
-    var firstPost = json[0];</p>
+    .get(‘http://jsonplaceholder.typicode.com/posts’)
+    .expectStatus(200)
+    .expectHeaderContains(‘content-type’, ‘application/json’)
+    .expectJSONTypes(‘*’, {
+        userId: Number,
+        id: Number,
+        title: String,
+        body: String
+    })
+    .afterJSON(function(json) {
+        var firstPost = json[0];</p>
 
-<pre><code>frisby.create('JSONPlaceholder - Posts API test: GET /posts/1')
-  .get('http://jsonplaceholder.typicode.com/posts/' + firstPost.id)
-  .expectStatus(200)
-  .expectHeaderContains('content-type', 'application/json')
-  .expectJSONTypes({
-    userId: Number,
-    id: Number,
-    title: String,
-    body: String
-  })
-  .expectJSON({
-    userId: 1,
-    id: 1,
-    title: "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-    body: "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
-  })
-  .toss();
+<pre><code>    frisby.create('JSONPlaceholder - Posts API test: GET /posts/1')
+        .get('http://jsonplaceholder.typicode.com/posts/' + firstPost.id)
+        .expectStatus(200)
+        .expectHeaderContains('content-type', 'application/json')
+        .expectJSONTypes({
+            userId: Number,
+            id: Number,
+            title: String,
+            body: String
+        })
+        .expectJSON({
+            userId: 1,
+            id: 1,
+            title: "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+            body: "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+        })
+        .toss();
+
+})
+.toss(); ```
 </code></pre>
-
-<p>})
-  .toss();
-```</p>
 
 <p>Using the above methods should allow you to get started writing some quick test for your REST API. So far, I am really liking the simplicity of frisby.js. If you know of any other cool libraries to help improve unit testing and overall code quality, hit me up as I am always looking for new tools/ideas on how to improve my code quality and overall workflow!</p>
 
-<h2 id="extra">Extra</h2>
-
+<h1 id="extra">Extra</h1>
 <p>Just a quick note about another method that I find to be very useful when generating these test is the <code>inspectJSON</code> method. Before I reread the documentation, I was utilizing the <code>afterJSON</code> method to <code>console.log</code> the JSON data that was returned out to the console so I could verify what I was testing. The <code>inspectJSON</code> method used the node.js pretty print utility method <a href="https://nodejs.org/api/util.html#util_util_inspect_object_options">util.inspect</a> to provide a colored console output. Frisby.js also provides a <code>inspectBody</code> method that will just dump the raw parsed/marked up output to the screen as well.</p>
 
 <p>As always, until next time…</p>
