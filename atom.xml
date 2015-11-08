@@ -11,7 +11,7 @@
   <subtitle>Utopian Concept LLC is a bespoke development company. Experienced with all aspects of development ranging from web, mobile, desktop, and client/server.</subtitle>
   <link href="http://utopianconcept.com/atom.xml" rel="self"/>
   <link href="http://utopianconcept.com/" rel="alternate" type="text/html"/>
-  <updated>2015-11-06T21:04:49+00:00</updated>
+  <updated>2015-11-08T15:35:09+00:00</updated>
   <id>http://utopianconcept.com/</id>
   <author>
     <name>Ray Clanan</name>
@@ -19,6 +19,32 @@
     <email>rclanan@utopianconcept.com</email>
   </author>
 
+  
+  <entry>
+    <title>Time for a change - onward and upward</title>
+    <link href="http://utopianconcept.com/articles/making-a-dent/"/>
+    <updated>2015-11-08T00:00:00+00:00</updated>
+    <id>http://utopianconcept.com/articles/making-a-dent</id>
+    <author>
+      <name>Ray Clanan</name>
+      <uri>http://utopianconcept.com/</uri>
+      <email>rclanan@utopianconcept.com</email>
+    </author>
+    <content type="html">
+      &lt;img src=&quot;http://utopianconcept.com/images/universe-feature.png&quot; alt=&quot;Time for a change - onward and upward feature&quot;&gt;&lt;br/&gt;
+      &lt;p&gt;The other day, David Hansson, otherwise known as &lt;a href=&quot;https://signalvnoise.com/writers/dhh&quot;&gt;DHH&lt;/a&gt; in the development community, posted an article called &lt;a href=&quot;https://medium.com/@dhh/reconsider-41adf356857f&quot;&gt;RECONSIDER&lt;/a&gt; from his talk at the &lt;a href=&quot;https://websummit.net/&quot;&gt;Web Submit 2015&lt;/a&gt;. It’s a great read if you are interested in entrepreneurship and startups. It really got me rethinking the direction I was heading with my current company and why I got into all of this in the first place, more on that later. Afterwards, I came across a post on &lt;a href=&quot;https://redd.it/3rw45v&quot;&gt;reddit/r/programming&lt;/a&gt;, LOVE reddit (&lt;a href=&quot;http://www.rememberaaronsw.com/&quot;&gt;R.I.P Aaron&lt;/a&gt; by the way, which talked about doing 365 days of commits to Github and gives some great tips on how to go about doing so.&lt;/p&gt;
+
+&lt;p&gt;Now, I know most people are probably thinking that these two are in no way related but hang in there. In the RECONSIDER talk, one of the things that stuck in my mind was “Make a dent in the Universe!”, this of course isn’t the first time DHH has talked about that, back in 2008, he made another post about it as well on &lt;a href=&quot;https://signalvnoise.com/posts/1437-put-a-dent-in-the-universe&quot;&gt;signalvnosie.com&lt;/a&gt;. That one little statement, at least to me, is very inspiring, almost like the battle cry from &lt;a href=&quot;http://www.imdb.com/title/tt0112573/&quot;&gt;Brave Heart&lt;/a&gt;, “Alba gu bràth!”, oh wait, no not that one! “but they’ll never take… OUR FREEDOM!”, yes, that one! Sorry for that tangent, back to the topic at hand, dent in the universe. As I was saying, I have for a long time wanted to make my own dent in the universe. Have always yearned to make a name for myself, and to have my own successful company. Getting beyond the multitude of excuses that I put up as my own roadblocks through the years, I have decided that the time is now for all of that to change! It’s time that I start “fighting” for my own FREEDDOM! Whatever that might be in the form of. While I contemplate what I want to do as my overall goal/product for my company, so many ideas that I have wrote down, so many niches I have worked in the past that I could lend my expertise to. Just need to figure out which is the viable one from a business model, that or just take a leap and run with one of them. Until I decide which, let me get back to the linkage between the two post!&lt;/p&gt;
+
+&lt;p&gt;In the 365 days of commit post, I love &lt;a href=&quot;https://en.wikipedia.org/wiki/Free_and_open-source_software&quot;&gt;FOSS&lt;/a&gt; (free and open-source software). To me, the whole idea of the 365 days of commits is to, wait for it, make a dent in the FOSS Universe! See what I did there?! It’s also a great learning experience, profile/brand builder, and I think a great place to start investigating ideas as to what direction I want to ultimately go with my company.&lt;/p&gt;
+
+&lt;p&gt;To quote the great &lt;a href=&quot;https://www.cslewis.com/us&quot;&gt;C.S. Lewis&lt;/a&gt;, &lt;a href=&quot;https://www.goodreads.com/quotes/18974-onward-and-upward-to-narnia-and-the-north&quot;&gt;“Onward and Upward! To Narnia and the North!”&lt;/a&gt;, well maybe just onward and upward! Feel free to comment on what you think of any of this. Also, I am always willing to entertain ideas as well.&lt;/p&gt;
+
+&lt;p&gt;As always, until next time…&lt;/p&gt;
+
+      &lt;p&gt;&lt;a href=&quot;http://utopianconcept.com/articles/making-a-dent/&quot; rel=&quot;nofollow&quot;&gt;Time for a change - onward and upward&lt;/a&gt; was originally published by &lt;a href=&quot;http://utopianconcept.com/about/&quot; rel=&quot;nofollow&quot;&gt;Ray Clanan&lt;/a&gt; on &lt;a href=&quot;http://utopianconcept.com&quot; rel=&quot;nofollow&quot;&gt;Utopian Concept LLC&lt;/a&gt;.&lt;/p&gt;
+    </content>
+  </entry>
   
   <entry>
     <title>REST API testing with frisby.js</title>
