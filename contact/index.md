@@ -42,7 +42,7 @@ Always looking for new opportunities to use what I have learned or learn somethi
 </h5>
 
 <h5>
-  <a href="https://coderbits.com/rclanan" itemprop="url" target="_blank">View my coding skill progress on CoderBits</a>
+  <a href="https://coderbits.com/rclanan_cb" itemprop="url" target="_blank">View my coding skill progress on CoderBits</a>
 </h5>
 
 <h5>
