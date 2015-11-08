@@ -9,7 +9,7 @@ image:
   thumb: universe-thumb.png
   credit: 'Provided by StockSnap.io'
   creditlink: 'https://stocksnap.io/photo/T7VWJ9PD7A'
-  tags: [personal, commitments, FOSS]
+tags: [personal, commitments, FOSS]
 comments: true
 ---
 
