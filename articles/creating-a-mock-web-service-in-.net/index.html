@@ -177,9 +177,9 @@
 <p>With the later bullet point being my case, I start off by grabbing the <a href="http://en.wikipedia.org/wiki/Web_Services_Description_Language">WSDL</a> file from the existing running web service. To do this you can just append ?wsdl to the path and it will generate the WSDL XML for you. Save this out to your local machine.</p>
 
 <p>After acquiring the WSDL XML, we will use the <a href="http://msdn.microsoft.com/en-us/library/7h3ystb6.aspx">wsdl.exe</a> file provided by Visual Studio to create our service interface. Open up the <a href="http://msdn.microsoft.com/en-us/library/ms229859.aspx">Visual Studio Command Prompt</a>, and type:
-<code>
+~~~
 wsdl /language:CS /namespace:Your.Namespace /out:Output\Directory /protocol:SOAP /serverinterface yourwsdlxmlfile.wsdl
-</code>
+~~~
 This should create a .cs file in the /out directory that will contain the interface that you need to implement to create a mock web service.</p>
 
 <p>In Visual Studio, create a new ASP.NET Empty Web Application from the Web installed templates under Add New Project. Add the .cs file to that was generated to this project, and then add a new web service.</p>

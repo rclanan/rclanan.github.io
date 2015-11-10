@@ -11,7 +11,7 @@
   <subtitle>Utopian Concept LLC is a bespoke development company. Experienced with all aspects of development ranging from web, mobile, desktop, and client/server.</subtitle>
   <link href="http://utopianconcept.com/atom.xml" rel="self"/>
   <link href="http://utopianconcept.com/" rel="alternate" type="text/html"/>
-  <updated>2015-11-10T03:26:56+00:00</updated>
+  <updated>2015-11-10T03:44:11+00:00</updated>
   <id>http://utopianconcept.com/</id>
   <author>
     <name>Ray Clanan</name>
@@ -863,9 +863,9 @@ SummaryCodepage=&quot; 1252&quot; /&amp;gt;
 &lt;p&gt;With the later bullet point being my case, I start off by grabbing the &lt;a href=&quot;http://en.wikipedia.org/wiki/Web_Services_Description_Language&quot;&gt;WSDL&lt;/a&gt; file from the existing running web service. To do this you can just append ?wsdl to the path and it will generate the WSDL XML for you. Save this out to your local machine.&lt;/p&gt;
 
 &lt;p&gt;After acquiring the WSDL XML, we will use the &lt;a href=&quot;http://msdn.microsoft.com/en-us/library/7h3ystb6.aspx&quot;&gt;wsdl.exe&lt;/a&gt; file provided by Visual Studio to create our service interface. Open up the &lt;a href=&quot;http://msdn.microsoft.com/en-us/library/ms229859.aspx&quot;&gt;Visual Studio Command Prompt&lt;/a&gt;, and type:
-&lt;code&gt;
+~~~
 wsdl /language:CS /namespace:Your.Namespace /out:Output\Directory /protocol:SOAP /serverinterface yourwsdlxmlfile.wsdl
-&lt;/code&gt;
+~~~
 This should create a .cs file in the /out directory that will contain the interface that you need to implement to create a mock web service.&lt;/p&gt;
 
 &lt;p&gt;In Visual Studio, create a new ASP.NET Empty Web Application from the Web installed templates under Add New Project. Add the .cs file to that was generated to this project, and then add a new web service.&lt;/p&gt;
