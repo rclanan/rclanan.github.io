@@ -26,7 +26,7 @@ As always, until next time...
 [^1]:	[http://www.nasa.gov/mission\_pages/apollo/apollo11.html][1]
 
 [1]:	http://www.nasa.gov/mission_pages/apollo/apollo11.html
-[2]:	http://utopianconcept.com/articles/making-a-dent/
+[2]:	https://utopianconcept.com/articles/making-a-dent/
 [3]:	http://www.amazon.com/Psycho-Cybernetics-Updated-Expanded-Maxwell-Maltz/dp/0399176136/ref=sr_1_2?ie=UTF8&qid=1447689943&sr=8-2&keywords=Psycho-Cybernetics "Psycho-Cybernetics, Updated and Expanded"
 [4]:	https://en.wikipedia.org/wiki/Maxwell_Maltz "Maxwell Maltz"
 [5]:	http://onlinelibrary.wiley.com/doi/10.1002/ejsp.674/abstract "How are habits formed: Modelling habit formation in the real world"

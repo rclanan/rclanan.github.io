@@ -77,6 +77,6 @@ All original content (e.g. articles, blog posts, illustrations, artwork, and pho
 
 ### Attribution
 
-If you're inclined to show credit, then a link back to the source article attributed to either [Utopian Concept](http://utopianconcept.com) or [Ray Clanan](http://utopianconcept.com) is good enough for me. If you don't want to show credit, hey that's cool too. Just don't go stealing my stuff and republishing it as your own.
+If you're inclined to show credit, then a link back to the source article attributed to either [Utopian Concept](https://utopianconcept.com) or [Ray Clanan](https://utopianconcept.com) is good enough for me. If you don't want to show credit, hey that's cool too. Just don't go stealing my stuff and republishing it as your own.
 
 If there is any part of the theme that you like, be sure to give credit to [Made Mistakes](http://mademistakes.com) or [Michael Rose](http://mademistakes.com) since he was generous to provide it for free!
