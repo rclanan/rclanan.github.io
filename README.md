@@ -6,8 +6,15 @@ Care to leave feedback? [File an issue on this project](https://github.com/rclan
 
 ## To run
 
+### Method 1:
+```bash
 docker build -t $IMAGENAME .
-
 docker run -t -i -p $LOCALHOSTNAME:$PORT:4000 -v $PWD:/src $IMAGENAME
+```
 
-or Fig Up
+### Method 2: Compose Usage (using **docker-compose**)
+
+```bash
+docker-compose build
+docker-compose up
+```
