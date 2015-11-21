@@ -1,3 +1,8 @@
+		<!-- Schema.org markup for Google+ -->
+		<meta itemprop="name" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+		<meta itemprop="description" content="{{ page.excerpt | strip_html }}">
+		<meta itemprop="image" content="{{ site.url }}/images/{{ page.image.feature }}">
+		<meta itemprop="datePublished" content="{{ page.modified | date: "%Y-%m-%dT%H:%M:%SZ" }}"/>
 	{% if site.owner.twitter %}
 		<!-- Twitter Cards -->
 		<meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
@@ -19,3 +24,4 @@
 		{% if page.excerpt %}<meta property="og:description" content="{{ page.excerpt | strip_html }}">{% endif %}
 		<meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.url }}">
 		<meta property="og:site_name" content="{{ site.title }}">
+		<meta property="fb:app_id" content="{{ site.owner.fbAppId }}">

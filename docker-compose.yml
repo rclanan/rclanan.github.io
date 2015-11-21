@@ -1,6 +1,6 @@
-web:
+rclanan.github.io:
     build: .
-    command: jekyll serve --watch --drafts --force_polling --config _config.dev.yml
+    command: bundle exec jekyll serve --port 4000 --host 0.0.0.0 --watch --drafts --force_polling --config _config.dev.yml
     ports:
         - "4000:4000"
     volumes:

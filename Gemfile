@@ -4,6 +4,9 @@ source "https://rubygems.org"
 gem 'rake'
 gem "jekyll"
 gem "jekyll-sitemap"
+gem 'jekyll-redirect-from'
+gem 'kramdown'
+gem 'rdiscount'
 gem "sass"
 gem "bourbon"
 gem "neat"

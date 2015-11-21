@@ -5,7 +5,8 @@ description: "Utopian Concept LLC is a bespoke development company. Experienced 
 logo: # 120x120 px default image used for Twitter summary card
 teaser: default-teaser.jpg # 400x250 px default teaser image used in image archive grid
 locale: en_US
-url: http://utopianconcept.com
+url: https://utopianconcept.com
+enforce_ssl: utopianconcept.com
 
 # Jekyll configuration
 
@@ -28,6 +29,7 @@ owner:
   email: rclanan@utopianconcept.com
   twitter: utopianconcept
   facebook: utopianconcept
+  fbAppId: 619415181409836
   instagram: rclanan
   stackoverflow: https://stackoverflow.com/users/139002/rclanan #http://stackoverflow.com/users/123456/username
   linkedin: raymondclanan #username
