@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "Screencast"
+title: "Screencasts"
 date: 2015-03-01
 modified: 2015-03-01
 excerpt: "A collection of screencast covering all aspects of development"

@@ -9,7 +9,7 @@ feature:
 share: false
 ---
 
-Found one of my articles or screencast useful? If you feel inclined, here's how you can thank me.
+Found one of my articles or screencasts useful? If you feel inclined, here's how you can thank me.
 
 ## Follow Me
 

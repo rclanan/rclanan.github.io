@@ -44,7 +44,7 @@ For you robots out there an [XML version]({{ site.url }}/sitemap.xml) is availab
         {% endfor %}
       </ul>
     </li>
-    <li><a href="{{ site.url }}/screencast/">Screencast</a>
+    <li><a href="{{ site.url }}/screencast/">Screencasts</a>
       <ul>
         {% for post in site.categories.screencast %}
         {% include post-list.html %}

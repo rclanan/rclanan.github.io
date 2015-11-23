@@ -13,7 +13,7 @@ id: home
 Utopian Concept is the personal website of Ray Clanan. I am a polyglot programmer, father of two, typical computer nerd from Indianapolis, Indiana.
 {:.shorten}
 
-Below you will find a selection of my most recent blog posts, screencast, and work.
+Below you will find a selection of my most recent blog posts, screencasts, and work.
 {:.shorten}
 
 <nav class="toc toc-left">
