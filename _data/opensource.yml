@@ -102,3 +102,18 @@
     - JavaScript
     - Backbone.js
   excerpt: "Immutable Collections and Models for Backbone.js"
+
+- title: moment
+  url: https://github.com/moment/moment
+  categories:
+    - JavaScript
+    - Moment.js
+  excerpt: "Parse, validate, manipulate, and display dates in javascript."
+
+- title: moment.timezone
+  url: https://github.com/moment/moment-timezone
+  categories:
+    - JavaScript
+    - Moment.js
+    - Timezone
+  excerpt: "Timezone support for moment.js"
