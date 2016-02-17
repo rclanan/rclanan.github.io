@@ -7,4 +7,5 @@ node_modules
 _asset_bundler_cache
 .sass-cache
 .idea
-*.plist          
+*.plist
+*.*.plist
