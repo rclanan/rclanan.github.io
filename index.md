@@ -34,10 +34,10 @@ Below you will find a selection of my most recent blog posts, screencasts, and w
 <nav class="toc toc-left">
 <ul>
   <li><h6><a href="{{ site.url }}/work/">Work I've Done <i class="fa fa-long-arrow-right"></i></a></h6></li>
-  {% for post in site.categories.work limit:3 %}
+  {% for post in site.categories.work limit:6 %}
     <li><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></li>
   {% endfor %}
-  {% for contribution in site.data.opensource limit:3 %}
+  {% for contribution in site.data.opensource limit:6 %}
     <li><a href="{{ contribution.url }}">{{ contribution.title }}</a></li>
   {% endfor %}
 </ul>
