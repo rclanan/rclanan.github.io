@@ -11,7 +11,7 @@
   <subtitle>Utopian Concept LLC is a bespoke development company. Experienced with all aspects of development ranging from web, mobile, desktop, and client/server.</subtitle>
   <link href="https://utopianconcept.com/articles-feed.xml" rel="self"/>
   <link href="https://utopianconcept.com/" rel="alternate" type="text/html"/>
-  <updated>2016-02-18T15:43:06+00:00</updated>
+  <updated>2016-02-20T07:16:41+00:00</updated>
   <id>https://utopianconcept.com/</id>
   <author>
     <name>Ray Clanan</name>
@@ -19,6 +19,45 @@
     <email>rclanan@utopianconcept.com</email>
   </author>
 
+  
+  <entry>
+    <title>Tip - Transferring VirtualBox VM between Windows and Mac</title>
+    <link href="https://utopianconcept.com/articles/tip-transferring-virtualBox-vm-between-windows-and-mac/"/>
+    <updated>2016-02-20T00:00:00+00:00</updated>
+    <id>https://utopianconcept.com/articles/tip-transferring-virtualBox-vm-between-windows-and-mac</id>
+    <author>
+      <name>Ray Clanan</name>
+      <uri>https://utopianconcept.com/</uri>
+      <email>rclanan@utopianconcept.com</email>
+    </author>
+    <content type="html">
+      &lt;img src=&quot;https://utopianconcept.com/images/virtualbox-feature.png&quot; alt=&quot;Tip - Transferring VirtualBox VM between Windows and Mac feature&quot;&gt;&lt;br/&gt;
+      &lt;p&gt;When it comes to operating systems today, I am a bit agnostic. I  have a personal preference for using Linux whenever I can but to say that one is better than the other, I am not sure I can. I see pros and cons to all three of the mainstream operating systems; Mac OS X, Linux, and Windows.&lt;/p&gt;
+
+&lt;p&gt;As proof to that testament, I run all three in my current home setup and have for years. I have my trusty Mac book pro which I love because it’s extremely light weight and ‘just works’. I have my &lt;a href=&quot;https://www.archlinux.org/&quot;&gt;Debian&lt;/a&gt; machine which I alternate distros on all the time. I tend to stick with &lt;a href=&quot;https://www.debian.org/&quot; title=&quot;Debian&quot;&gt;Debian&lt;/a&gt; or &lt;a href=&quot;https://www.archlinux.org/&quot; title=&quot;Arch&quot;&gt;Arch&lt;/a&gt; mostly though. I also have my Windows 10 beast running my primary box, mostly due to the business world that I work in but to not lie completely, somewhat due to the games that I get addicted to as well!&lt;/p&gt;
+
+&lt;p&gt;So after that tangent, back to what this article is about. I wanted to document for myself and whomever else stumbles across this. I am starting a new .NET freelancing project and I prefer to do all of my development in virtual machines for a few reasons. The two most important ones are; I can create a VM per project so that all resources, tools, and configurations are stored separately so I don’t have to worry about conflicts between projects and secondly I don’t have to clutter my main environments with tools for one off projects.&lt;/p&gt;
+
+&lt;p&gt;I created the initial &lt;a href=&quot;https://en.wikipedia.org/wiki/Virtual_machine&quot; title=&quot;Virtual Machine&quot;&gt;virtual machine&lt;/a&gt; (VM) on my main Windows 10 machine since that is where I will be doing most of my development, but I also like to move around a lot and needed to have the project be portable.&lt;/p&gt;
+
+&lt;p&gt;Initially, I just pulled out my trusty flash drive and copied the entire virtual machine folder over to it, then plugged it into my Mac. Once I tired to start the VM, I ran into issues stating that the network configuration was not setup properly. I went to correct that issue only to have it complain that it couldn’t save the configuration back out.&lt;/p&gt;
+
+&lt;p&gt;Afterwards, I messaged a peer of mine, &lt;a href=&quot;http://allenbuckley.com/&quot; title=&quot;Allen Buckley&quot;&gt;Allen Buckley&lt;/a&gt;, to see if he had run into this before which he had but didn’t recall what he had to do to fix it.&lt;/p&gt;
+
+&lt;p&gt;I knew I could recreate the VM on my Mac but didn’t want to use up another Windows license since I had already used one for the other VM. That got me thinking, what about just creating the virtual machine on the Mac, using the same settings from Windows, and then point it to the virtual hard drive that was created with the other virtual machine. That allowed me to boot into the previously created virtual machine. Once in the VM, I reinstalled the &lt;a href=&quot;https://www.virtualbox.org/wiki/Downloads&quot;&gt;Guest Extensions&lt;/a&gt; so that they would be the correct ones for the current host.&lt;/p&gt;
+
+&lt;p&gt;So far, I haven’t had any issues running the VM on my Mac and it is still functioning on my Windows machine as well. The only thing I have to remember is any configuration changes, I will either need to recopy the virtual drive or just duplicate the change in both VMs.&lt;/p&gt;
+
+&lt;p&gt;Oh, and for Allen, after words, he said, “Yup. Sounds like what I had to do. Glad it worked.” He proceeded to then say, “Would make a great blog post. Could have used that a year ago”. So the challenge was then made to create one while it was still fresh in my mind as to what the ultimate fix was. Thanks for the blog suggestion Allen!&lt;/p&gt;
+
+&lt;p&gt;If anyone has a better method of transferring the VM across multiple machines, I would love to hear about them. My &lt;a href=&quot;https://en.wiktionary.org/wiki/Google-fu&quot;&gt;google-fu&lt;/a&gt; failed me as I didn’t have any luck finding references to this. My biggest concern is the project specific configuration needing to be duplicated. Code wise, well we all use version control systems these days! Right?&lt;/p&gt;
+
+&lt;p&gt;Until next time…&lt;/p&gt;
+
+
+      &lt;p&gt;&lt;a href=&quot;https://utopianconcept.com/articles/tip-transferring-virtualBox-vm-between-windows-and-mac/&quot; rel=&quot;nofollow&quot;&gt;Tip - Transferring VirtualBox VM between Windows and Mac&lt;/a&gt; was originally published by &lt;a href=&quot;https://utopianconcept.com/about/&quot; rel=&quot;nofollow&quot;&gt;Ray Clanan&lt;/a&gt; on &lt;a href=&quot;https://utopianconcept.com&quot; rel=&quot;nofollow&quot;&gt;Utopian Concept LLC&lt;/a&gt;.&lt;/p&gt;
+    </content>
+  </entry>
   
   <entry>
     <title>21 days</title>
