@@ -5,8 +5,8 @@ excerpt: 'Virtual machine transferring tips'
 category: articles
 image:
   feature: virtualbox-feature.png
-  teaser: virtual-teaser.png
-  thumb: virtual-thumb.png
+  teaser: virtualbox-teaser.png
+  thumb: virtualbox-thumb.png
   credit: 
   creditlink: 
 tags: [VirtualBox, VM, Windows, Mac, Tips]
