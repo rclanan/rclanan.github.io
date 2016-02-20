@@ -20,7 +20,7 @@ Below you will find a selection of my most recent blog posts, screencasts, and w
 <ul>
   <li><h6><a href="{{ site.url }}/articles/">A Blog of Sorts <i class="fa fa-long-arrow-right"></i></a></h6></li>
   <li><a href="{{ site.url }}/tag/">Tag Archive</a></li>
-  <li><a href="{{ site.url }}/2015/">Posts from 2016</a></li>
+  <li><a href="{{ site.url }}/2016/">Posts from 2016</a></li>
   <li><a href="{{ site.url }}/2015/">Posts from 2015</a></li>
   <li><a href="{{ site.url }}/2013/">Posts from 2013</a></li>
 </ul>
