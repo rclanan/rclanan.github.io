@@ -1,3 +1,18 @@
+---
+layout: article
+title: Tip - Transferring VirtualBox VM between Windows and Mac
+excerpt: 'Virtual machine transferring tips'
+category: articles
+image:
+  feature: virtualbox-feature.png
+  teaser: virtual-teaser.png
+  thumb: virtual-thumb.png
+  credit: 
+  creditlink: 
+tags: [VirtualBox, VM, Windows, Mac, Tips]
+comments: true
+---
+
 When it comes to operating systems today, I am a bit agnostic. I  have a personal preference for using Linux whenever I can but to say that one is better than the other, I am not sure I can. I see pros and cons to all three of the mainstream operating systems; Mac OS X, Linux, and Windows. 
 
 As proof to that testament, I run all three in my current home setup and have for years. I have my trusty Mac book pro which I love because it's extremely light weight and 'just works'. I have my [Debian][1] machine which I alternate distros on all the time. I tend to stick with [Debian][2] or [Arch][3] mostly though. I also have my Windows 10 beast running my primary box, mostly due to the business world that I work in but to not lie completely, somewhat due to the games that I get addicted to as well! 
