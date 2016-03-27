@@ -54,7 +54,6 @@ Below you will find a selection of my most recent blog posts, screencasts, and w
 </div><!-- /.tiles-3-4 -->
 
 <div class="tiles">
-<h3>Clients</h3>
 {% for client in site.data.clients %}
   {% include client-grid.html %}
 {% endfor %}
