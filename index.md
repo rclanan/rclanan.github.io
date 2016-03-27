@@ -53,8 +53,8 @@ Below you will find a selection of my most recent blog posts, screencasts, and w
 {% endfor %}
 </div><!-- /.tiles-3-4 -->
 
-<h2>Clients</h2>
 <div class="tiles">
+<h2>Clients</h2>
 {% for client in site.data.clients %}
   {% include client-grid.html %}
 {% endfor %}
