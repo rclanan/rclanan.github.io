@@ -1,0 +1,29 @@
+# Client listing
+
+- title: "Deloitte"
+  url: http://www2.deloitte.com/us/en.html
+  image: deloitte-logo.jpg
+- title: "Capax Global"
+  url: http://www.capaxglobal.com/
+  image: capax-logo.png
+- title: "Track Ahead"
+  url: http://trackahead.com/
+  image: track-ahead-logo.png
+- title: "Gravity Ward"
+  url: http://www.gravityward.com/
+  image: gravity-logo.png
+- title: "77 Media"
+  url: http://www.77media.com/
+  image: 77media-logo.png
+- title: "Indiana Fiber Network"
+  url: https://ifncom.co/
+  image: ifn-logo.jpg
+- title: "Wilmouth Group"
+  url: http://www.wilmothgroup.com/
+  image: wilmoth-logo.jpg
+- title: "Basecamp Leasing"
+  url: http://www.basecampleasing.com/
+  image: basecamp-leasing-logo.png
+- title: "Infinity Hair Solutions"
+  url: http://www.infinityhairsolutions.com/
+  image: ihs-logo.jpg
