@@ -2,7 +2,7 @@
 layout: article
 title: "About Ray Clanan"
 date: 2013-08-10
-modified: 2015-02-28
+modified: 2017-02-02
 excerpt: "Ray Clanan is a polyglot programmer, father of two, typical computer nerd from Indianapolis"
 image:
   feature:
@@ -14,7 +14,7 @@ share: false
 sidebar: sidebar-about
 ---
 
-I am a Programmer, IT Consultant, Entrepreneur, Administrator, Trainer, and Wearer of many hats, with 10+ years experience.
+I am a Programmer, IT Consultant, Entrepreneur, Administrator, Trainer, and Wearer of many hats, with 16+ years experience.
 
 ## What I offer:
 
