@@ -2,7 +2,7 @@
 layout: article
 title: "Contact"
 date: 2013-08--10
-modified: 2015-02-28
+modified: 2017-02-03
 excerpt:
 image:
   feature:
@@ -39,10 +39,6 @@ Always looking for new opportunities to use what I have learned or learn somethi
 
 <h5>
   <a href="http://linkedin.com/in/raymondclanan" itemprop="url" target="_blank">Connect with me on LinkedIn</a>
-</h5>
-
-<h5>
-  <a href="https://coderbits.com/rclanan_cb" itemprop="url" target="_blank">View my coding skill progress on CoderBits</a>
 </h5>
 
 <h5>
