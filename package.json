@@ -13,6 +13,6 @@
     "grunt-contrib-imagemin": "~1.0.0",
     "grunt-svgmin": "~3.1.0",
     "grunt-imgcompress": "~0.1.1",
-    "grunt-newer": "^1.1.1"
+    "grunt-newer": "^1.3.0"
   }
 }
